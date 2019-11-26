@@ -1,0 +1,65 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x0",
+      "device": "xc7a35ticsg324-1L",
+      "name": "design_1",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2018.3"
+    },
+    "design_tree": {
+      "can_top_0": ""
+    },
+    "components": {
+      "can_top_0": {
+        "vlnv": "xilinx.com:module_ref:can_top:1.0",
+        "xci_name": "design_1_can_top_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "can_top",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "rst_i": {
+            "direction": "I"
+          },
+          "ale_i": {
+            "direction": "I"
+          },
+          "rd_i": {
+            "direction": "I"
+          },
+          "wr_i": {
+            "direction": "I"
+          },
+          "port_0_io": {
+            "direction": "IO",
+            "left": "7",
+            "right": "0"
+          },
+          "cs_can_i": {
+            "direction": "I"
+          },
+          "clk_i": {
+            "direction": "I"
+          },
+          "rx_i": {
+            "direction": "I"
+          },
+          "tx_o": {
+            "direction": "O"
+          },
+          "bus_off_on": {
+            "direction": "O"
+          },
+          "irq_on": {
+            "direction": "O"
+          },
+          "clkout_o": {
+            "direction": "O"
+          }
+        }
+      }
+    }
+  }
+}
