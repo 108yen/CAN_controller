@@ -236,7 +236,9 @@ module can_top
   tx_o,
   bus_off_on,
   irq_on,
-  clkout_o
+  clkout_o,
+  sample_point,
+  sampled_bit
 
   // Bist
 `ifdef CAN_BIST
@@ -292,6 +294,8 @@ output       tx_o;
 output       bus_off_on;
 output       irq_on;
 output       clkout_o;
+output       sample_point;
+output       sampled_bit;
 
 // Bist
 `ifdef CAN_BIST
@@ -393,8 +397,8 @@ wire   [7:0] tx_data_12;
 wire         cs;
 
 /* Output signals from can_btl module */
-wire         sample_point;
-wire         sampled_bit;
+//wire         sample_point;
+//wire         sampled_bit;
 wire         sampled_bit_q;
 wire         tx_point;
 wire         hard_sync;

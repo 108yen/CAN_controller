@@ -1,0 +1,16 @@
+set_property PACKAGE_PIN E3 [get_ports clk]
+set_property IOSTANDARD LVCMOS33 [get_ports clk]
+set_property PACKAGE_PIN B11 [get_ports can_signal_in]
+set_property IOSTANDARD LVCMOS33 [get_ports can_signal_in]
+set_property PACKAGE_PIN G13 [get_ports can_signal_out]
+set_property IOSTANDARD LVCMOS33 [get_ports can_signal_out]
+
+set_property PACKAGE_PIN D12 [get_ports triger]
+set_property IOSTANDARD LVCMOS33 [get_ports triger]
+
+set_property PACKAGE_PIN D13 [get_ports debug_0]
+set_property PACKAGE_PIN B18 [get_ports debug_1]
+set_property PACKAGE_PIN A18 [get_ports debug_2]
+set_property IOSTANDARD LVCMOS33 [get_ports debug_0]
+set_property IOSTANDARD LVCMOS33 [get_ports debug_1]
+set_property IOSTANDARD LVCMOS33 [get_ports debug_2]
