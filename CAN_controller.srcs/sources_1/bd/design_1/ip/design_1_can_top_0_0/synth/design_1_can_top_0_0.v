@@ -69,7 +69,10 @@ module design_1_can_top_0_0 (
   irq_on,
   clkout_o,
   sample_point,
-  sampled_bit
+  sampled_bit,
+  cs_o,
+  we_o,
+  debug
 );
 
 input wire rst_i;
@@ -86,6 +89,9 @@ output wire irq_on;
 output wire clkout_o;
 output wire sample_point;
 output wire sampled_bit;
+output wire cs_o;
+output wire we_o;
+output wire debug;
 
   can_top #(
     .Tp(1)
@@ -103,6 +109,9 @@ output wire sampled_bit;
     .irq_on(irq_on),
     .clkout_o(clkout_o),
     .sample_point(sample_point),
-    .sampled_bit(sampled_bit)
+    .sampled_bit(sampled_bit),
+    .cs_o(cs_o),
+    .we_o(we_o),
+    .debug(debug)
   );
 endmodule

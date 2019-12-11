@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Tue Dec 10 19:30:14 2019
+//Date        : Wed Dec 11 14:01:07 2019
 //Host        : DESKTOP-NTANC38 running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -29,9 +29,7 @@ module design_1
   wire MODULE_CONTROLLER_0_TRIGER;
   wire can_signal_in_1;
   wire can_top_0_clkout_o;
-  wire can_top_0_sample_point;
-  wire can_top_0_sampled_bit;
-  wire can_top_0_tx_o;
+  wire can_top_0_we_o;
   wire clk_1;
   wire clk_wiz_0_clk_out2;
   wire clk_wiz_0_clk_out3;
@@ -39,15 +37,16 @@ module design_1
   wire initializer_0_ale_i;
   wire initializer_0_clk_o;
   wire initializer_0_cs_can_i;
+  wire initializer_0_debug;
   wire initializer_0_rd_i;
   wire initializer_0_rst_i;
   wire initializer_0_wr_i;
 
   assign can_signal_in_1 = can_signal_in;
-  assign can_signal_out = can_top_0_tx_o;
+  assign can_signal_out = initializer_0_cs_can_i;
   assign clk_1 = clk;
-  assign debug_0 = can_top_0_sample_point;
-  assign debug_1 = can_top_0_sampled_bit;
+  assign debug_0 = can_top_0_we_o;
+  assign debug_1 = initializer_0_debug;
   assign debug_2 = can_top_0_clkout_o;
   assign triger = MODULE_CONTROLLER_0_TRIGER;
   design_1_MODULE_CONTROLLER_0_0 MODULE_CONTROLLER_0
@@ -63,9 +62,7 @@ module design_1
         .rd_i(initializer_0_rd_i),
         .rst_i(initializer_0_rst_i),
         .rx_i(can_signal_in_1),
-        .sample_point(can_top_0_sample_point),
-        .sampled_bit(can_top_0_sampled_bit),
-        .tx_o(can_top_0_tx_o),
+        .we_o(can_top_0_we_o),
         .wr_i(initializer_0_wr_i));
   design_1_clk_wiz_0_0 clk_wiz_0
        (.clk_in1(clk_1),
@@ -73,14 +70,15 @@ module design_1
         .clk_out3(clk_wiz_0_clk_out3),
         .locked(clk_wiz_0_locked));
   design_1_initializer_0_0 initializer_0
-       (.ale_i(initializer_0_ale_i),
+       (.ale_o(initializer_0_ale_i),
         .bus_off_on(1'b0),
         .clk_i(clk_wiz_0_clk_out2),
         .clk_o(initializer_0_clk_o),
-        .cs_can_i(initializer_0_cs_can_i),
+        .cs_can_o(initializer_0_cs_can_i),
+        .debug(initializer_0_debug),
         .irq_on(1'b0),
-        .rd_i(initializer_0_rd_i),
-        .rst_i(initializer_0_rst_i),
+        .rd_o(initializer_0_rd_i),
+        .rst_o(initializer_0_rst_i),
         .tx_o(1'b0),
-        .wr_i(initializer_0_wr_i));
+        .wr_o(initializer_0_wr_i));
 endmodule

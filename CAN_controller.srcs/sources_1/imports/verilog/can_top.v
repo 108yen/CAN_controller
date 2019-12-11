@@ -238,7 +238,10 @@ module can_top
   irq_on,
   clkout_o,
   sample_point,
-  sampled_bit
+  sampled_bit,
+  cs_o,
+  we_o,
+  debug
 
   // Bist
 `ifdef CAN_BIST
@@ -294,8 +297,16 @@ output       tx_o;
 output       bus_off_on;
 output       irq_on;
 output       clkout_o;
+//debug
 output       sample_point;
 output       sampled_bit;
+output       cs_o;
+output       we_o;
+output       debug;
+
+assign       cs_o = cs;
+assign       we_o = i_can_registers.we_bus_timing_0;
+assign       debug = reset_mode;
 
 // Bist
 `ifdef CAN_BIST

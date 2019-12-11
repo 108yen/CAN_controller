@@ -11,8 +11,8 @@
     "design_tree": {
       "clk_wiz_0": "",
       "MODULE_CONTROLLER_0": "",
-      "can_top_0": "",
-      "initializer_0": ""
+      "initializer_0": "",
+      "can_top_0": ""
     },
     "ports": {
       "clk": {
@@ -186,6 +186,72 @@
           }
         }
       },
+      "initializer_0": {
+        "vlnv": "xilinx.com:module_ref:initializer:1.0",
+        "xci_name": "design_1_initializer_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "initializer",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "port_0_io": {
+            "direction": "IO",
+            "left": "7",
+            "right": "0"
+          },
+          "rst_o": {
+            "direction": "O"
+          },
+          "ale_o": {
+            "direction": "O"
+          },
+          "rd_o": {
+            "direction": "O"
+          },
+          "wr_o": {
+            "direction": "O"
+          },
+          "cs_can_o": {
+            "direction": "O"
+          },
+          "clk_o": {
+            "direction": "O"
+          },
+          "clk_i": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
+              },
+              "FREQ_HZ": {
+                "value": "32000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "rx_i": {
+            "direction": "O"
+          },
+          "tx_o": {
+            "direction": "I"
+          },
+          "bus_off_on": {
+            "direction": "I"
+          },
+          "irq_on": {
+            "direction": "I"
+          },
+          "debug": {
+            "direction": "O"
+          }
+        }
+      },
       "can_top_0": {
         "vlnv": "xilinx.com:module_ref:can_top:1.0",
         "xci_name": "design_1_can_top_0_0",
@@ -216,21 +282,7 @@
             "direction": "I"
           },
           "clk_i": {
-            "direction": "I",
-            "parameters": {
-              "CLK_DOMAIN": {
-                "value": "/clk_wiz_0_clk_out1",
-                "value_src": "ip_prop"
-              },
-              "FREQ_HZ": {
-                "value": "16000000",
-                "value_src": "ip_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "ip_prop"
-              }
-            }
+            "direction": "I"
           },
           "rx_i": {
             "direction": "I"
@@ -252,121 +304,36 @@
           },
           "sampled_bit": {
             "direction": "O"
-          }
-        }
-      },
-      "initializer_0": {
-        "vlnv": "xilinx.com:module_ref:initializer:1.0",
-        "xci_name": "design_1_initializer_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "initializer",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "rst_i": {
+          },
+          "cs_o": {
             "direction": "O"
           },
-          "ale_i": {
+          "we_o": {
             "direction": "O"
           },
-          "rd_i": {
+          "debug": {
             "direction": "O"
-          },
-          "wr_i": {
-            "direction": "O"
-          },
-          "port_0_io": {
-            "direction": "IO",
-            "left": "7",
-            "right": "0"
-          },
-          "cs_can_i": {
-            "direction": "O"
-          },
-          "clk_o": {
-            "direction": "O",
-            "parameters": {
-              "CLK_DOMAIN": {
-                "value": "/clk_wiz_0_clk_out1",
-                "value_src": "ip_prop"
-              },
-              "FREQ_HZ": {
-                "value": "16000000",
-                "value_src": "ip_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "ip_prop"
-              }
-            }
-          },
-          "clk_i": {
-            "direction": "I",
-            "parameters": {
-              "CLK_DOMAIN": {
-                "value": "/clk_wiz_0_clk_out1",
-                "value_src": "ip_prop"
-              },
-              "FREQ_HZ": {
-                "value": "32000000",
-                "value_src": "ip_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "ip_prop"
-              }
-            }
-          },
-          "rx_i": {
-            "direction": "O"
-          },
-          "tx_o": {
-            "direction": "I"
-          },
-          "bus_off_on": {
-            "direction": "I"
-          },
-          "irq_on": {
-            "direction": "I"
           }
         }
       }
     },
     "nets": {
-      "initializer_0_rst_i": {
-        "ports": [
-          "initializer_0/rst_i",
-          "can_top_0/rst_i"
-        ]
-      },
-      "initializer_0_ale_i": {
-        "ports": [
-          "initializer_0/ale_i",
-          "can_top_0/ale_i"
-        ]
-      },
       "initializer_0_rd_i": {
         "ports": [
-          "initializer_0/rd_i",
+          "initializer_0/rd_o",
           "can_top_0/rd_i"
-        ]
-      },
-      "initializer_0_wr_i": {
-        "ports": [
-          "initializer_0/wr_i",
-          "can_top_0/wr_i"
         ]
       },
       "Net": {
         "ports": [
-          "can_top_0/port_0_io",
-          "initializer_0/port_0_io"
+          "initializer_0/port_0_io",
+          "can_top_0/port_0_io"
         ]
       },
       "initializer_0_cs_can_i": {
         "ports": [
-          "initializer_0/cs_can_i",
+          "initializer_0/cs_can_o",
+          "can_signal_out",
           "can_top_0/cs_can_i"
         ]
       },
@@ -374,19 +341,6 @@
         "ports": [
           "clk",
           "clk_wiz_0/clk_in1"
-        ]
-      },
-      "can_signal_in_1": {
-        "ports": [
-          "can_signal_in",
-          "MODULE_CONTROLLER_0/CAN_SIGNAL_IN",
-          "can_top_0/rx_i"
-        ]
-      },
-      "can_top_0_tx_o": {
-        "ports": [
-          "can_top_0/tx_o",
-          "can_signal_out"
         ]
       },
       "MODULE_CONTROLLER_0_TRIGER": {
@@ -401,28 +355,10 @@
           "debug_2"
         ]
       },
-      "can_top_0_sample_point": {
-        "ports": [
-          "can_top_0/sample_point",
-          "debug_0"
-        ]
-      },
-      "can_top_0_sampled_bit": {
-        "ports": [
-          "can_top_0/sampled_bit",
-          "debug_1"
-        ]
-      },
       "clk_wiz_0_clk_out3": {
         "ports": [
           "clk_wiz_0/clk_out3",
           "MODULE_CONTROLLER_0/CLK"
-        ]
-      },
-      "clk_wiz_0_clk_out2": {
-        "ports": [
-          "clk_wiz_0/clk_out2",
-          "initializer_0/clk_i"
         ]
       },
       "clk_wiz_0_locked": {
@@ -435,6 +371,49 @@
         "ports": [
           "initializer_0/clk_o",
           "can_top_0/clk_i"
+        ]
+      },
+      "can_signal_in_1": {
+        "ports": [
+          "can_signal_in",
+          "MODULE_CONTROLLER_0/CAN_SIGNAL_IN",
+          "can_top_0/rx_i"
+        ]
+      },
+      "initializer_0_rst_i": {
+        "ports": [
+          "initializer_0/rst_o",
+          "can_top_0/rst_i"
+        ]
+      },
+      "clk_wiz_0_clk_out2": {
+        "ports": [
+          "clk_wiz_0/clk_out2",
+          "initializer_0/clk_i"
+        ]
+      },
+      "initializer_0_debug": {
+        "ports": [
+          "initializer_0/debug",
+          "debug_1"
+        ]
+      },
+      "initializer_0_wr_i": {
+        "ports": [
+          "initializer_0/wr_o",
+          "can_top_0/wr_i"
+        ]
+      },
+      "initializer_0_ale_i": {
+        "ports": [
+          "initializer_0/ale_o",
+          "can_top_0/ale_i"
+        ]
+      },
+      "can_top_0_we_o": {
+        "ports": [
+          "can_top_0/we_o",
+          "debug_0"
         ]
       }
     }

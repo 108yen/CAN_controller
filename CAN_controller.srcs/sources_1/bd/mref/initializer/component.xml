@@ -15,7 +15,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>969ecd44</spirit:value>
+            <spirit:value>1f8d1cfe</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -28,7 +28,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>969ecd44</spirit:value>
+            <spirit:value>1f8d1cfe</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -42,70 +42,6 @@
       </spirit:view>
     </spirit:views>
     <spirit:ports>
-      <spirit:port>
-        <spirit:name>rst_i</spirit:name>
-        <spirit:wire>
-          <spirit:direction>out</spirit:direction>
-          <spirit:wireTypeDefs>
-            <spirit:wireTypeDef>
-              <spirit:typeName>reg</spirit:typeName>
-              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
-              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
-            </spirit:wireTypeDef>
-          </spirit:wireTypeDefs>
-          <spirit:driver>
-            <spirit:defaultValue spirit:format="long">1</spirit:defaultValue>
-          </spirit:driver>
-        </spirit:wire>
-      </spirit:port>
-      <spirit:port>
-        <spirit:name>ale_i</spirit:name>
-        <spirit:wire>
-          <spirit:direction>out</spirit:direction>
-          <spirit:wireTypeDefs>
-            <spirit:wireTypeDef>
-              <spirit:typeName>reg</spirit:typeName>
-              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
-              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
-            </spirit:wireTypeDef>
-          </spirit:wireTypeDefs>
-          <spirit:driver>
-            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
-          </spirit:driver>
-        </spirit:wire>
-      </spirit:port>
-      <spirit:port>
-        <spirit:name>rd_i</spirit:name>
-        <spirit:wire>
-          <spirit:direction>out</spirit:direction>
-          <spirit:wireTypeDefs>
-            <spirit:wireTypeDef>
-              <spirit:typeName>reg</spirit:typeName>
-              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
-              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
-            </spirit:wireTypeDef>
-          </spirit:wireTypeDefs>
-          <spirit:driver>
-            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
-          </spirit:driver>
-        </spirit:wire>
-      </spirit:port>
-      <spirit:port>
-        <spirit:name>wr_i</spirit:name>
-        <spirit:wire>
-          <spirit:direction>out</spirit:direction>
-          <spirit:wireTypeDefs>
-            <spirit:wireTypeDef>
-              <spirit:typeName>reg</spirit:typeName>
-              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
-              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
-            </spirit:wireTypeDef>
-          </spirit:wireTypeDefs>
-          <spirit:driver>
-            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
-          </spirit:driver>
-        </spirit:wire>
-      </spirit:port>
       <spirit:port>
         <spirit:name>port_0_io</spirit:name>
         <spirit:wire>
@@ -124,7 +60,71 @@
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>cs_can_i</spirit:name>
+        <spirit:name>rst_o</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>reg</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>ale_o</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>reg</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>rd_o</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>reg</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>wr_o</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>reg</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>cs_can_o</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:wireTypeDefs>
@@ -220,6 +220,19 @@
           </spirit:wireTypeDefs>
         </spirit:wire>
       </spirit:port>
+      <spirit:port>
+        <spirit:name>debug</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
     </spirit:ports>
     <spirit:modelParameters>
       <spirit:modelParameter xsi:type="spirit:nameValueTypeType" spirit:dataType="integer">
@@ -232,6 +245,56 @@
         <spirit:displayName>Brp</spirit:displayName>
         <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.BRP" spirit:dependency="(2 * (&quot;000000&quot; + 1))">2</spirit:value>
       </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>timing1</spirit:name>
+        <spirit:displayName>Timing1</spirit:displayName>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.timing1" spirit:bitStringLength="20">0x00002</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>timing2</spirit:name>
+        <spirit:displayName>Timing2</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.timing2" spirit:dependency="(0x00003 + spirit:decode(id(&apos;MODELPARAM_VALUE.timing1&apos;)))">5</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>timing3</spirit:name>
+        <spirit:displayName>Timing3</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.timing3" spirit:dependency="(0x00004 + spirit:decode(id(&apos;MODELPARAM_VALUE.timing2&apos;)))">9</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>timing4</spirit:name>
+        <spirit:displayName>Timing4</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.timing4" spirit:dependency="(0x00006 + spirit:decode(id(&apos;MODELPARAM_VALUE.timing3&apos;)))">15</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>wr0</spirit:name>
+        <spirit:displayName>Wr0</spirit:displayName>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.wr0" spirit:bitStringLength="20">0x00001</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>wr1</spirit:name>
+        <spirit:displayName>Wr1</spirit:displayName>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.wr1" spirit:bitStringLength="20">0x003F5</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>wr2</spirit:name>
+        <spirit:displayName>Wr2</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.wr2" spirit:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.wr1&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.timing4&apos;))) + 0x00002)">1030</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>wr3</spirit:name>
+        <spirit:displayName>Wr3</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.wr3" spirit:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.wr2&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.timing4&apos;))) + 0x00002)">1047</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>wr4</spirit:name>
+        <spirit:displayName>Wr4</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.wr4" spirit:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.wr3&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.timing4&apos;))) + 0x00002)">1064</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>wr5</spirit:name>
+        <spirit:displayName>Wr5</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.wr5" spirit:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.wr4&apos;)) + spirit:decode(id(&apos;MODELPARAM_VALUE.timing4&apos;))) + 0x007D0)">3079</spirit:value>
+      </spirit:modelParameter>
     </spirit:modelParameters>
   </spirit:model>
   <spirit:fileSets>
@@ -240,7 +303,7 @@
       <spirit:file>
         <spirit:name>xgui/initializer_v1_0.tcl</spirit:name>
         <spirit:fileType>tclSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_7fb79120</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_65a29dd1</spirit:userFileType>
         <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
@@ -256,6 +319,56 @@
       <spirit:name>BRP</spirit:name>
       <spirit:displayName>Brp</spirit:displayName>
       <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.BRP">2</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>timing1</spirit:name>
+      <spirit:displayName>Timing1</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.timing1" spirit:bitStringLength="20">0x00002</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>timing2</spirit:name>
+      <spirit:displayName>Timing2</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.timing2">5</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>timing3</spirit:name>
+      <spirit:displayName>Timing3</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.timing3">9</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>timing4</spirit:name>
+      <spirit:displayName>Timing4</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.timing4">15</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>wr0</spirit:name>
+      <spirit:displayName>Wr0</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.wr0" spirit:bitStringLength="20">0x00001</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>wr1</spirit:name>
+      <spirit:displayName>Wr1</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.wr1" spirit:bitStringLength="20">0x003F5</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>wr2</spirit:name>
+      <spirit:displayName>Wr2</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.wr2">1030</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>wr3</spirit:name>
+      <spirit:displayName>Wr3</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.wr3">1047</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>wr4</spirit:name>
+      <spirit:displayName>Wr4</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.wr4">1064</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>wr5</spirit:name>
+      <spirit:displayName>Wr5</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.wr5">3079</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Component_Name</spirit:name>
@@ -277,7 +390,7 @@
         <xilinx:designToolContext>IPI</xilinx:designToolContext>
       </xilinx:designToolContexts>
       <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2019-12-10T10:30:08Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2019-12-11T04:55:36Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2018.3</xilinx:xilinxVersion>

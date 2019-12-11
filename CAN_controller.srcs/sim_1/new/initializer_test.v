@@ -40,12 +40,12 @@ wire sample_point;
     
 initializer i_initializer
 (
-    .rst_i(rst_i),
-    .ale_i(ale_i),
-    .rd_i(rd_i),
-    .wr_i(wr_i),
+    .rst_o(rst_i),
+    .ale_o(ale_i),
+    .rd_o(rd_i),
+    .wr_o(wr_i),
     .port_0_io(port_0_io),
-    .cs_can_i(cs_can_i),
+    .cs_can_o(cs_can_i),
     .clk_o(clk_o),
     .clk_i(clk),
     .rx_i(rx_i),
@@ -63,7 +63,7 @@ can_top i_can_top
       .wr_i(wr_i),
       .port_0_io(port_0_io),
       .clk_i(clk_o),
-      .rx_i(1),
+      .rx_i(0),
       .tx_o(tx_o),
       .bus_off_on(bus_off_on),
       .irq_on(irq_on),
@@ -82,9 +82,9 @@ end
 initial
 begin
   
-    repeat (1300) @ (posedge clk);
+    repeat (2500) @ (posedge clk);
 
-    #5000;
+    #1000;
     $display("CAN Testbench finished !");
     $stop;
 end

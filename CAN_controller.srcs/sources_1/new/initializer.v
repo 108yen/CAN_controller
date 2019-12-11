@@ -35,32 +35,34 @@
 
 module initializer
 (
-    rst_i,
-    ale_i,
-    rd_i,
-    wr_i,
     port_0_io,
-    cs_can_i,
+    rst_o,
+    ale_o,
+    rd_o,
+    wr_o,
+    cs_can_o,
     clk_o,
     clk_i,
     rx_i,
     tx_o,
     bus_off_on,
-    irq_on
+    irq_on,
+    debug
 );
 
-output reg   rst_i=1;
-output reg   ale_i=0;
-output reg   rd_i=0;
-output reg   wr_i=0;
 inout  [7:0] port_0_io;
-output reg   cs_can_i=0;
+output reg   rst_o=0;
+output reg   ale_o=0;
+output reg   rd_o=0;
+output reg   wr_o=0;
+output reg   cs_can_o=0;
 output reg   clk_o=1;
 input         clk_i;    //32MHz
 output        rx_i;
 input         tx_o;
 input         bus_off_on;
 input         irq_on;
+output        debug;
 
 parameter Tp = 1;
 parameter BRP = 2*(`CAN_TIMING0_BRP + 1);
@@ -70,6 +72,7 @@ reg   [7:0] port_0_o=8'h0;
 reg         port_0_en=0;
 
 assign port_0_io = port_0_en? port_0_o : 8'hz;
+assign debug = cs_can_o;
 
 always @(posedge clk_i) begin
     clk_o = ~clk_o;
@@ -85,122 +88,168 @@ always @(posedge clk_i) begin
     end
 end
 
+//reg [19:0] interbal=20'd2;
+//reg [19:0] rst_time=20'd7;
+//reg [19:0] base_time=20'd13;
+//reg [19:0] cs_can_time=20'd1;
+//reg [19:0] ale_time=20'd2;
+//reg [19:0] port_time=20'd3;
+//reg [19:0] wr_time=20'd5;
+//wire [19:0] st_write_reg;
+parameter [19:0] timing1=20'd2;
+parameter [19:0] timing2=20'd3+timing1;
+parameter [19:0] timing3=20'd4+timing2;
+parameter [19:0] timing4=20'd6+timing3;
+
+parameter [19:0] wr0=20'd1;
+parameter [19:0] wr1=20'd1013;
+parameter [19:0] wr2=wr1+timing4+20'd2;
+parameter [19:0] wr3=wr2+timing4+20'd2;
+parameter [19:0] wr4=wr3+timing4+20'd2;
+parameter [19:0] wr5=wr4+timing4+20'd2000;
+
 always @(posedge clk_i) begin
     case (clk_i_counter)
-        20'd4:begin
-            rst_i <= 0;
+        20'd0:begin
+            rst_o <= 0;
         end
-//        20'd8:begin
-//            rst_i <= 0;
-//        end
-//    write_register(8'd6, {`CAN_TIMING0_SJW, `CAN_TIMING0_BRP});
-        20'd13:begin
-            cs_can_i <= 1;
+//        CAN_MODE_RESET
+        wr0:begin
+            cs_can_o <= 1;
         end
-        20'd14:begin
-            ale_i <= 1;
-            port_0_en <= 1;
-            port_0_o <= 8'd6;
-        end
-        20'd16:begin
-            ale_i <= 0;
-        end
-        20'd19:begin
-            port_0_o <= {`CAN_TIMING0_SJW, `CAN_TIMING0_BRP};
-            wr_i <= 1;
-        end
-        20'd24:begin
-            wr_i <= 0;
-            port_0_en <= 0;
-            cs_can_i <= 0;
-        end
-        
-//        write_register(8'd7, {`CAN_TIMING1_SAM, `CAN_TIMING1_TSEG2, `CAN_TIMING1_TSEG1});
-        20'd25:begin
-            cs_can_i <= 1;
-        end
-        20'd26:begin
-            ale_i <= 1;
-            port_0_en <= 1;
-            port_0_o <= 8'd7;
-        end
-        20'd28:begin
-            ale_i <= 0;
-        end
-        20'd31:begin
-            port_0_o <= {`CAN_TIMING1_SAM, `CAN_TIMING1_TSEG2, `CAN_TIMING1_TSEG1};
-            wr_i <= 1;
-        end
-        20'd36:begin
-            wr_i <= 0;
-            port_0_en <= 0;
-            cs_can_i <= 0;
-        end
-        
-//        write_register(8'd4, 8'he8); // acceptance code
-        20'd37:begin
-            cs_can_i <= 1;
-        end
-        20'd38:begin
-            ale_i <= 1;
-            port_0_en <= 1;
-            port_0_o <= 8'd4;
-        end
-        20'd40:begin
-            ale_i <= 0;
-        end
-        20'd43:begin
-            port_0_o <= 8'he8;
-            wr_i <= 1;
-        end
-        20'd48:begin
-            wr_i <= 0;
-            port_0_en <= 0;
-            cs_can_i <= 0;
-        end
-        
-//        write_register(8'd5, 8'h0f); // acceptance mask
-        20'd49:begin
-            cs_can_i <= 1;
-        end
-        20'd50:begin
-            ale_i <= 1;
-            port_0_en <= 1;
-            port_0_o <= 8'd5;
-        end
-        20'd52:begin
-            ale_i <= 0;
-        end
-        20'd55:begin
-            port_0_o <= 8'h0f;
-            wr_i <= 1;
-        end
-        20'd60:begin
-            wr_i <= 0;
-            port_0_en <= 0;
-            cs_can_i <= 0;
-        end
-        
-//        write_register(8'd0, {7'h0, ~(`CAN_MODE_RESET)});
-        20'd2060:begin
-            cs_can_i <= 1;
-        end
-        20'd2061:begin
-            ale_i <= 1;
+        wr0+timing1:begin
+            ale_o <= 1;
             port_0_en <= 1;
             port_0_o <= 8'd0;
         end
-        20'd2063:begin
-            ale_i <= 0;
+        wr0+timing2:begin
+            ale_o <= 0;
         end
-        20'd2066:begin
-            port_0_o <= {7'h0, ~(`CAN_MODE_RESET)};
-            wr_i <= 1;
+        wr0+timing3:begin
+            port_0_o <= {7'h0, `CAN_MODE_RESET};
+            wr_o <= 1;
         end
-        20'd2071:begin
-            wr_i <= 0;
+        wr0+timing4:begin
+            wr_o <= 0;
             port_0_en <= 0;
-            cs_can_i <= 0;
+            cs_can_o <= 0;
+        end
+        
+        wr0+timing4+20'd1:begin
+            rst_o <= 1;
+        end
+        20'd1007:begin
+            rst_o <= 0;
+        end
+        
+//        write_register(8'd6, {`CAN_TIMING0_SJW, `CAN_TIMING0_BRP});
+        wr1:begin
+            cs_can_o <= 1;
+        end
+        wr1+timing1:begin
+            ale_o <= 1;
+            port_0_en <= 1;
+            port_0_o <= 8'd6;
+        end
+        wr1+timing2:begin
+            ale_o <= 0;
+        end
+        wr1+timing3:begin
+            port_0_o <= {`CAN_TIMING0_SJW, `CAN_TIMING0_BRP};
+            wr_o <= 1;
+        end
+        wr1+timing4:begin
+            wr_o <= 0;
+            port_0_en <= 0;
+            cs_can_o <= 0;
+        end
+        
+//        write_register(8'd7, {`CAN_TIMING1_SAM, `CAN_TIMING1_TSEG2, `CAN_TIMING1_TSEG1});
+        wr2:begin
+            cs_can_o <= 1;
+        end
+        wr2+timing1:begin
+            ale_o <= 1;
+            port_0_en <= 1;
+            port_0_o <= 8'd7;
+        end
+        wr2+timing2:begin
+            ale_o <= 0;
+        end
+        wr2+timing3:begin
+            port_0_o <= {`CAN_TIMING1_SAM, `CAN_TIMING1_TSEG2, `CAN_TIMING1_TSEG1};
+            wr_o <= 1;
+        end
+        wr2+timing4:begin
+            wr_o <= 0;
+            port_0_en <= 0;
+            cs_can_o <= 0;
+        end
+        
+//        write_register(8'd4, 8'he8); // acceptance code
+        wr3:begin
+            cs_can_o <= 1;
+        end
+        wr3+timing1:begin
+            ale_o <= 1;
+            port_0_en <= 1;
+            port_0_o <= 8'd4;
+        end
+        wr3+timing2:begin
+            ale_o <= 0;
+        end
+        wr3+timing3:begin
+            port_0_o <= 8'he8;
+            wr_o <= 1;
+        end
+        wr3+timing4:begin
+            wr_o <= 0;
+            port_0_en <= 0;
+            cs_can_o <= 0;
+        end
+        
+//        write_register(8'd5, 8'h0f); // acceptance mask
+        wr4:begin
+            cs_can_o <= 1;
+        end
+        wr4+timing1:begin
+            ale_o <= 1;
+            port_0_en <= 1;
+            port_0_o <= 8'd5;
+        end
+        wr4+timing2:begin
+            ale_o <= 0;
+        end
+        wr4+timing3:begin
+            port_0_o <= 8'h0f;
+            wr_o <= 1;
+        end
+        wr4+timing4:begin
+            wr_o <= 0;
+            port_0_en <= 0;
+            cs_can_o <= 0;
+        end
+        
+//        write_register(8'd0, {7'h0, ~(`CAN_MODE_RESET)});
+        wr5:begin
+            cs_can_o <= 1;
+        end
+        wr5+timing1:begin
+            ale_o <= 1;
+            port_0_en <= 1;
+            port_0_o <= 8'd0;
+        end
+        wr5+timing2:begin
+            ale_o <= 0;
+        end
+        wr5+timing3:begin
+            port_0_o <= {7'h0, ~(`CAN_MODE_RESET)};
+            wr_o <= 1;
+        end
+        wr5+timing4:begin
+            wr_o <= 0;
+            port_0_en <= 0;
+            cs_can_o <= 0;
         end
     endcase
     

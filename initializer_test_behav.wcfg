@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="initializer_test_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="initializer_test" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="30156208334fs"></ZoomStartTime>
+      <ZoomEndTime time="36526208335fs"></ZoomEndTime>
+      <Cursor1Time time="31126208000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="175"></NameColumnWidth>
+      <ValueColumnWidth column_width="147"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="17" />
+   <wvobject fp_name="/initializer_test/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/initializer_test/rst_i" type="logic">
+      <obj_property name="ElementShortName">rst_i</obj_property>
+      <obj_property name="ObjectShortName">rst_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/initializer_test/ale_i" type="logic">
+      <obj_property name="ElementShortName">ale_i</obj_property>
+      <obj_property name="ObjectShortName">ale_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/initializer_test/rd_i" type="logic">
+      <obj_property name="ElementShortName">rd_i</obj_property>
+      <obj_property name="ObjectShortName">rd_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/initializer_test/wr_i" type="logic">
+      <obj_property name="ElementShortName">wr_i</obj_property>
+      <obj_property name="ObjectShortName">wr_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/initializer_test/port_0_io" type="array">
+      <obj_property name="ElementShortName">port_0_io[7:0]</obj_property>
+      <obj_property name="ObjectShortName">port_0_io[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/initializer_test/cs_can_i" type="logic">
+      <obj_property name="ElementShortName">cs_can_i</obj_property>
+      <obj_property name="ObjectShortName">cs_can_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/initializer_test/rx_i" type="logic">
+      <obj_property name="ElementShortName">rx_i</obj_property>
+      <obj_property name="ObjectShortName">rx_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/initializer_test/tx_o" type="logic">
+      <obj_property name="ElementShortName">tx_o</obj_property>
+      <obj_property name="ObjectShortName">tx_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/initializer_test/bus_off_on" type="logic">
+      <obj_property name="ElementShortName">bus_off_on</obj_property>
+      <obj_property name="ObjectShortName">bus_off_on</obj_property>
+   </wvobject>
+   <wvobject fp_name="/initializer_test/irq_on" type="logic">
+      <obj_property name="ElementShortName">irq_on</obj_property>
+      <obj_property name="ObjectShortName">irq_on</obj_property>
+   </wvobject>
+   <wvobject fp_name="/initializer_test/clk_o" type="logic">
+      <obj_property name="ElementShortName">clk_o</obj_property>
+      <obj_property name="ObjectShortName">clk_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/initializer_test/sample_point" type="logic">
+      <obj_property name="ElementShortName">sample_point</obj_property>
+      <obj_property name="ObjectShortName">sample_point</obj_property>
+   </wvobject>
+   <wvobject fp_name="/initializer_test/i_can_top/baud_r_presc" type="array">
+      <obj_property name="ElementShortName">baud_r_presc[5:0]</obj_property>
+      <obj_property name="ObjectShortName">baud_r_presc[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/initializer_test/i_can_top/sync_jump_width" type="array">
+      <obj_property name="ElementShortName">sync_jump_width[1:0]</obj_property>
+      <obj_property name="ObjectShortName">sync_jump_width[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/initializer_test/i_can_top/time_segment1" type="array">
+      <obj_property name="ElementShortName">time_segment1[3:0]</obj_property>
+      <obj_property name="ObjectShortName">time_segment1[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/initializer_test/i_can_top/time_segment2" type="array">
+      <obj_property name="ElementShortName">time_segment2[2:0]</obj_property>
+      <obj_property name="ObjectShortName">time_segment2[2:0]</obj_property>
+   </wvobject>
+</wave_config>
