@@ -1,0 +1,652 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Mon Dec 16 21:02:52 2019
+# Process ID: 12680
+# Current directory: C:/Users/car_security/vivado/CAN_controller/CAN_controller.runs/design_1_can_top_0_0_synth_1
+# Command line: vivado.exe -log design_1_can_top_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_can_top_0_0.tcl
+# Log file: C:/Users/car_security/vivado/CAN_controller/CAN_controller.runs/design_1_can_top_0_0_synth_1/design_1_can_top_0_0.vds
+# Journal file: C:/Users/car_security/vivado/CAN_controller/CAN_controller.runs/design_1_can_top_0_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source design_1_can_top_0_0.tcl -notrace
+Command: synth_design -top design_1_can_top_0_0 -part xc7a35ticsg324-1L -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35ti'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35ti'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 13840 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 485.082 ; gain = 103.094
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'design_1_can_top_0_0' [c:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/bd/design_1/ip/design_1_can_top_0_0/synth/design_1_can_top_0_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'can_top' [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/verilog/can_top.v:214]
+	Parameter Tp bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'can_registers' [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/verilog/can_registers.v:173]
+	Parameter Tp bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'can_register_asyn_syn' [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/verilog/can_register_asyn_syn.v:77]
+	Parameter WIDTH bound to: 1 - type: integer 
+	Parameter RESET_VALUE bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'can_register_asyn_syn' (1#1) [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/verilog/can_register_asyn_syn.v:77]
+INFO: [Synth 8-6157] synthesizing module 'can_register_asyn' [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/verilog/can_register_asyn.v:77]
+	Parameter WIDTH bound to: 4 - type: integer 
+	Parameter RESET_VALUE bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'can_register_asyn' (2#1) [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/verilog/can_register_asyn.v:77]
+INFO: [Synth 8-6157] synthesizing module 'can_register_asyn__parameterized0' [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/verilog/can_register_asyn.v:77]
+	Parameter WIDTH bound to: 3 - type: integer 
+	Parameter RESET_VALUE bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'can_register_asyn__parameterized0' (2#1) [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/verilog/can_register_asyn.v:77]
+INFO: [Synth 8-6157] synthesizing module 'can_register_asyn_syn__parameterized0' [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/verilog/can_register_asyn_syn.v:77]
+	Parameter WIDTH bound to: 1 - type: integer 
+	Parameter RESET_VALUE bound to: 1'b0 
+INFO: [Synth 8-6155] done synthesizing module 'can_register_asyn_syn__parameterized0' (2#1) [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/verilog/can_register_asyn_syn.v:77]
+INFO: [Synth 8-6157] synthesizing module 'can_register_asyn_syn__parameterized1' [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/verilog/can_register_asyn_syn.v:77]
+	Parameter WIDTH bound to: 2 - type: integer 
+	Parameter RESET_VALUE bound to: 2'b00 
+INFO: [Synth 8-6155] done synthesizing module 'can_register_asyn_syn__parameterized1' (2#1) [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/verilog/can_register_asyn_syn.v:77]
+INFO: [Synth 8-6157] synthesizing module 'can_register' [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/verilog/can_register.v:77]
+	Parameter WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'can_register' (3#1) [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/verilog/can_register.v:77]
+INFO: [Synth 8-6157] synthesizing module 'can_register_asyn__parameterized1' [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/verilog/can_register_asyn.v:77]
+	Parameter WIDTH bound to: 8 - type: integer 
+	Parameter RESET_VALUE bound to: 96 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'can_register_asyn__parameterized1' (3#1) [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/verilog/can_register_asyn.v:77]
+INFO: [Synth 8-6157] synthesizing module 'can_register_asyn__parameterized2' [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/verilog/can_register_asyn.v:77]
+	Parameter WIDTH bound to: 1 - type: integer 
+	Parameter RESET_VALUE bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'can_register_asyn__parameterized2' (3#1) [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/verilog/can_register_asyn.v:77]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/verilog/can_registers.v:816]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma full_case detected. Simulation mismatch may occur [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/verilog/can_registers.v:816]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/verilog/can_registers.v:1093]
+INFO: [Synth 8-6155] done synthesizing module 'can_registers' (4#1) [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/verilog/can_registers.v:173]
+INFO: [Synth 8-6157] synthesizing module 'can_btl' [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/verilog/can_btl.v:155]
+	Parameter Tp bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'can_btl' (5#1) [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/verilog/can_btl.v:155]
+INFO: [Synth 8-6157] synthesizing module 'can_bsp' [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/verilog/can_bsp.v:236]
+	Parameter Tp bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'can_crc' [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/verilog/can_crc.v:75]
+	Parameter Tp bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'can_crc' (6#1) [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/verilog/can_crc.v:75]
+INFO: [Synth 8-6157] synthesizing module 'can_acf' [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/verilog/can_acf.v:92]
+	Parameter Tp bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'can_acf' (7#1) [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/verilog/can_acf.v:92]
+INFO: [Synth 8-3536] HDL ADVISOR - Pragma parallel_case detected. Simulation mismatch may occur [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/verilog/can_bsp.v:1379]
+INFO: [Synth 8-6157] synthesizing module 'can_fifo' [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/verilog/can_fifo.v:149]
+	Parameter Tp bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'can_fifo' (8#1) [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/verilog/can_fifo.v:149]
+INFO: [Synth 8-6157] synthesizing module 'can_ibo' [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/verilog/can_ibo.v:66]
+INFO: [Synth 8-6155] done synthesizing module 'can_ibo' (9#1) [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/verilog/can_ibo.v:66]
+INFO: [Synth 8-6155] done synthesizing module 'can_bsp' (10#1) [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/verilog/can_bsp.v:236]
+WARNING: [Synth 8-5788] Register debug_addr_reg in module can_top is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/verilog/can_top.v:874]
+INFO: [Synth 8-6155] done synthesizing module 'can_top' (11#1) [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/verilog/can_top.v:214]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_can_top_0_0' (12#1) [c:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/bd/design_1/ip/design_1_can_top_0_0/synth/design_1_can_top_0_0.v:58]
+WARNING: [Synth 8-3331] design can_fifo has unconnected port fifo_selected
+WARNING: [Synth 8-3331] design can_bsp has unconnected port addr[7]
+WARNING: [Synth 8-3331] design can_bsp has unconnected port addr[6]
+WARNING: [Synth 8-3331] design can_registers has unconnected port overload_frame
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 555.754 ; gain = 173.766
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 555.754 ; gain = 173.766
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 555.754 ; gain = 173.766
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35ticsg324-1L
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 871.277 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 871.277 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.056 . Memory (MB): peak = 874.098 ; gain = 2.820
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 874.098 ; gain = 492.109
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35ticsg324-1L
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 874.098 ; gain = 492.109
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 874.098 ; gain = 492.109
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/verilog/can_btl.v:382]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/verilog/can_fifo.v:350]
+WARNING: [Synth 8-6014] Unused sequential element rd_info_pointer_reg_rep was removed.  [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/verilog/can_fifo.v:282]
+INFO: [Synth 8-5544] ROM "tmp_fifo_reg[0]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tmp_fifo_reg[1]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tmp_fifo_reg[2]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tmp_fifo_reg[3]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tmp_fifo_reg[4]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tmp_fifo_reg[5]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tmp_fifo_reg[6]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tmp_fifo_reg[7]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tmp_fifo_reg[0]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tmp_fifo_reg[1]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tmp_fifo_reg[2]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tmp_fifo_reg[3]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tmp_fifo_reg[4]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tmp_fifo_reg[5]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tmp_fifo_reg[6]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tmp_fifo_reg[7]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "header_len1" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "error_capture_code_type" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 874.098 ; gain = 492.109
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 3     
+	   2 Input      8 Bit       Adders := 3     
+	   2 Input      7 Bit       Adders := 4     
+	   3 Input      7 Bit       Adders := 2     
+	   2 Input      6 Bit       Adders := 10    
+	   3 Input      6 Bit       Adders := 2     
+	   2 Input      5 Bit       Adders := 3     
+	   3 Input      4 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 6     
+	   2 Input      3 Bit       Adders := 13    
+	   3 Input      3 Bit       Adders := 2     
+	   2 Input      2 Bit       Adders := 1     
++---XORs : 
+	   2 Input     15 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 4     
++---Registers : 
+	               29 Bit    Registers := 1     
+	               15 Bit    Registers := 2     
+	                9 Bit    Registers := 2     
+	                8 Bit    Registers := 37    
+	                7 Bit    Registers := 3     
+	                6 Bit    Registers := 5     
+	                5 Bit    Registers := 3     
+	                4 Bit    Registers := 6     
+	                3 Bit    Registers := 15    
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 110   
++---RAMs : 
+	              512 Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     15 Bit        Muxes := 2     
+	   2 Input      9 Bit        Muxes := 7     
+	   2 Input      8 Bit        Muxes := 18    
+	  11 Input      8 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 5     
+	   2 Input      6 Bit        Muxes := 7     
+	   2 Input      5 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 8     
+	   8 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 20    
+	   2 Input      2 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 144   
+	   3 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module can_register_asyn_syn 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 2     
+Module can_register_asyn 
+Detailed RTL Component Info : 
++---Registers : 
+	                4 Bit    Registers := 1     
+Module can_register_asyn__parameterized0 
+Detailed RTL Component Info : 
++---Registers : 
+	                3 Bit    Registers := 1     
+Module can_register_asyn_syn__parameterized0 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module can_register_asyn_syn__parameterized1 
+Detailed RTL Component Info : 
++---Registers : 
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module can_register 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+Module can_register_asyn__parameterized1 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+Module can_register_asyn__parameterized2 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module can_registers 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      3 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 2     
++---Registers : 
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 21    
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 14    
+	   8 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 20    
+Module can_btl 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 2     
+	   2 Input      5 Bit       Adders := 2     
+	   3 Input      4 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
+	   3 Input      3 Bit       Adders := 1     
++---Registers : 
+	                7 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 13    
++---Muxes : 
+	   2 Input      7 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 14    
+Module can_crc 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input     15 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               15 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     15 Bit        Muxes := 2     
+	   3 Input      1 Bit        Muxes := 1     
+Module can_acf 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 5     
+Module can_fifo 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 2     
+	   3 Input      7 Bit       Adders := 2     
+	   2 Input      6 Bit       Adders := 5     
+	   3 Input      6 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	                7 Bit    Registers := 2     
+	                6 Bit    Registers := 3     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---RAMs : 
+	              512 Bit         RAMs := 1     
++---Muxes : 
+	   2 Input      7 Bit        Muxes := 4     
+	   2 Input      6 Bit        Muxes := 3     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 9     
+Module can_bsp 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 3     
+	   2 Input      8 Bit       Adders := 2     
+	   2 Input      6 Bit       Adders := 5     
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 4     
+	   2 Input      3 Bit       Adders := 12    
+	   3 Input      3 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               29 Bit    Registers := 1     
+	               15 Bit    Registers := 1     
+	                9 Bit    Registers := 2     
+	                8 Bit    Registers := 10    
+	                6 Bit    Registers := 2     
+	                5 Bit    Registers := 2     
+	                4 Bit    Registers := 3     
+	                3 Bit    Registers := 12    
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 61    
++---Muxes : 
+	   2 Input      9 Bit        Muxes := 7     
+	   2 Input      8 Bit        Muxes := 2     
+	  11 Input      8 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 4     
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 5     
+	   2 Input      3 Bit        Muxes := 19    
+	   2 Input      2 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 90    
+Module can_top 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5544] ROM "tmp_fifo_reg[0]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tmp_fifo_reg[1]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tmp_fifo_reg[2]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tmp_fifo_reg[3]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tmp_fifo_reg[4]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tmp_fifo_reg[5]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tmp_fifo_reg[6]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tmp_fifo_reg[7]" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+WARNING: [Synth 8-3331] design can_fifo has unconnected port fifo_selected
+WARNING: [Synth 8-3331] design can_bsp has unconnected port addr[7]
+WARNING: [Synth 8-3331] design can_bsp has unconnected port addr[6]
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/i_can_bsp/overload_frame_blocked_reg )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/i_can_btl/delay_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/i_can_bsp/rx_err_cnt_reg[8] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 874.098 ; gain = 492.109
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping  Report (see note below)
++---------------------+--------------------------------------------+-----------+----------------------+----------------+
+|Module Name          | RTL Object                                 | Inference | Size (Depth x Width) | Primitives     | 
++---------------------+--------------------------------------------+-----------+----------------------+----------------+
+|design_1_can_top_0_0 | inst/i_can_bsp/i_can_fifo/length_fifo_reg  | Implied   | 64 x 4               | RAM64M x 2     | 
+|design_1_can_top_0_0 | inst/i_can_bsp/i_can_fifo/fifo_reg         | Implied   | 64 x 8               | RAM64M x 3     | 
+|design_1_can_top_0_0 | inst/i_can_bsp/i_can_fifo/overrun_info_reg | Implied   | 64 x 1               | RAM64X1D x 1   | 
++---------------------+--------------------------------------------+-----------+----------------------+----------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 874.098 ; gain = 492.109
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 874.098 ; gain = 492.109
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping  Report
++---------------------+--------------------------------------------+-----------+----------------------+----------------+
+|Module Name          | RTL Object                                 | Inference | Size (Depth x Width) | Primitives     | 
++---------------------+--------------------------------------------+-----------+----------------------+----------------+
+|design_1_can_top_0_0 | inst/i_can_bsp/i_can_fifo/length_fifo_reg  | Implied   | 64 x 4               | RAM64M x 2     | 
+|design_1_can_top_0_0 | inst/i_can_bsp/i_can_fifo/fifo_reg         | Implied   | 64 x 8               | RAM64M x 3     | 
+|design_1_can_top_0_0 | inst/i_can_bsp/i_can_fifo/overrun_info_reg | Implied   | 64 x 1               | RAM64X1D x 1   | 
++---------------------+--------------------------------------------+-----------+----------------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3886] merging instance 'inst/i_can_bsp/i_can_fifo/rd_info_pointer_reg_rep[5]' (FDCE) to 'inst/i_can_bsp/i_can_fifo/rd_info_pointer_reg[5]'
+INFO: [Synth 8-3886] merging instance 'inst/i_can_bsp/i_can_fifo/rd_info_pointer_reg_rep[4]' (FDCE) to 'inst/i_can_bsp/i_can_fifo/rd_info_pointer_reg[4]'
+INFO: [Synth 8-3886] merging instance 'inst/i_can_bsp/i_can_fifo/rd_info_pointer_reg_rep[3]' (FDCE) to 'inst/i_can_bsp/i_can_fifo/rd_info_pointer_reg[3]'
+INFO: [Synth 8-3886] merging instance 'inst/i_can_bsp/i_can_fifo/rd_info_pointer_reg_rep[2]' (FDCE) to 'inst/i_can_bsp/i_can_fifo/rd_info_pointer_reg[2]'
+INFO: [Synth 8-3886] merging instance 'inst/i_can_bsp/i_can_fifo/rd_info_pointer_reg_rep[1]' (FDCE) to 'inst/i_can_bsp/i_can_fifo/rd_info_pointer_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/i_can_bsp/i_can_fifo/rd_info_pointer_reg_rep[0]' (FDCE) to 'inst/i_can_bsp/i_can_fifo/rd_info_pointer_reg[0]'
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 911.430 ; gain = 529.441
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 911.430 ; gain = 529.441
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 911.430 ; gain = 529.441
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 911.430 ; gain = 529.441
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 911.430 ; gain = 529.441
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 911.430 ; gain = 529.441
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 911.430 ; gain = 529.441
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |CARRY4   |    14|
+|2     |LUT1     |     8|
+|3     |LUT2     |   105|
+|4     |LUT3     |   112|
+|5     |LUT4     |   146|
+|6     |LUT5     |   184|
+|7     |LUT6     |   487|
+|8     |MUXF7    |    30|
+|9     |MUXF8    |     1|
+|10    |RAM64M   |     5|
+|11    |RAM64X1D |     1|
+|12    |FDCE     |   319|
+|13    |FDPE     |    20|
+|14    |FDRE     |   286|
++------+---------+------+
+
+Report Instance Areas: 
++------+----------------------------+-----------------------------------------+------+
+|      |Instance                    |Module                                   |Cells |
++------+----------------------------+-----------------------------------------+------+
+|1     |top                         |                                         |  1718|
+|2     |  inst                      |can_top                                  |  1716|
+|3     |    i_can_bsp               |can_bsp                                  |   922|
+|4     |      i_can_acf             |can_acf                                  |    22|
+|5     |      i_can_crc_rx          |can_crc                                  |    50|
+|6     |      i_can_fifo            |can_fifo                                 |   247|
+|7     |    i_can_btl               |can_btl                                  |    95|
+|8     |    i_can_registers         |can_registers                            |   664|
+|9     |      ACCEPTANCE_CODE_REG0  |can_register                             |    12|
+|10    |      ACCEPTANCE_CODE_REG1  |can_register_0                           |    10|
+|11    |      ACCEPTANCE_CODE_REG2  |can_register_1                           |     8|
+|12    |      ACCEPTANCE_CODE_REG3  |can_register_2                           |    12|
+|13    |      ACCEPTANCE_MASK_REG0  |can_register_3                           |    20|
+|14    |      ACCEPTANCE_MASK_REG1  |can_register_4                           |    39|
+|15    |      ACCEPTANCE_MASK_REG2  |can_register_5                           |    28|
+|16    |      ACCEPTANCE_MASK_REG3  |can_register_6                           |    38|
+|17    |      BUS_TIMING_0_REG      |can_register_7                           |    15|
+|18    |      BUS_TIMING_1_REG      |can_register_8                           |    31|
+|19    |      CLOCK_DIVIDER_REG_3   |can_register_asyn__parameterized2        |     2|
+|20    |      CLOCK_DIVIDER_REG_7   |can_register_asyn__parameterized2_9      |    26|
+|21    |      CLOCK_DIVIDER_REG_LOW |can_register_asyn__parameterized0        |    13|
+|22    |      COMMAND_REG           |can_register_asyn_syn__parameterized1    |    11|
+|23    |      COMMAND_REG0          |can_register_asyn_syn__parameterized0    |     5|
+|24    |      COMMAND_REG1          |can_register_asyn_syn__parameterized0_10 |     3|
+|25    |      COMMAND_REG4          |can_register_asyn_syn__parameterized0_11 |     4|
+|26    |      ERROR_WARNING_REG     |can_register_asyn__parameterized1        |    16|
+|27    |      IRQ_EN_REG            |can_register_12                          |    15|
+|28    |      MODE_REG0             |can_register_asyn_syn                    |    89|
+|29    |      MODE_REG_BASIC        |can_register_asyn                        |     7|
+|30    |      MODE_REG_EXT          |can_register_asyn__parameterized0_13     |    10|
+|31    |      TX_DATA_REG0          |can_register_14                          |    21|
+|32    |      TX_DATA_REG1          |can_register_15                          |    18|
+|33    |      TX_DATA_REG10         |can_register_16                          |    11|
+|34    |      TX_DATA_REG11         |can_register_17                          |    13|
+|35    |      TX_DATA_REG12         |can_register_18                          |    13|
+|36    |      TX_DATA_REG2          |can_register_19                          |    28|
+|37    |      TX_DATA_REG3          |can_register_20                          |    18|
+|38    |      TX_DATA_REG4          |can_register_21                          |    15|
+|39    |      TX_DATA_REG5          |can_register_22                          |    22|
+|40    |      TX_DATA_REG6          |can_register_23                          |    17|
+|41    |      TX_DATA_REG7          |can_register_24                          |    15|
+|42    |      TX_DATA_REG8          |can_register_25                          |    12|
+|43    |      TX_DATA_REG9          |can_register_26                          |    20|
++------+----------------------------+-----------------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 911.430 ; gain = 529.441
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 911.430 ; gain = 211.098
+Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 911.430 ; gain = 529.441
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 51 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 911.430 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 6 instances were transformed.
+  RAM64M => RAM64M (RAMD64E, RAMD64E, RAMD64E, RAMD64E): 5 instances
+  RAM64X1D => RAM64X1D (RAMD64E, RAMD64E): 1 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+86 Infos, 10 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 911.430 ; gain = 542.449
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 911.430 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/car_security/vivado/CAN_controller/CAN_controller.runs/design_1_can_top_0_0_synth_1/design_1_can_top_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1174] Renamed 42 cell refs.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 911.430 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/car_security/vivado/CAN_controller/CAN_controller.runs/design_1_can_top_0_0_synth_1/design_1_can_top_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_can_top_0_0_utilization_synth.rpt -pb design_1_can_top_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Dec 16 21:03:33 2019...

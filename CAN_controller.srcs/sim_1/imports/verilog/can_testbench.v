@@ -426,17 +426,17 @@ begin
 
   // Set bus timing register 0
   write_register(8'd6, {`CAN_TIMING0_SJW, `CAN_TIMING0_BRP});
-  write_register2(8'd6, {`CAN_TIMING0_SJW, `CAN_TIMING0_BRP});
+//  write_register2(8'd6, {`CAN_TIMING0_SJW, `CAN_TIMING0_BRP});
 
   // Set bus timing register 1
   write_register(8'd7, {`CAN_TIMING1_SAM, `CAN_TIMING1_TSEG2, `CAN_TIMING1_TSEG1});
-  write_register2(8'd7, {`CAN_TIMING1_SAM, `CAN_TIMING1_TSEG2, `CAN_TIMING1_TSEG1});
+//  write_register2(8'd7, {`CAN_TIMING1_SAM, `CAN_TIMING1_TSEG2, `CAN_TIMING1_TSEG1});
 
 
   // Set Clock Divider register
 //  extended_mode = 1'b1;
 //  write_register(8'd31, {extended_mode, 3'h0, 1'b0, 3'h0});   // Setting the normal mode (not extended)
-  write_register2(8'd31, {extended_mode, 3'h0, 1'b0, 3'h0});   // Setting the normal mode (not extended)
+//  write_register2(8'd31, {extended_mode, 3'h0, 1'b0, 3'h0});   // Setting the normal mode (not extended)
 
 
   // Set Acceptance Code and Acceptance Mask registers (their address differs for basic and extended mode
@@ -470,7 +470,7 @@ begin
   
   // Switch-off reset mode
   write_register(8'd0, {7'h0, ~(`CAN_MODE_RESET)});
-  write_register2(8'd0, {7'h0, ~(`CAN_MODE_RESET)});
+//  write_register2(8'd0, {7'h0, ~(`CAN_MODE_RESET)});
 
   repeat (BRP) @ (posedge clk);   // At least BRP clocks needed before bus goes to dominant level. Otherwise 1 quant difference is possible
                                   // This difference is resynchronized later.
@@ -487,7 +487,7 @@ begin
 //  test_reset_mode;              // test currently switched off
 //  bus_off_test;               // test currently switched off
 //  forced_bus_off;             // test currently switched off
-  send_frame_basic;           // test currently switched on
+//  send_frame_basic;           // test currently switched on
 //  send_frame_extended;        // test currently switched off
 //  self_reception_request;       // test currently switched off
 //  manual_frame_basic;         // test currently switched off

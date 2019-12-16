@@ -236,7 +236,16 @@ module can_top
   tx_o,
   bus_off_on,
   irq_on,
-  clkout_o
+  clkout_o,
+  port_0_i,
+  sample_point,
+  sampled_bit,
+  cs_o,
+  we_o,
+  wr_i_q_o,
+  addr_o,
+  debug_addr,
+  debug
 
   // Bist
 `ifdef CAN_BIST
@@ -292,6 +301,25 @@ output       tx_o;
 output       bus_off_on;
 output       irq_on;
 output       clkout_o;
+//debug
+input  [7:0] port_0_i;
+output       sample_point;
+output       sampled_bit;
+output       cs_o;
+output       we_o;
+output       wr_i_q_o;
+output       addr_o;
+output       debug_addr;
+output       debug;
+
+assign       cs_o = cs;
+//assign       cs_o = (wr_i&(~wr_i_q)) & cs_can_i;
+assign       we_o = i_can_registers.we;
+assign       wr_i_q_o = wr_i_q;
+assign       addr_o = addr_latched==0;
+assign       debug = port_0_io==8'd6;
+//assign       debug = (cs_can_i & rd_i)? 1 : 0;
+reg         debug_addr=0;
 
 // Bist
 `ifdef CAN_BIST
@@ -393,8 +421,8 @@ wire   [7:0] tx_data_12;
 wire         cs;
 
 /* Output signals from can_btl module */
-wire         sample_point;
-wire         sampled_bit;
+//wire         sample_point;
+//wire         sampled_bit;
 wire         sampled_bit_q;
 wire         tx_point;
 wire         hard_sync;
@@ -837,11 +865,15 @@ end
   always @ (posedge clk_i or posedge rst)
   begin
     if (rst)
-      addr_latched <= 8'h0;
+      begin
+        addr_latched <= 8'h0;
+      end
     else if (ale_i)
-      addr_latched <=#Tp port_0_io;
+      begin
+        addr_latched <= port_0_io;
+        debug_addr<=~debug_addr;
+      end
   end
-
 
   // Generating delayed wr_i and rd_i signals
   always @ (posedge clk_i or posedge rst)
@@ -853,8 +885,8 @@ end
       end
     else
       begin
-        wr_i_q <=#Tp wr_i;
-        rd_i_q <=#Tp rd_i;
+        wr_i_q <= wr_i;
+        rd_i_q <= rd_i;
       end
   end
 
@@ -866,7 +898,8 @@ end
   assign we        = wr_i;
   assign addr      = addr_latched;
   assign data_in   = port_0_io;
-  assign port_0_io = (cs_can_i & rd_i)? data_out : 8'hz;
+  assign port_0_io = (cs_can_i & rd_i)? data_out : port_0_i;
+//  assign port_0_io = (rd_i)? data_out : 8'hz;
 
 `endif
 

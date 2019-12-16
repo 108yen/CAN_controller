@@ -1,16 +1,194 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x0",
+      "boundary_crc": "0xC387CEA7DF968F2",
       "device": "xc7a35ticsg324-1L",
       "name": "design_1",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2018.3"
+      "tool_version": "2018.3",
+      "validated": "true"
     },
     "design_tree": {
-      "can_top_0": ""
+      "clk_wiz_0": "",
+      "MODULE_CONTROLLER_0": "",
+      "can_top_0": "",
+      "initializer_0": ""
+    },
+    "ports": {
+      "clk": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "design_1_clk",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "can_signal_in": {
+        "direction": "I"
+      },
+      "can_signal_out": {
+        "direction": "O"
+      },
+      "triger": {
+        "direction": "O"
+      },
+      "debug_0": {
+        "direction": "O"
+      },
+      "debug_1": {
+        "direction": "O"
+      },
+      "debug_2": {
+        "direction": "O"
+      },
+      "to_recessive": {
+        "direction": "O"
+      }
     },
     "components": {
+      "clk_wiz_0": {
+        "vlnv": "xilinx.com:ip:clk_wiz:6.0",
+        "xci_name": "design_1_clk_wiz_0_0",
+        "parameters": {
+          "CLKIN2_JITTER_PS": {
+            "value": "166.66"
+          },
+          "CLKOUT1_JITTER": {
+            "value": "346.176"
+          },
+          "CLKOUT1_PHASE_ERROR": {
+            "value": "301.601"
+          },
+          "CLKOUT1_REQUESTED_OUT_FREQ": {
+            "value": "16"
+          },
+          "CLKOUT2_JITTER": {
+            "value": "302.524"
+          },
+          "CLKOUT2_PHASE_ERROR": {
+            "value": "301.601"
+          },
+          "CLKOUT2_REQUESTED_OUT_FREQ": {
+            "value": "32"
+          },
+          "CLKOUT2_USED": {
+            "value": "true"
+          },
+          "CLKOUT3_JITTER": {
+            "value": "290.458"
+          },
+          "CLKOUT3_PHASE_ERROR": {
+            "value": "301.601"
+          },
+          "CLKOUT3_REQUESTED_OUT_FREQ": {
+            "value": "40"
+          },
+          "CLKOUT3_USED": {
+            "value": "true"
+          },
+          "MMCM_CLKFBOUT_MULT_F": {
+            "value": "48.000"
+          },
+          "MMCM_CLKIN2_PERIOD": {
+            "value": "10.000"
+          },
+          "MMCM_CLKOUT0_DIVIDE_F": {
+            "value": "60.000"
+          },
+          "MMCM_CLKOUT1_DIVIDE": {
+            "value": "30"
+          },
+          "MMCM_CLKOUT2_DIVIDE": {
+            "value": "24"
+          },
+          "MMCM_DIVCLK_DIVIDE": {
+            "value": "5"
+          },
+          "NUM_OUT_CLKS": {
+            "value": "3"
+          },
+          "SECONDARY_SOURCE": {
+            "value": "Single_ended_clock_capable_pin"
+          },
+          "USE_INCLK_SWITCHOVER": {
+            "value": "false"
+          },
+          "USE_LOCKED": {
+            "value": "true"
+          },
+          "USE_RESET": {
+            "value": "false"
+          }
+        }
+      },
+      "MODULE_CONTROLLER_0": {
+        "vlnv": "xilinx.com:module_ref:MODULE_CONTROLLER:1.0",
+        "xci_name": "design_1_MODULE_CONTROLLER_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "MODULE_CONTROLLER",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "CLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "RESET",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
+              },
+              "FREQ_HZ": {
+                "value": "40000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "RESET": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "CAN_SIGNAL_IN": {
+            "direction": "I"
+          },
+          "TRIGER": {
+            "direction": "O"
+          },
+          "ATTACK_STATE": {
+            "direction": "O"
+          },
+          "DEBUG": {
+            "direction": "O"
+          },
+          "DEBUG_1": {
+            "direction": "O"
+          },
+          "DEBUG_2": {
+            "direction": "O"
+          }
+        }
+      },
       "can_top_0": {
         "vlnv": "xilinx.com:module_ref:can_top:1.0",
         "xci_name": "design_1_can_top_0_0",
@@ -57,8 +235,214 @@
           },
           "clkout_o": {
             "direction": "O"
+          },
+          "port_0_i": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "sample_point": {
+            "direction": "O"
+          },
+          "sampled_bit": {
+            "direction": "O"
+          },
+          "cs_o": {
+            "direction": "O"
+          },
+          "we_o": {
+            "direction": "O"
+          },
+          "wr_i_q_o": {
+            "direction": "O"
+          },
+          "addr_o": {
+            "direction": "O"
+          },
+          "debug_addr": {
+            "direction": "O"
+          },
+          "debug": {
+            "direction": "O"
           }
         }
+      },
+      "initializer_0": {
+        "vlnv": "xilinx.com:module_ref:initializer:1.0",
+        "xci_name": "design_1_initializer_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "initializer",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "port_0_io": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "rst_o": {
+            "direction": "O"
+          },
+          "ale_o": {
+            "direction": "O"
+          },
+          "rd_o": {
+            "direction": "O"
+          },
+          "wr_o": {
+            "direction": "O"
+          },
+          "cs_can_o": {
+            "direction": "O"
+          },
+          "clk_o": {
+            "direction": "O"
+          },
+          "clk_i": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
+              },
+              "FREQ_HZ": {
+                "value": "32000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "rx_i": {
+            "direction": "O"
+          },
+          "tx_o": {
+            "direction": "I"
+          },
+          "bus_off_on": {
+            "direction": "I"
+          },
+          "irq_on": {
+            "direction": "I"
+          },
+          "debug": {
+            "direction": "O"
+          }
+        }
+      }
+    },
+    "nets": {
+      "initializer_0_rd_i": {
+        "ports": [
+          "initializer_0/rd_o",
+          "can_top_0/rd_i"
+        ]
+      },
+      "clk_1": {
+        "ports": [
+          "clk",
+          "clk_wiz_0/clk_in1"
+        ]
+      },
+      "MODULE_CONTROLLER_0_TRIGER": {
+        "ports": [
+          "MODULE_CONTROLLER_0/TRIGER",
+          "triger"
+        ]
+      },
+      "can_top_0_clkout_o": {
+        "ports": [
+          "can_top_0/clkout_o",
+          "debug_2"
+        ]
+      },
+      "clk_wiz_0_clk_out3": {
+        "ports": [
+          "clk_wiz_0/clk_out3",
+          "MODULE_CONTROLLER_0/CLK"
+        ]
+      },
+      "clk_wiz_0_locked": {
+        "ports": [
+          "clk_wiz_0/locked",
+          "MODULE_CONTROLLER_0/RESET"
+        ]
+      },
+      "initializer_0_clk_o": {
+        "ports": [
+          "initializer_0/clk_o",
+          "can_top_0/clk_i"
+        ]
+      },
+      "can_signal_in_1": {
+        "ports": [
+          "can_signal_in",
+          "MODULE_CONTROLLER_0/CAN_SIGNAL_IN",
+          "can_top_0/rx_i"
+        ]
+      },
+      "clk_wiz_0_clk_out2": {
+        "ports": [
+          "clk_wiz_0/clk_out2",
+          "initializer_0/clk_i"
+        ]
+      },
+      "initializer_0_wr_o": {
+        "ports": [
+          "initializer_0/wr_o",
+          "can_top_0/wr_i"
+        ]
+      },
+      "can_top_0_debug": {
+        "ports": [
+          "can_top_0/debug",
+          "to_recessive"
+        ]
+      },
+      "initializer_0_cs_can_o": {
+        "ports": [
+          "initializer_0/cs_can_o",
+          "can_top_0/cs_can_i"
+        ]
+      },
+      "initializer_0_rst_o": {
+        "ports": [
+          "initializer_0/rst_o",
+          "can_top_0/rst_i"
+        ]
+      },
+      "can_top_0_addr": {
+        "ports": [
+          "can_top_0/addr_o",
+          "can_signal_out"
+        ]
+      },
+      "initializer_0_debug": {
+        "ports": [
+          "initializer_0/debug",
+          "debug_1"
+        ]
+      },
+      "initializer_0_ale_o": {
+        "ports": [
+          "initializer_0/ale_o",
+          "can_top_0/ale_i"
+        ]
+      },
+      "initializer_0_port_0_io": {
+        "ports": [
+          "initializer_0/port_0_io",
+          "can_top_0/port_0_i"
+        ]
+      },
+      "can_top_0_sample_point": {
+        "ports": [
+          "can_top_0/sample_point",
+          "debug_0"
+        ]
       }
     }
   }
