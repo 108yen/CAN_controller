@@ -51,7 +51,7 @@ module initializer
 );
 
 output [7:0] port_0_io;
-output reg   rst_o=0;
+output reg   rst_o=1;
 output reg   ale_o=0;
 output reg   rd_o=0;
 output reg   wr_o=0;
@@ -81,8 +81,8 @@ end
 reg[19:0] clk_i_counter = 0;
 
 always @(posedge clk_i) begin
-    if(clk_i_counter == 20'd100000) begin
-        clk_i_counter <= 0;
+    if(clk_i_counter == 20'd200000) begin
+//        clk_i_counter <= 0;
     end else begin
         clk_i_counter <= clk_i_counter + 1;
     end
@@ -116,27 +116,12 @@ always @(posedge clk_i) begin
         20'd10:begin
             rst_o <= 0;
         end
-//        CAN_MODE_RESET
-/*        wr0:begin
-            cs_can_o <= 1;
+        20'd100:begin
+            rst_o <= 1;
         end
-        wr0+timing1:begin
-            ale_o <= 1;
-            port_0_en <= 1;
-            port_0_o <= 8'd0;
+        20'd200:begin
+            rst_o <= 0;
         end
-        wr0+timing2:begin
-            ale_o <= 0;
-        end
-        wr0+timing3:begin
-            port_0_o <= {7'h0, ~(`CAN_MODE_RESET)};
-            wr_o <= 1;
-        end
-        wr0+timing4:begin
-            wr_o <= 0;
-            port_0_en <= 0;
-            cs_can_o <= 0;
-        end*/
         
 //        write_register(8'd6, {`CAN_TIMING0_SJW, `CAN_TIMING0_BRP});
         wr1:begin
