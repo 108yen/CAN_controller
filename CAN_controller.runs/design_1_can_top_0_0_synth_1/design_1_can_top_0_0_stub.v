@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Wed Dec 11 14:01:51 2019
+// Date        : Mon Dec 16 21:03:32 2019
 // Host        : DESKTOP-NTANC38 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_1_can_top_0_0_stub.v
@@ -15,8 +15,9 @@
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
 (* X_CORE_INFO = "can_top,Vivado 2018.3" *)
 module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix(rst_i, ale_i, rd_i, wr_i, port_0_io, cs_can_i, clk_i, 
-  rx_i, tx_o, bus_off_on, irq_on, clkout_o, sample_point, sampled_bit, cs_o, we_o, debug)
-/* synthesis syn_black_box black_box_pad_pin="rst_i,ale_i,rd_i,wr_i,port_0_io[7:0],cs_can_i,clk_i,rx_i,tx_o,bus_off_on,irq_on,clkout_o,sample_point,sampled_bit,cs_o,we_o,debug" */;
+  rx_i, tx_o, bus_off_on, irq_on, clkout_o, port_0_i, sample_point, sampled_bit, cs_o, we_o, wr_i_q_o, 
+  addr_o, debug_addr, debug)
+/* synthesis syn_black_box black_box_pad_pin="rst_i,ale_i,rd_i,wr_i,port_0_io[7:0],cs_can_i,clk_i,rx_i,tx_o,bus_off_on,irq_on,clkout_o,port_0_i[7:0],sample_point,sampled_bit,cs_o,we_o,wr_i_q_o,addr_o,debug_addr,debug" */;
   input rst_i;
   input ale_i;
   input rd_i;
@@ -29,9 +30,13 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix(rst_i, ale_i, rd_i, wr_i, port_
   output bus_off_on;
   output irq_on;
   output clkout_o;
+  input [7:0]port_0_i;
   output sample_point;
   output sampled_bit;
   output cs_o;
   output we_o;
+  output wr_i_q_o;
+  output addr_o;
+  output debug_addr;
   output debug;
 endmodule

@@ -50,7 +50,7 @@ module initializer
     debug
 );
 
-inout  [7:0] port_0_io;
+output [7:0] port_0_io;
 output reg   rst_o=0;
 output reg   ale_o=0;
 output reg   rd_o=0;
@@ -72,7 +72,7 @@ reg   [7:0] port_0_o=8'h0;
 reg         port_0_en=0;
 
 assign port_0_io = port_0_en? port_0_o : 8'hz;
-assign debug = cs_can_o;
+assign debug = port_0_io==8'd6;
 
 always @(posedge clk_i) begin
     clk_o = ~clk_o;
@@ -81,8 +81,8 @@ end
 reg[19:0] clk_i_counter = 0;
 
 always @(posedge clk_i) begin
-    if(clk_i_counter == 20'hfffff) begin
-    
+    if(clk_i_counter == 20'd100000) begin
+        clk_i_counter <= 0;
     end else begin
         clk_i_counter <= clk_i_counter + 1;
     end
@@ -101,7 +101,7 @@ parameter [19:0] timing2=20'd3+timing1;
 parameter [19:0] timing3=20'd4+timing2;
 parameter [19:0] timing4=20'd6+timing3;
 
-parameter [19:0] wr0=20'd1;
+parameter [19:0] wr0=20'd500;
 parameter [19:0] wr1=20'd1013;
 parameter [19:0] wr2=wr1+timing4+20'd2;
 parameter [19:0] wr3=wr2+timing4+20'd2;
@@ -111,10 +111,13 @@ parameter [19:0] wr5=wr4+timing4+20'd2000;
 always @(posedge clk_i) begin
     case (clk_i_counter)
         20'd0:begin
+            rst_o <= 1;
+        end
+        20'd10:begin
             rst_o <= 0;
         end
 //        CAN_MODE_RESET
-        wr0:begin
+/*        wr0:begin
             cs_can_o <= 1;
         end
         wr0+timing1:begin
@@ -126,21 +129,14 @@ always @(posedge clk_i) begin
             ale_o <= 0;
         end
         wr0+timing3:begin
-            port_0_o <= {7'h0, `CAN_MODE_RESET};
+            port_0_o <= {7'h0, ~(`CAN_MODE_RESET)};
             wr_o <= 1;
         end
         wr0+timing4:begin
             wr_o <= 0;
             port_0_en <= 0;
             cs_can_o <= 0;
-        end
-        
-        wr0+timing4+20'd1:begin
-            rst_o <= 1;
-        end
-        20'd1007:begin
-            rst_o <= 0;
-        end
+        end*/
         
 //        write_register(8'd6, {`CAN_TIMING0_SJW, `CAN_TIMING0_BRP});
         wr1:begin

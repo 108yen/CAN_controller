@@ -15,7 +15,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>1f8d1cfe</spirit:value>
+            <spirit:value>ff50eaca</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -28,7 +28,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>1f8d1cfe</spirit:value>
+            <spirit:value>ff50eaca</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -45,7 +45,7 @@
       <spirit:port>
         <spirit:name>port_0_io</spirit:name>
         <spirit:wire>
-          <spirit:direction>inout</spirit:direction>
+          <spirit:direction>out</spirit:direction>
           <spirit:vector>
             <spirit:left spirit:format="long">7</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
@@ -268,7 +268,7 @@
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>wr0</spirit:name>
         <spirit:displayName>Wr0</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.wr0" spirit:bitStringLength="20">0x00001</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.wr0" spirit:bitStringLength="20">0x001F4</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>wr1</spirit:name>
@@ -343,7 +343,7 @@
     <spirit:parameter>
       <spirit:name>wr0</spirit:name>
       <spirit:displayName>Wr0</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.wr0" spirit:bitStringLength="20">0x00001</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.wr0" spirit:bitStringLength="20">0x001F4</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>wr1</spirit:name>
@@ -390,7 +390,7 @@
         <xilinx:designToolContext>IPI</xilinx:designToolContext>
       </xilinx:designToolContexts>
       <xilinx:coreRevision>1</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2019-12-11T04:55:36Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2019-12-16T12:36:58Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2018.3</xilinx:xilinxVersion>

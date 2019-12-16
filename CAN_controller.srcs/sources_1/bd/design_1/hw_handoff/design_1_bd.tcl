@@ -173,6 +173,7 @@ proc create_root_design { parentCell } {
   set debug_0 [ create_bd_port -dir O debug_0 ]
   set debug_1 [ create_bd_port -dir O debug_1 ]
   set debug_2 [ create_bd_port -dir O debug_2 ]
+  set to_recessive [ create_bd_port -dir O to_recessive ]
   set triger [ create_bd_port -dir O triger ]
 
   # Create instance: MODULE_CONTROLLER_0, and set properties
@@ -238,21 +239,23 @@ proc create_root_design { parentCell } {
   
   # Create port connections
   connect_bd_net -net MODULE_CONTROLLER_0_TRIGER [get_bd_ports triger] [get_bd_pins MODULE_CONTROLLER_0/TRIGER]
-  connect_bd_net -net Net [get_bd_pins can_top_0/port_0_io] [get_bd_pins initializer_0/port_0_io]
   connect_bd_net -net can_signal_in_1 [get_bd_ports can_signal_in] [get_bd_pins MODULE_CONTROLLER_0/CAN_SIGNAL_IN] [get_bd_pins can_top_0/rx_i]
+  connect_bd_net -net can_top_0_addr [get_bd_ports can_signal_out] [get_bd_pins can_top_0/addr_o]
   connect_bd_net -net can_top_0_clkout_o [get_bd_ports debug_2] [get_bd_pins can_top_0/clkout_o]
-  connect_bd_net -net can_top_0_we_o [get_bd_ports debug_0] [get_bd_pins can_top_0/we_o]
+  connect_bd_net -net can_top_0_debug [get_bd_ports to_recessive] [get_bd_pins can_top_0/debug]
+  connect_bd_net -net can_top_0_sample_point [get_bd_ports debug_0] [get_bd_pins can_top_0/sample_point]
   connect_bd_net -net clk_1 [get_bd_ports clk] [get_bd_pins clk_wiz_0/clk_in1]
   connect_bd_net -net clk_wiz_0_clk_out2 [get_bd_pins clk_wiz_0/clk_out2] [get_bd_pins initializer_0/clk_i]
   connect_bd_net -net clk_wiz_0_clk_out3 [get_bd_pins MODULE_CONTROLLER_0/CLK] [get_bd_pins clk_wiz_0/clk_out3]
   connect_bd_net -net clk_wiz_0_locked [get_bd_pins MODULE_CONTROLLER_0/RESET] [get_bd_pins clk_wiz_0/locked]
-  connect_bd_net -net initializer_0_ale_i [get_bd_pins can_top_0/ale_i] [get_bd_pins initializer_0/ale_o]
+  connect_bd_net -net initializer_0_ale_o [get_bd_pins can_top_0/ale_i] [get_bd_pins initializer_0/ale_o]
   connect_bd_net -net initializer_0_clk_o [get_bd_pins can_top_0/clk_i] [get_bd_pins initializer_0/clk_o]
-  connect_bd_net -net initializer_0_cs_can_i [get_bd_ports can_signal_out] [get_bd_pins can_top_0/cs_can_i] [get_bd_pins initializer_0/cs_can_o]
+  connect_bd_net -net initializer_0_cs_can_o [get_bd_pins can_top_0/cs_can_i] [get_bd_pins initializer_0/cs_can_o]
   connect_bd_net -net initializer_0_debug [get_bd_ports debug_1] [get_bd_pins initializer_0/debug]
+  connect_bd_net -net initializer_0_port_0_io [get_bd_pins can_top_0/port_0_i] [get_bd_pins initializer_0/port_0_io]
   connect_bd_net -net initializer_0_rd_i [get_bd_pins can_top_0/rd_i] [get_bd_pins initializer_0/rd_o]
-  connect_bd_net -net initializer_0_rst_i [get_bd_pins can_top_0/rst_i] [get_bd_pins initializer_0/rst_o]
-  connect_bd_net -net initializer_0_wr_i [get_bd_pins can_top_0/wr_i] [get_bd_pins initializer_0/wr_o]
+  connect_bd_net -net initializer_0_rst_o [get_bd_pins can_top_0/rst_i] [get_bd_pins initializer_0/rst_o]
+  connect_bd_net -net initializer_0_wr_o [get_bd_pins can_top_0/wr_i] [get_bd_pins initializer_0/wr_o]
 
   # Create address segments
 

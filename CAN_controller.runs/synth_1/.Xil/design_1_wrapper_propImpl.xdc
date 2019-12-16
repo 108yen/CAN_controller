@@ -13,3 +13,5 @@ set_property src_info {type:XDC file:1 line:12 export:INPUT save:INPUT read:READ
 set_property PACKAGE_PIN B18 [get_ports debug_1]
 set_property src_info {type:XDC file:1 line:13 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN A18 [get_ports debug_2]
+set_property src_info {type:XDC file:1 line:18 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN A11 [get_ports to_recessive]

@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xE62BB2A97348EE5A",
+      "boundary_crc": "0xC387CEA7DF968F2",
       "device": "xc7a35ticsg324-1L",
       "name": "design_1",
       "synth_flow_mode": "Hierarchical",
@@ -11,8 +11,8 @@
     "design_tree": {
       "clk_wiz_0": "",
       "MODULE_CONTROLLER_0": "",
-      "initializer_0": "",
-      "can_top_0": ""
+      "can_top_0": "",
+      "initializer_0": ""
     },
     "ports": {
       "clk": {
@@ -52,6 +52,9 @@
         "direction": "O"
       },
       "debug_2": {
+        "direction": "O"
+      },
+      "to_recessive": {
         "direction": "O"
       }
     },
@@ -186,6 +189,84 @@
           }
         }
       },
+      "can_top_0": {
+        "vlnv": "xilinx.com:module_ref:can_top:1.0",
+        "xci_name": "design_1_can_top_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "can_top",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "rst_i": {
+            "direction": "I"
+          },
+          "ale_i": {
+            "direction": "I"
+          },
+          "rd_i": {
+            "direction": "I"
+          },
+          "wr_i": {
+            "direction": "I"
+          },
+          "port_0_io": {
+            "direction": "IO",
+            "left": "7",
+            "right": "0"
+          },
+          "cs_can_i": {
+            "direction": "I"
+          },
+          "clk_i": {
+            "direction": "I"
+          },
+          "rx_i": {
+            "direction": "I"
+          },
+          "tx_o": {
+            "direction": "O"
+          },
+          "bus_off_on": {
+            "direction": "O"
+          },
+          "irq_on": {
+            "direction": "O"
+          },
+          "clkout_o": {
+            "direction": "O"
+          },
+          "port_0_i": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "sample_point": {
+            "direction": "O"
+          },
+          "sampled_bit": {
+            "direction": "O"
+          },
+          "cs_o": {
+            "direction": "O"
+          },
+          "we_o": {
+            "direction": "O"
+          },
+          "wr_i_q_o": {
+            "direction": "O"
+          },
+          "addr_o": {
+            "direction": "O"
+          },
+          "debug_addr": {
+            "direction": "O"
+          },
+          "debug": {
+            "direction": "O"
+          }
+        }
+      },
       "initializer_0": {
         "vlnv": "xilinx.com:module_ref:initializer:1.0",
         "xci_name": "design_1_initializer_0_0",
@@ -196,7 +277,7 @@
         },
         "ports": {
           "port_0_io": {
-            "direction": "IO",
+            "direction": "O",
             "left": "7",
             "right": "0"
           },
@@ -251,70 +332,6 @@
             "direction": "O"
           }
         }
-      },
-      "can_top_0": {
-        "vlnv": "xilinx.com:module_ref:can_top:1.0",
-        "xci_name": "design_1_can_top_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "can_top",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "rst_i": {
-            "direction": "I"
-          },
-          "ale_i": {
-            "direction": "I"
-          },
-          "rd_i": {
-            "direction": "I"
-          },
-          "wr_i": {
-            "direction": "I"
-          },
-          "port_0_io": {
-            "direction": "IO",
-            "left": "7",
-            "right": "0"
-          },
-          "cs_can_i": {
-            "direction": "I"
-          },
-          "clk_i": {
-            "direction": "I"
-          },
-          "rx_i": {
-            "direction": "I"
-          },
-          "tx_o": {
-            "direction": "O"
-          },
-          "bus_off_on": {
-            "direction": "O"
-          },
-          "irq_on": {
-            "direction": "O"
-          },
-          "clkout_o": {
-            "direction": "O"
-          },
-          "sample_point": {
-            "direction": "O"
-          },
-          "sampled_bit": {
-            "direction": "O"
-          },
-          "cs_o": {
-            "direction": "O"
-          },
-          "we_o": {
-            "direction": "O"
-          },
-          "debug": {
-            "direction": "O"
-          }
-        }
       }
     },
     "nets": {
@@ -322,19 +339,6 @@
         "ports": [
           "initializer_0/rd_o",
           "can_top_0/rd_i"
-        ]
-      },
-      "Net": {
-        "ports": [
-          "initializer_0/port_0_io",
-          "can_top_0/port_0_io"
-        ]
-      },
-      "initializer_0_cs_can_i": {
-        "ports": [
-          "initializer_0/cs_can_o",
-          "can_signal_out",
-          "can_top_0/cs_can_i"
         ]
       },
       "clk_1": {
@@ -380,16 +384,40 @@
           "can_top_0/rx_i"
         ]
       },
-      "initializer_0_rst_i": {
+      "clk_wiz_0_clk_out2": {
+        "ports": [
+          "clk_wiz_0/clk_out2",
+          "initializer_0/clk_i"
+        ]
+      },
+      "initializer_0_wr_o": {
+        "ports": [
+          "initializer_0/wr_o",
+          "can_top_0/wr_i"
+        ]
+      },
+      "can_top_0_debug": {
+        "ports": [
+          "can_top_0/debug",
+          "to_recessive"
+        ]
+      },
+      "initializer_0_cs_can_o": {
+        "ports": [
+          "initializer_0/cs_can_o",
+          "can_top_0/cs_can_i"
+        ]
+      },
+      "initializer_0_rst_o": {
         "ports": [
           "initializer_0/rst_o",
           "can_top_0/rst_i"
         ]
       },
-      "clk_wiz_0_clk_out2": {
+      "can_top_0_addr": {
         "ports": [
-          "clk_wiz_0/clk_out2",
-          "initializer_0/clk_i"
+          "can_top_0/addr_o",
+          "can_signal_out"
         ]
       },
       "initializer_0_debug": {
@@ -398,21 +426,21 @@
           "debug_1"
         ]
       },
-      "initializer_0_wr_i": {
-        "ports": [
-          "initializer_0/wr_o",
-          "can_top_0/wr_i"
-        ]
-      },
-      "initializer_0_ale_i": {
+      "initializer_0_ale_o": {
         "ports": [
           "initializer_0/ale_o",
           "can_top_0/ale_i"
         ]
       },
-      "can_top_0_we_o": {
+      "initializer_0_port_0_io": {
         "ports": [
-          "can_top_0/we_o",
+          "initializer_0/port_0_io",
+          "can_top_0/port_0_i"
+        ]
+      },
+      "can_top_0_sample_point": {
+        "ports": [
+          "can_top_0/sample_point",
           "debug_0"
         ]
       }

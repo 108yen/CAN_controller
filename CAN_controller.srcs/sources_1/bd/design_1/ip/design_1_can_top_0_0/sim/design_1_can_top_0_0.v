@@ -67,10 +67,14 @@ module design_1_can_top_0_0 (
   bus_off_on,
   irq_on,
   clkout_o,
+  port_0_i,
   sample_point,
   sampled_bit,
   cs_o,
   we_o,
+  wr_i_q_o,
+  addr_o,
+  debug_addr,
   debug
 );
 
@@ -86,10 +90,14 @@ output wire tx_o;
 output wire bus_off_on;
 output wire irq_on;
 output wire clkout_o;
+input wire [7 : 0] port_0_i;
 output wire sample_point;
 output wire sampled_bit;
 output wire cs_o;
 output wire we_o;
+output wire wr_i_q_o;
+output wire addr_o;
+output wire debug_addr;
 output wire debug;
 
   can_top #(
@@ -107,10 +115,14 @@ output wire debug;
     .bus_off_on(bus_off_on),
     .irq_on(irq_on),
     .clkout_o(clkout_o),
+    .port_0_i(port_0_i),
     .sample_point(sample_point),
     .sampled_bit(sampled_bit),
     .cs_o(cs_o),
     .we_o(we_o),
+    .wr_i_q_o(wr_i_q_o),
+    .addr_o(addr_o),
+    .debug_addr(debug_addr),
     .debug(debug)
   );
 endmodule

@@ -52,7 +52,7 @@
 
 (* X_CORE_INFO = "initializer,Vivado 2018.3" *)
 (* CHECK_LICENSE_TYPE = "design_1_initializer_0_0,initializer,{}" *)
-(* CORE_GENERATION_INFO = "design_1_initializer_0_0,initializer,{x_ipProduct=Vivado 2018.3,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=initializer,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,Tp=1,BRP=2,timing1=0x00002,timing2=5,timing3=9,timing4=15,wr0=0x00001,wr1=0x003F5,wr2=1030,wr3=1047,wr4=1064,wr5=3079}" *)
+(* CORE_GENERATION_INFO = "design_1_initializer_0_0,initializer,{x_ipProduct=Vivado 2018.3,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=initializer,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,Tp=1,BRP=2,timing1=0x00002,timing2=5,timing3=9,timing4=15,wr0=0x001F4,wr1=0x003F5,wr2=1030,wr3=1047,wr4=1064,wr5=3079}" *)
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_1_initializer_0_0 (
@@ -71,7 +71,7 @@ module design_1_initializer_0_0 (
   debug
 );
 
-inout wire [7 : 0] port_0_io;
+output wire [7 : 0] port_0_io;
 output wire rst_o;
 output wire ale_o;
 output wire rd_o;
@@ -92,7 +92,7 @@ output wire debug;
     .timing2(5),
     .timing3(9),
     .timing4(15),
-    .wr0(20'H00001),
+    .wr0(20'H001F4),
     .wr1(20'H003F5),
     .wr2(1030),
     .wr3(1047),

@@ -70,7 +70,7 @@ module design_1_initializer_0_0 (
   debug
 );
 
-inout wire [7 : 0] port_0_io;
+output wire [7 : 0] port_0_io;
 output wire rst_o;
 output wire ale_o;
 output wire rd_o;
@@ -91,7 +91,7 @@ output wire debug;
     .timing2(5),
     .timing3(9),
     .timing4(15),
-    .wr0(20'H00001),
+    .wr0(20'H001F4),
     .wr1(20'H003F5),
     .wr2(1030),
     .wr3(1047),

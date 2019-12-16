@@ -14,7 +14,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:1ab5d0af</spirit:value>
+            <spirit:value>9:f15024b6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -30,11 +30,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Dec 11 04:55:40 UTC 2019</spirit:value>
+            <spirit:value>Mon Dec 16 12:37:04 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:1ab5d0af</spirit:value>
+            <spirit:value>9:f15024b6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -46,7 +46,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:b9b32f31</spirit:value>
+            <spirit:value>9:12199e5a</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -62,11 +62,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Dec 11 04:55:40 UTC 2019</spirit:value>
+            <spirit:value>Mon Dec 16 12:37:04 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:b9b32f31</spirit:value>
+            <spirit:value>9:12199e5a</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -80,11 +80,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Dec 11 04:56:14 UTC 2019</spirit:value>
+            <spirit:value>Mon Dec 16 12:37:35 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:1ab5d0af</spirit:value>
+            <spirit:value>9:f15024b6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -93,7 +93,7 @@
       <spirit:port>
         <spirit:name>port_0_io</spirit:name>
         <spirit:wire>
-          <spirit:direction>inout</spirit:direction>
+          <spirit:direction>out</spirit:direction>
           <spirit:vector>
             <spirit:left spirit:format="long">7</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
@@ -316,7 +316,7 @@
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>wr0</spirit:name>
         <spirit:displayName>Wr0</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.wr0" spirit:bitStringLength="20">0x00001</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.wr0" spirit:bitStringLength="20">0x001F4</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>wr1</spirit:name>
@@ -434,7 +434,7 @@
     <spirit:parameter>
       <spirit:name>wr0</spirit:name>
       <spirit:displayName>Wr0</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.wr0" spirit:bitStringLength="20">0x00001</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.wr0" spirit:bitStringLength="20">0x001F4</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>wr1</spirit:name>
