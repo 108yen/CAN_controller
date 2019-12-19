@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1576501025">
+<GenRun Id="synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1576733367">
   <File Type="PA-TCL" Name="design_1_wrapper.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="design_1_wrapper_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="design_1_wrapper_reports.tcl"/>
@@ -236,6 +236,6 @@
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="design_1_clk_wiz_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_MODULE_CONTROLLER_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_can_top_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_initializer_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_can_top_0_0"/>
 </GenRun>

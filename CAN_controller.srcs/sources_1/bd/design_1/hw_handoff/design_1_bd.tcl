@@ -165,7 +165,6 @@ proc create_root_design { parentCell } {
 
   # Create ports
   set can_signal_in [ create_bd_port -dir I can_signal_in ]
-  set can_signal_out [ create_bd_port -dir O can_signal_out ]
   set clk [ create_bd_port -dir I -type clk clk ]
   set_property -dict [ list \
    CONFIG.FREQ_HZ {100000000} \
@@ -173,6 +172,7 @@ proc create_root_design { parentCell } {
   set debug_0 [ create_bd_port -dir O debug_0 ]
   set debug_1 [ create_bd_port -dir O debug_1 ]
   set debug_2 [ create_bd_port -dir O debug_2 ]
+  set to_dominant [ create_bd_port -dir O to_dominant ]
   set to_recessive [ create_bd_port -dir O to_recessive ]
   set triger [ create_bd_port -dir O triger ]
 
@@ -240,10 +240,10 @@ proc create_root_design { parentCell } {
   # Create port connections
   connect_bd_net -net MODULE_CONTROLLER_0_TRIGER [get_bd_ports triger] [get_bd_pins MODULE_CONTROLLER_0/TRIGER]
   connect_bd_net -net can_signal_in_1 [get_bd_ports can_signal_in] [get_bd_pins MODULE_CONTROLLER_0/CAN_SIGNAL_IN] [get_bd_pins can_top_0/rx_i]
-  connect_bd_net -net can_top_0_addr [get_bd_ports can_signal_out] [get_bd_pins can_top_0/addr_o]
   connect_bd_net -net can_top_0_clkout_o [get_bd_ports debug_2] [get_bd_pins can_top_0/clkout_o]
   connect_bd_net -net can_top_0_debug [get_bd_ports to_recessive] [get_bd_pins can_top_0/debug]
   connect_bd_net -net can_top_0_sample_point [get_bd_ports debug_0] [get_bd_pins can_top_0/sample_point]
+  connect_bd_net -net can_top_0_tx_o [get_bd_ports to_dominant] [get_bd_pins can_top_0/tx_o]
   connect_bd_net -net clk_1 [get_bd_ports clk] [get_bd_pins clk_wiz_0/clk_in1]
   connect_bd_net -net clk_wiz_0_clk_out2 [get_bd_pins clk_wiz_0/clk_out2] [get_bd_pins initializer_0/clk_i]
   connect_bd_net -net clk_wiz_0_clk_out3 [get_bd_pins MODULE_CONTROLLER_0/CLK] [get_bd_pins clk_wiz_0/clk_out3]

@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Mon Dec 16 21:57:00 2019
+//Date        : Thu Dec 19 14:29:24 2019
 //Host        : DESKTOP-NTANC38 running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -12,28 +12,28 @@
 (* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=4,numReposBlks=4,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=3,numPkgbdBlks=0,bdsource=USER,da_clkrst_cnt=2,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
 module design_1
    (can_signal_in,
-    can_signal_out,
     clk,
     debug_0,
     debug_1,
     debug_2,
+    to_dominant,
     to_recessive,
     triger);
   input can_signal_in;
-  output can_signal_out;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK, CLK_DOMAIN design_1_clk, FREQ_HZ 100000000, INSERT_VIP 0, PHASE 0.000" *) input clk;
   output debug_0;
   output debug_1;
   output debug_2;
+  output to_dominant;
   output to_recessive;
   output triger;
 
   wire MODULE_CONTROLLER_0_TRIGER;
   wire can_signal_in_1;
-  wire can_top_0_addr;
   wire can_top_0_clkout_o;
   wire can_top_0_debug;
   wire can_top_0_sample_point;
+  wire can_top_0_tx_o;
   wire clk_1;
   wire clk_wiz_0_clk_out2;
   wire clk_wiz_0_clk_out3;
@@ -48,11 +48,11 @@ module design_1
   wire initializer_0_wr_o;
 
   assign can_signal_in_1 = can_signal_in;
-  assign can_signal_out = can_top_0_addr;
   assign clk_1 = clk;
   assign debug_0 = can_top_0_sample_point;
   assign debug_1 = initializer_0_debug;
   assign debug_2 = can_top_0_clkout_o;
+  assign to_dominant = can_top_0_tx_o;
   assign to_recessive = can_top_0_debug;
   assign triger = MODULE_CONTROLLER_0_TRIGER;
   design_1_MODULE_CONTROLLER_0_0 MODULE_CONTROLLER_0
@@ -61,8 +61,7 @@ module design_1
         .RESET(clk_wiz_0_locked),
         .TRIGER(MODULE_CONTROLLER_0_TRIGER));
   design_1_can_top_0_0 can_top_0
-       (.addr_o(can_top_0_addr),
-        .ale_i(initializer_0_ale_o),
+       (.ale_i(initializer_0_ale_o),
         .clk_i(initializer_0_clk_o),
         .clkout_o(can_top_0_clkout_o),
         .cs_can_i(initializer_0_cs_can_o),
@@ -72,6 +71,7 @@ module design_1
         .rst_i(initializer_0_rst_o),
         .rx_i(can_signal_in_1),
         .sample_point(can_top_0_sample_point),
+        .tx_o(can_top_0_tx_o),
         .wr_i(initializer_0_wr_o));
   design_1_clk_wiz_0_0 clk_wiz_0
        (.clk_in1(clk_1),
