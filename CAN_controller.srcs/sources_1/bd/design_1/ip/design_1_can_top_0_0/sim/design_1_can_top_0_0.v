@@ -59,7 +59,6 @@ module design_1_can_top_0_0 (
   ale_i,
   rd_i,
   wr_i,
-  port_0_io,
   cs_can_i,
   clk_i,
   rx_i,
@@ -70,11 +69,6 @@ module design_1_can_top_0_0 (
   port_0_i,
   sample_point,
   sampled_bit,
-  cs_o,
-  we_o,
-  wr_i_q_o,
-  addr_o,
-  debug_addr,
   debug
 );
 
@@ -82,7 +76,6 @@ input wire rst_i;
 input wire ale_i;
 input wire rd_i;
 input wire wr_i;
-inout wire [7 : 0] port_0_io;
 input wire cs_can_i;
 input wire clk_i;
 input wire rx_i;
@@ -93,11 +86,6 @@ output wire clkout_o;
 input wire [7 : 0] port_0_i;
 output wire sample_point;
 output wire sampled_bit;
-output wire cs_o;
-output wire we_o;
-output wire wr_i_q_o;
-output wire addr_o;
-output wire debug_addr;
 output wire debug;
 
   can_top #(
@@ -107,7 +95,6 @@ output wire debug;
     .ale_i(ale_i),
     .rd_i(rd_i),
     .wr_i(wr_i),
-    .port_0_io(port_0_io),
     .cs_can_i(cs_can_i),
     .clk_i(clk_i),
     .rx_i(rx_i),
@@ -118,11 +105,6 @@ output wire debug;
     .port_0_i(port_0_i),
     .sample_point(sample_point),
     .sampled_bit(sampled_bit),
-    .cs_o(cs_o),
-    .we_o(we_o),
-    .wr_i_q_o(wr_i_q_o),
-    .addr_o(addr_o),
-    .debug_addr(debug_addr),
     .debug(debug)
   );
 endmodule

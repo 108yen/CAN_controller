@@ -11,8 +11,8 @@
     "design_tree": {
       "clk_wiz_0": "",
       "MODULE_CONTROLLER_0": "",
-      "initializer_0": "",
-      "can_top_0": ""
+      "can_top_0": "",
+      "initializer_0": ""
     },
     "ports": {
       "clk": {
@@ -189,6 +189,64 @@
           }
         }
       },
+      "can_top_0": {
+        "vlnv": "xilinx.com:module_ref:can_top:1.0",
+        "xci_name": "design_1_can_top_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "can_top",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "rst_i": {
+            "direction": "I"
+          },
+          "ale_i": {
+            "direction": "I"
+          },
+          "rd_i": {
+            "direction": "I"
+          },
+          "wr_i": {
+            "direction": "I"
+          },
+          "cs_can_i": {
+            "direction": "I"
+          },
+          "clk_i": {
+            "direction": "I"
+          },
+          "rx_i": {
+            "direction": "I"
+          },
+          "tx_o": {
+            "direction": "O"
+          },
+          "bus_off_on": {
+            "direction": "O"
+          },
+          "irq_on": {
+            "direction": "O"
+          },
+          "clkout_o": {
+            "direction": "O"
+          },
+          "port_0_i": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "sample_point": {
+            "direction": "O"
+          },
+          "sampled_bit": {
+            "direction": "O"
+          },
+          "debug": {
+            "direction": "O"
+          }
+        }
+      },
       "initializer_0": {
         "vlnv": "xilinx.com:module_ref:initializer:1.0",
         "xci_name": "design_1_initializer_0_0",
@@ -249,84 +307,6 @@
           },
           "irq_on": {
             "direction": "I"
-          },
-          "debug": {
-            "direction": "O"
-          }
-        }
-      },
-      "can_top_0": {
-        "vlnv": "xilinx.com:module_ref:can_top:1.0",
-        "xci_name": "design_1_can_top_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "can_top",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "rst_i": {
-            "direction": "I"
-          },
-          "ale_i": {
-            "direction": "I"
-          },
-          "rd_i": {
-            "direction": "I"
-          },
-          "wr_i": {
-            "direction": "I"
-          },
-          "port_0_io": {
-            "direction": "IO",
-            "left": "7",
-            "right": "0"
-          },
-          "cs_can_i": {
-            "direction": "I"
-          },
-          "clk_i": {
-            "direction": "I"
-          },
-          "rx_i": {
-            "direction": "I"
-          },
-          "tx_o": {
-            "direction": "O"
-          },
-          "bus_off_on": {
-            "direction": "O"
-          },
-          "irq_on": {
-            "direction": "O"
-          },
-          "clkout_o": {
-            "direction": "O"
-          },
-          "port_0_i": {
-            "direction": "I",
-            "left": "7",
-            "right": "0"
-          },
-          "sample_point": {
-            "direction": "O"
-          },
-          "sampled_bit": {
-            "direction": "O"
-          },
-          "cs_o": {
-            "direction": "O"
-          },
-          "we_o": {
-            "direction": "O"
-          },
-          "wr_i_q_o": {
-            "direction": "O"
-          },
-          "addr_o": {
-            "direction": "O"
-          },
-          "debug_addr": {
-            "direction": "O"
           },
           "debug": {
             "direction": "O"
@@ -432,16 +412,16 @@
           "can_top_0/port_0_i"
         ]
       },
-      "can_top_0_sample_point": {
-        "ports": [
-          "can_top_0/sample_point",
-          "debug_0"
-        ]
-      },
       "can_top_0_tx_o": {
         "ports": [
           "can_top_0/tx_o",
           "to_dominant"
+        ]
+      },
+      "can_top_0_sampled_bit": {
+        "ports": [
+          "can_top_0/sampled_bit",
+          "debug_0"
         ]
       }
     }

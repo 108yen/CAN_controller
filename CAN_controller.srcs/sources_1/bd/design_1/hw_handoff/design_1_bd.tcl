@@ -242,7 +242,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net can_signal_in_1 [get_bd_ports can_signal_in] [get_bd_pins MODULE_CONTROLLER_0/CAN_SIGNAL_IN] [get_bd_pins can_top_0/rx_i]
   connect_bd_net -net can_top_0_clkout_o [get_bd_ports debug_2] [get_bd_pins can_top_0/clkout_o]
   connect_bd_net -net can_top_0_debug [get_bd_ports to_recessive] [get_bd_pins can_top_0/debug]
-  connect_bd_net -net can_top_0_sample_point [get_bd_ports debug_0] [get_bd_pins can_top_0/sample_point]
+  connect_bd_net -net can_top_0_sampled_bit [get_bd_ports debug_0] [get_bd_pins can_top_0/sampled_bit]
   connect_bd_net -net can_top_0_tx_o [get_bd_ports to_dominant] [get_bd_pins can_top_0/tx_o]
   connect_bd_net -net clk_1 [get_bd_ports clk] [get_bd_pins clk_wiz_0/clk_in1]
   connect_bd_net -net clk_wiz_0_clk_out2 [get_bd_pins clk_wiz_0/clk_out2] [get_bd_pins initializer_0/clk_i]
