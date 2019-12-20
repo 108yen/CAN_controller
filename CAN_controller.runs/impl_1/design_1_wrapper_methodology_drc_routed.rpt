@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Sat Dec 21 00:11:04 2019
+| Date         : Sat Dec 21 00:34:42 2019
 | Host         : DESKTOP-NTANC38 running 64-bit major release  (build 9200)
 | Command      : report_methodology -file design_1_wrapper_methodology_drc_routed.rpt -pb design_1_wrapper_methodology_drc_routed.pb -rpx design_1_wrapper_methodology_drc_routed.rpx
 | Design       : design_1_wrapper
@@ -23,11 +23,11 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 329
+             Violations found: 330
 +-----------+----------+-----------------------------+------------+
 | Rule      | Severity | Description                 | Violations |
 +-----------+----------+-----------------------------+------------+
-| TIMING-17 | Warning  | Non-clocked sequential cell | 329        |
+| TIMING-17 | Warning  | Non-clocked sequential cell | 330        |
 +-----------+----------+-----------------------------+------------+
 
 2. REPORT DETAILS
@@ -889,790 +889,795 @@ Related violations: <none>
 
 TIMING-17#172 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_btl/hard_sync_blocked_reg/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_btl/delay_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#173 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_btl/quant_cnt_reg[0]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_btl/hard_sync_blocked_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#174 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_btl/quant_cnt_reg[1]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_btl/quant_cnt_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#175 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_btl/quant_cnt_reg[2]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_btl/quant_cnt_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#176 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_btl/quant_cnt_reg[3]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_btl/quant_cnt_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#177 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_btl/quant_cnt_reg[4]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_btl/quant_cnt_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#178 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_btl/resync_latched_reg/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_btl/quant_cnt_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#179 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_btl/sample_point_reg/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_btl/resync_latched_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#180 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_btl/sample_reg[0]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_btl/sample_point_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#181 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_btl/sample_reg[1]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_btl/sample_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#182 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_btl/sampled_bit_q_reg/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_btl/sample_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#183 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_btl/sampled_bit_reg/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_btl/sampled_bit_q_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#184 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_btl/seg1_reg/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_btl/sampled_bit_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#185 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_btl/seg2_reg/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_btl/seg1_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#186 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_btl/sync_blocked_reg/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_btl/seg2_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#187 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_btl/sync_reg/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_btl/sync_blocked_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#188 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_btl/tx_next_sp_reg/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_btl/sync_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#189 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_btl/tx_point_reg/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_btl/tx_next_sp_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#190 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/BUS_TIMING_0_REG/data_out_reg[0]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_btl/tx_point_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#191 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/BUS_TIMING_0_REG/data_out_reg[1]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/BUS_TIMING_0_REG/data_out_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#192 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/BUS_TIMING_0_REG/data_out_reg[2]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/BUS_TIMING_0_REG/data_out_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#193 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/BUS_TIMING_0_REG/data_out_reg[3]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/BUS_TIMING_0_REG/data_out_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#194 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/BUS_TIMING_0_REG/data_out_reg[4]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/BUS_TIMING_0_REG/data_out_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#195 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/BUS_TIMING_0_REG/data_out_reg[5]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/BUS_TIMING_0_REG/data_out_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#196 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/BUS_TIMING_0_REG/data_out_reg[6]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/BUS_TIMING_0_REG/data_out_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#197 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/BUS_TIMING_0_REG/data_out_reg[7]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/BUS_TIMING_0_REG/data_out_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#198 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/BUS_TIMING_1_REG/data_out_reg[0]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/BUS_TIMING_0_REG/data_out_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#199 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/BUS_TIMING_1_REG/data_out_reg[1]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/BUS_TIMING_1_REG/data_out_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#200 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/BUS_TIMING_1_REG/data_out_reg[2]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/BUS_TIMING_1_REG/data_out_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#201 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/BUS_TIMING_1_REG/data_out_reg[3]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/BUS_TIMING_1_REG/data_out_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#202 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/BUS_TIMING_1_REG/data_out_reg[4]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/BUS_TIMING_1_REG/data_out_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#203 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/BUS_TIMING_1_REG/data_out_reg[5]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/BUS_TIMING_1_REG/data_out_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#204 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/BUS_TIMING_1_REG/data_out_reg[6]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/BUS_TIMING_1_REG/data_out_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#205 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/BUS_TIMING_1_REG/data_out_reg[7]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/BUS_TIMING_1_REG/data_out_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#206 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/CLOCK_DIVIDER_REG_3/data_out_reg[0]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/BUS_TIMING_1_REG/data_out_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#207 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/CLOCK_DIVIDER_REG_7/data_out_reg[0]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/CLOCK_DIVIDER_REG_3/data_out_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#208 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/CLOCK_DIVIDER_REG_LOW/data_out_reg[0]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/CLOCK_DIVIDER_REG_7/data_out_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#209 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/CLOCK_DIVIDER_REG_LOW/data_out_reg[1]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/CLOCK_DIVIDER_REG_LOW/data_out_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#210 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/CLOCK_DIVIDER_REG_LOW/data_out_reg[2]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/CLOCK_DIVIDER_REG_LOW/data_out_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#211 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/COMMAND_REG0/data_out_reg[0]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/CLOCK_DIVIDER_REG_LOW/data_out_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#212 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/COMMAND_REG1/data_out_reg[0]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/COMMAND_REG0/data_out_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#213 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/COMMAND_REG4/data_out_reg[0]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/COMMAND_REG1/data_out_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#214 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/MODE_REG0/data_out_reg[0]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/COMMAND_REG4/data_out_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#215 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/MODE_REG_EXT/data_out_reg[0]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/MODE_REG0/data_out_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#216 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/MODE_REG_EXT/data_out_reg[1]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/MODE_REG_EXT/data_out_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#217 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG0/data_out_reg[0]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/MODE_REG_EXT/data_out_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#218 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG0/data_out_reg[1]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG0/data_out_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#219 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG0/data_out_reg[2]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG0/data_out_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#220 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG0/data_out_reg[3]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG0/data_out_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#221 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG0/data_out_reg[4]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG0/data_out_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#222 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG0/data_out_reg[5]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG0/data_out_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#223 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG0/data_out_reg[6]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG0/data_out_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#224 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG0/data_out_reg[7]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG0/data_out_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#225 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG1/data_out_reg[0]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG0/data_out_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#226 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG1/data_out_reg[1]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG1/data_out_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#227 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG1/data_out_reg[2]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG1/data_out_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#228 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG1/data_out_reg[3]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG1/data_out_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#229 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG1/data_out_reg[4]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG1/data_out_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#230 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG1/data_out_reg[5]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG1/data_out_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#231 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG1/data_out_reg[6]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG1/data_out_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#232 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG1/data_out_reg[7]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG1/data_out_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#233 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG10/data_out_reg[0]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG1/data_out_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#234 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG10/data_out_reg[1]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG10/data_out_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#235 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG10/data_out_reg[2]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG10/data_out_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#236 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG10/data_out_reg[3]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG10/data_out_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#237 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG10/data_out_reg[4]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG10/data_out_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#238 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG10/data_out_reg[5]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG10/data_out_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#239 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG10/data_out_reg[6]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG10/data_out_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#240 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG10/data_out_reg[7]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG10/data_out_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#241 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG11/data_out_reg[0]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG10/data_out_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#242 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG11/data_out_reg[1]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG11/data_out_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#243 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG11/data_out_reg[2]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG11/data_out_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#244 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG11/data_out_reg[3]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG11/data_out_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#245 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG11/data_out_reg[4]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG11/data_out_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#246 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG11/data_out_reg[5]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG11/data_out_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#247 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG11/data_out_reg[6]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG11/data_out_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#248 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG11/data_out_reg[7]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG11/data_out_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#249 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG12/data_out_reg[0]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG11/data_out_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#250 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG12/data_out_reg[1]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG12/data_out_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#251 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG12/data_out_reg[2]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG12/data_out_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#252 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG12/data_out_reg[3]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG12/data_out_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#253 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG12/data_out_reg[4]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG12/data_out_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#254 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG12/data_out_reg[5]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG12/data_out_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#255 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG12/data_out_reg[6]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG12/data_out_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#256 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG12/data_out_reg[7]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG12/data_out_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#257 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG2/data_out_reg[0]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG12/data_out_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#258 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG2/data_out_reg[1]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG2/data_out_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#259 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG2/data_out_reg[2]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG2/data_out_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#260 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG2/data_out_reg[3]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG2/data_out_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#261 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG2/data_out_reg[4]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG2/data_out_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#262 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG2/data_out_reg[5]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG2/data_out_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#263 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG2/data_out_reg[6]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG2/data_out_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#264 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG2/data_out_reg[7]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG2/data_out_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#265 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG3/data_out_reg[0]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG2/data_out_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#266 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG3/data_out_reg[1]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG3/data_out_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#267 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG3/data_out_reg[2]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG3/data_out_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#268 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG3/data_out_reg[3]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG3/data_out_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#269 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG3/data_out_reg[4]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG3/data_out_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#270 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG3/data_out_reg[5]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG3/data_out_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#271 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG3/data_out_reg[6]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG3/data_out_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#272 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG3/data_out_reg[7]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG3/data_out_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#273 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG4/data_out_reg[0]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG3/data_out_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#274 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG4/data_out_reg[1]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG4/data_out_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#275 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG4/data_out_reg[2]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG4/data_out_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#276 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG4/data_out_reg[3]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG4/data_out_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#277 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG4/data_out_reg[4]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG4/data_out_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#278 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG4/data_out_reg[5]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG4/data_out_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#279 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG4/data_out_reg[6]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG4/data_out_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#280 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG4/data_out_reg[7]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG4/data_out_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#281 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG5/data_out_reg[0]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG4/data_out_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#282 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG5/data_out_reg[1]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG5/data_out_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#283 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG5/data_out_reg[2]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG5/data_out_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#284 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG5/data_out_reg[3]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG5/data_out_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#285 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG5/data_out_reg[4]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG5/data_out_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#286 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG5/data_out_reg[5]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG5/data_out_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#287 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG5/data_out_reg[6]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG5/data_out_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#288 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG5/data_out_reg[7]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG5/data_out_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#289 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG6/data_out_reg[0]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG5/data_out_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#290 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG6/data_out_reg[1]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG6/data_out_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#291 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG6/data_out_reg[2]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG6/data_out_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#292 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG6/data_out_reg[3]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG6/data_out_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#293 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG6/data_out_reg[4]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG6/data_out_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#294 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG6/data_out_reg[5]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG6/data_out_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#295 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG6/data_out_reg[6]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG6/data_out_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#296 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG6/data_out_reg[7]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG6/data_out_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#297 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG7/data_out_reg[0]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG6/data_out_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#298 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG7/data_out_reg[1]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG7/data_out_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#299 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG7/data_out_reg[2]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG7/data_out_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#300 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG7/data_out_reg[3]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG7/data_out_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#301 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG7/data_out_reg[4]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG7/data_out_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#302 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG7/data_out_reg[5]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG7/data_out_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#303 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG7/data_out_reg[6]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG7/data_out_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#304 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG7/data_out_reg[7]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG7/data_out_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#305 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG8/data_out_reg[0]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG7/data_out_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#306 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG8/data_out_reg[1]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG8/data_out_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#307 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG8/data_out_reg[2]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG8/data_out_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#308 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG8/data_out_reg[3]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG8/data_out_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#309 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG8/data_out_reg[4]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG8/data_out_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#310 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG8/data_out_reg[5]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG8/data_out_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#311 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG8/data_out_reg[6]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG8/data_out_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#312 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG8/data_out_reg[7]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG8/data_out_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#313 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG9/data_out_reg[0]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG8/data_out_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#314 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG9/data_out_reg[1]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG9/data_out_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#315 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG9/data_out_reg[2]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG9/data_out_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#316 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG9/data_out_reg[3]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG9/data_out_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#317 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG9/data_out_reg[4]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG9/data_out_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#318 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG9/data_out_reg[5]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG9/data_out_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#319 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG9/data_out_reg[6]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG9/data_out_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#320 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG9/data_out_reg[7]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG9/data_out_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#321 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/clkout_cnt_reg[0]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/TX_DATA_REG9/data_out_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#322 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/clkout_cnt_reg[1]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/clkout_cnt_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#323 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/clkout_cnt_reg[2]/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/clkout_cnt_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#324 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/clkout_tmp_reg/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/clkout_cnt_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#325 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/single_shot_transmission_reg/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/clkout_tmp_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#326 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/i_can_registers/transmit_buffer_status_reg/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/single_shot_transmission_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#327 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/rx_sync_reg/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/i_can_registers/transmit_buffer_status_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#328 Warning
 Non-clocked sequential cell  
-The clock pin design_1_i/can_top_0/inst/rx_sync_tmp_reg/C is not reached by a timing clock
+The clock pin design_1_i/can_top_0/inst/rx_sync_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#329 Warning
+Non-clocked sequential cell  
+The clock pin design_1_i/can_top_0/inst/rx_sync_tmp_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#330 Warning
 Non-clocked sequential cell  
 The clock pin design_1_i/can_top_0/inst/wr_i_q_reg/C is not reached by a timing clock
 Related violations: <none>

@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Sat Dec 21 00:09:08 2019
+//Date        : Sat Dec 21 00:32:32 2019
 //Host        : DESKTOP-NTANC38 running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -32,7 +32,8 @@ module design_1
   wire can_signal_in_1;
   wire can_top_0_clkout_o;
   wire can_top_0_debug;
-  wire can_top_0_sampled_bit;
+  wire can_top_0_sample_point;
+  wire can_top_0_sample_point_q;
   wire can_top_0_tx_o;
   wire clk_1;
   wire clk_wiz_0_clk_out2;
@@ -41,7 +42,6 @@ module design_1
   wire initializer_0_ale_o;
   wire initializer_0_clk_o;
   wire initializer_0_cs_can_o;
-  wire initializer_0_debug;
   wire [7:0]initializer_0_port_0_io;
   wire initializer_0_rd_i;
   wire initializer_0_rst_o;
@@ -49,8 +49,8 @@ module design_1
 
   assign can_signal_in_1 = can_signal_in;
   assign clk_1 = clk;
-  assign debug_0 = can_top_0_sampled_bit;
-  assign debug_1 = initializer_0_debug;
+  assign debug_0 = can_top_0_sample_point;
+  assign debug_1 = can_top_0_sample_point_q;
   assign debug_2 = can_top_0_clkout_o;
   assign to_dominant = can_top_0_tx_o;
   assign to_recessive = can_top_0_debug;
@@ -70,7 +70,8 @@ module design_1
         .rd_i(initializer_0_rd_i),
         .rst_i(initializer_0_rst_o),
         .rx_i(can_signal_in_1),
-        .sampled_bit(can_top_0_sampled_bit),
+        .sample_point(can_top_0_sample_point),
+        .sample_point_q(can_top_0_sample_point_q),
         .tx_o(can_top_0_tx_o),
         .wr_i(initializer_0_wr_o));
   design_1_clk_wiz_0_0 clk_wiz_0
@@ -84,7 +85,6 @@ module design_1
         .clk_i(clk_wiz_0_clk_out2),
         .clk_o(initializer_0_clk_o),
         .cs_can_o(initializer_0_cs_can_o),
-        .debug(initializer_0_debug),
         .irq_on(1'b0),
         .port_0_io(initializer_0_port_0_io),
         .rd_o(initializer_0_rd_i),
