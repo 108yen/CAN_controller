@@ -5,34 +5,22 @@
       "device": "xc7a35ticsg324-1L",
       "name": "design_1",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2018.3",
-      "validated": "true"
+      "tool_version": "2018.3"
     },
     "design_tree": {
       "clk_wiz_0": "",
       "initializer_0": "",
       "can_top_0": "",
-      "MODULE_CONTROLLER_0": ""
+      "MODULE_CONTROLLER_0": "",
+      "ATTACK_MODULE_0": ""
     },
     "ports": {
       "clk": {
         "type": "clk",
         "direction": "I",
         "parameters": {
-          "CLK_DOMAIN": {
-            "value": "design_1_clk",
-            "value_src": "default"
-          },
           "FREQ_HZ": {
             "value": "100000000"
-          },
-          "INSERT_VIP": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "PHASE": {
-            "value": "0.000",
-            "value_src": "default"
           }
         }
       },
@@ -167,21 +155,7 @@
             "direction": "O"
           },
           "clk_i": {
-            "direction": "I",
-            "parameters": {
-              "CLK_DOMAIN": {
-                "value": "/clk_wiz_0_clk_out1",
-                "value_src": "ip_prop"
-              },
-              "FREQ_HZ": {
-                "value": "32000000",
-                "value_src": "ip_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "ip_prop"
-              }
-            }
+            "direction": "I"
           },
           "rx_i": {
             "direction": "O"
@@ -272,13 +246,7 @@
         "ports": {
           "clk": {
             "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "reset",
-                "value_src": "constant"
-              }
-            }
+            "direction": "I"
           },
           "reset": {
             "type": "rst",
@@ -293,6 +261,9 @@
           "triger": {
             "direction": "O"
           },
+          "state": {
+            "direction": "O"
+          },
           "attack_state": {
             "direction": "O"
           },
@@ -303,6 +274,46 @@
             "direction": "O"
           },
           "debug_2": {
+            "direction": "O"
+          }
+        }
+      },
+      "ATTACK_MODULE_0": {
+        "vlnv": "xilinx.com:module_ref:ATTACK_MODULE:1.0",
+        "xci_name": "design_1_ATTACK_MODULE_0_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ATTACK_MODULE",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "can_signal_in": {
+            "direction": "I"
+          },
+          "state": {
+            "direction": "I"
+          },
+          "attack_state": {
+            "direction": "I"
+          },
+          "sample_point": {
+            "direction": "I"
+          },
+          "sample_point_q": {
+            "direction": "I"
+          },
+          "to_dominant": {
+            "direction": "O"
+          },
+          "to_recessive": {
             "direction": "O"
           }
         }
@@ -336,21 +347,24 @@
       "clk_wiz_0_locked": {
         "ports": [
           "clk_wiz_0/locked",
-          "MODULE_CONTROLLER_0/reset"
+          "MODULE_CONTROLLER_0/reset",
+          "ATTACK_MODULE_0/rst"
         ]
       },
       "initializer_0_clk_o": {
         "ports": [
           "initializer_0/clk_o",
           "can_top_0/clk_i",
-          "MODULE_CONTROLLER_0/clk"
+          "MODULE_CONTROLLER_0/clk",
+          "ATTACK_MODULE_0/clk"
         ]
       },
       "can_signal_in_1": {
         "ports": [
           "can_signal_in",
           "can_top_0/rx_i",
-          "MODULE_CONTROLLER_0/can_signal_in"
+          "MODULE_CONTROLLER_0/can_signal_in",
+          "ATTACK_MODULE_0/can_signal_in"
         ]
       },
       "clk_wiz_0_clk_out2": {
@@ -404,14 +418,28 @@
       "can_top_0_sample_point_q": {
         "ports": [
           "can_top_0/sample_point_q",
-          "debug_1"
+          "debug_1",
+          "ATTACK_MODULE_0/sample_point_q"
         ]
       },
       "can_top_0_sample_point": {
         "ports": [
           "can_top_0/sample_point",
           "debug_0",
-          "MODULE_CONTROLLER_0/sample_point"
+          "MODULE_CONTROLLER_0/sample_point",
+          "ATTACK_MODULE_0/sample_point"
+        ]
+      },
+      "MODULE_CONTROLLER_0_attack_state": {
+        "ports": [
+          "MODULE_CONTROLLER_0/attack_state",
+          "ATTACK_MODULE_0/attack_state"
+        ]
+      },
+      "MODULE_CONTROLLER_0_state": {
+        "ports": [
+          "MODULE_CONTROLLER_0/state",
+          "ATTACK_MODULE_0/state"
         ]
       }
     }
