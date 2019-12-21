@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date             : Sat Dec 21 00:34:43 2019
+| Date             : Sat Dec 21 13:51:35 2019
 | Host             : DESKTOP-NTANC38 running 64-bit major release  (build 9200)
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
@@ -52,14 +52,14 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |    <0.001 |        6 |       --- |             --- |
-| Slice Logic    |    <0.001 |     1256 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      589 |     20800 |            2.83 |
-|   Register     |    <0.001 |      495 |     41600 |            1.19 |
+| Clocks         |    <0.001 |        5 |       --- |             --- |
+| Slice Logic    |    <0.001 |     1226 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      576 |     20800 |            2.77 |
+|   Register     |    <0.001 |      483 |     41600 |            1.16 |
 |   CARRY4       |    <0.001 |       20 |      8150 |            0.25 |
 |   F7/F8 Muxes  |    <0.001 |       22 |     32600 |            0.07 |
-|   Others       |     0.000 |       42 |       --- |             --- |
-| Signals        |    <0.001 |      922 |       --- |             --- |
+|   Others       |     0.000 |       41 |       --- |             --- |
+| Signals        |    <0.001 |      904 |       --- |             --- |
 | MMCM           |     0.103 |        1 |         5 |           20.00 |
 | I/O            |    <0.001 |        8 |       210 |            3.81 |
 | Static Power   |     0.062 |          |           |                 |
@@ -131,7 +131,6 @@ Table of Contents
 +-------------------------------+---------------------------------------------------------+-----------------+
 | clk                           | clk                                                     |            10.0 |
 | clk_out2_design_1_clk_wiz_0_0 | design_1_i/clk_wiz_0/inst/clk_out2_design_1_clk_wiz_0_0 |            31.3 |
-| clk_out3_design_1_clk_wiz_0_0 | design_1_i/clk_wiz_0/inst/clk_out3_design_1_clk_wiz_0_0 |            25.0 |
 | clkfbout_design_1_clk_wiz_0_0 | design_1_i/clk_wiz_0/inst/clkfbout_design_1_clk_wiz_0_0 |            50.0 |
 +-------------------------------+---------------------------------------------------------+-----------------+
 
@@ -146,7 +145,7 @@ Table of Contents
 | Name             | Power (W) |
 +------------------+-----------+
 | design_1_wrapper |     0.105 |
-|   design_1_i     |     0.105 |
+|   design_1_i     |     0.104 |
 |     clk_wiz_0    |     0.103 |
 |       inst       |     0.103 |
 +------------------+-----------+

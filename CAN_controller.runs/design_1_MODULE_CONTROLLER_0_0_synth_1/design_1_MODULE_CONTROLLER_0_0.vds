@@ -2,8 +2,8 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Tue Dec 10 13:50:36 2019
-# Process ID: 8768
+# Start of session at: Sat Dec 21 13:45:23 2019
+# Process ID: 8060
 # Current directory: C:/Users/car_security/vivado/CAN_controller/CAN_controller.runs/design_1_MODULE_CONTROLLER_0_0_synth_1
 # Command line: vivado.exe -log design_1_MODULE_CONTROLLER_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_MODULE_CONTROLLER_0_0.tcl
 # Log file: C:/Users/car_security/vivado/CAN_controller/CAN_controller.runs/design_1_MODULE_CONTROLLER_0_0_synth_1/design_1_MODULE_CONTROLLER_0_0.vds
@@ -15,25 +15,23 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35ti'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35ti'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 11572 
+INFO: Helper process launched with PID 7408 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 483.785 ; gain = 102.219
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 483.512 ; gain = 101.504
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'design_1_MODULE_CONTROLLER_0_0' [c:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/bd/design_1/ip/design_1_MODULE_CONTROLLER_0_0/synth/design_1_MODULE_CONTROLLER_0_0.v:58]
 INFO: [Synth 8-6157] synthesizing module 'MODULE_CONTROLLER' [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/sources_1/imports/new/MODULE_CONTROLLER.v:23]
-INFO: [Synth 8-6157] synthesizing module 'TIMING_CONTROLLER' [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/sources_1/new/TIMING_CONTROLLER.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'TIMING_CONTROLLER' (1#1) [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/sources_1/new/TIMING_CONTROLLER.v:23]
 INFO: [Synth 8-6157] synthesizing module 'BUS_MSG_OBSERVER' [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/sources_1/imports/new/BUS_MSG_OBSERVER.v:21]
-INFO: [Synth 8-6155] done synthesizing module 'BUS_MSG_OBSERVER' (2#1) [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/sources_1/imports/new/BUS_MSG_OBSERVER.v:21]
+INFO: [Synth 8-6155] done synthesizing module 'BUS_MSG_OBSERVER' (1#1) [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/sources_1/imports/new/BUS_MSG_OBSERVER.v:21]
 INFO: [Synth 8-6157] synthesizing module 'STATE_DETECTOR' [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/sources_1/imports/new/STATE_DETECTOR.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'STATE_DETECTOR' (3#1) [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/sources_1/imports/new/STATE_DETECTOR.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'STATE_DETECTOR' (2#1) [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/sources_1/imports/new/STATE_DETECTOR.v:23]
 INFO: [Synth 8-6157] synthesizing module 'MSG_FILTER' [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/sources_1/imports/new/MSG_FILTER.v:21]
 	Parameter TARGET bound to: 108'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000110011010 
-INFO: [Synth 8-6155] done synthesizing module 'MSG_FILTER' (4#1) [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/sources_1/imports/new/MSG_FILTER.v:21]
-INFO: [Synth 8-6155] done synthesizing module 'MODULE_CONTROLLER' (5#1) [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/sources_1/imports/new/MODULE_CONTROLLER.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_MODULE_CONTROLLER_0_0' (6#1) [c:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/bd/design_1/ip/design_1_MODULE_CONTROLLER_0_0/synth/design_1_MODULE_CONTROLLER_0_0.v:58]
+INFO: [Synth 8-6155] done synthesizing module 'MSG_FILTER' (3#1) [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/sources_1/imports/new/MSG_FILTER.v:21]
+INFO: [Synth 8-6155] done synthesizing module 'MODULE_CONTROLLER' (4#1) [C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/imports/sources_1/imports/new/MODULE_CONTROLLER.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_MODULE_CONTROLLER_0_0' (5#1) [c:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/bd/design_1/ip/design_1_MODULE_CONTROLLER_0_0/synth/design_1_MODULE_CONTROLLER_0_0.v:58]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 539.016 ; gain = 157.449
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 539.102 ; gain = 157.094
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -46,10 +44,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 539.016 ; gain = 157.449
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 539.102 ; gain = 157.094
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 539.016 ; gain = 157.449
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 539.102 ; gain = 157.094
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35ticsg324-1L
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -58,35 +56,34 @@ Processing XDC Constraints
 Initializing timing engine
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 843.711 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 850.031 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 843.711 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 850.031 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.039 . Memory (MB): peak = 846.520 ; gain = 2.809
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.042 . Memory (MB): peak = 853.023 ; gain = 2.992
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 846.520 ; gain = 464.953
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 853.023 ; gain = 471.016
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35ticsg324-1L
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 846.520 ; gain = 464.953
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 853.023 ; gain = 471.016
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 846.520 ; gain = 464.953
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 853.023 ; gain = 471.016
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5546] ROM "SP_TRG" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "STATE" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "ATTACK_STATE" won't be mapped to RAM because it is too sparse
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 846.520 ; gain = 464.953
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 853.023 ; gain = 471.016
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -100,20 +97,17 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     16 Bit       Adders := 1     
-	   2 Input     11 Bit       Adders := 1     
 +---Registers : 
 	              108 Bit    Registers := 1     
 	               16 Bit    Registers := 1     
-	               11 Bit    Registers := 1     
 	                6 Bit    Registers := 1     
 	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 4     
+	                1 Bit    Registers := 3     
 +---Muxes : 
 	   2 Input     16 Bit        Muxes := 1     
-	   2 Input     11 Bit        Muxes := 1     
 	   2 Input      6 Bit        Muxes := 2     
 	   2 Input      2 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 10    
+	   2 Input      1 Bit        Muxes := 8     
 	   3 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -122,16 +116,6 @@ Finished RTL Component Statistics
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
 Hierarchical RTL Component report 
-Module TIMING_CONTROLLER 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     11 Bit       Adders := 1     
-+---Registers : 
-	               11 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input     11 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 2     
 Module BUS_MSG_OBSERVER 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -175,12 +159,11 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-INFO: [Synth 8-5546] ROM "inst/nolabel_line43/SP_TRG" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-3917] design design_1_MODULE_CONTROLLER_0_0 has port DEBUG driven by constant 0
-INFO: [Synth 8-3917] design design_1_MODULE_CONTROLLER_0_0 has port DEBUG_1 driven by constant 0
-INFO: [Synth 8-3917] design design_1_MODULE_CONTROLLER_0_0 has port DEBUG_2 driven by constant 0
+INFO: [Synth 8-3917] design design_1_MODULE_CONTROLLER_0_0 has port debug driven by constant 0
+INFO: [Synth 8-3917] design design_1_MODULE_CONTROLLER_0_0 has port debug_1 driven by constant 0
+INFO: [Synth 8-3917] design design_1_MODULE_CONTROLLER_0_0 has port debug_2 driven by constant 0
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 846.520 ; gain = 464.953
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 853.023 ; gain = 471.016
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -192,13 +175,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 853.070 ; gain = 471.504
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 854.684 ; gain = 472.676
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 853.293 ; gain = 471.727
+Finished Timing Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 854.758 ; gain = 472.750
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -210,7 +193,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 873.027 ; gain = 491.461
+Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 874.535 ; gain = 492.527
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -234,7 +217,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 873.027 ; gain = 491.461
+Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 874.535 ; gain = 492.527
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -247,7 +230,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 873.027 ; gain = 491.461
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 874.535 ; gain = 492.527
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -259,25 +242,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 873.027 ; gain = 491.461
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 874.535 ; gain = 492.527
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 873.027 ; gain = 491.461
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 874.535 ; gain = 492.527
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 873.027 ; gain = 491.461
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 874.535 ; gain = 492.527
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 873.027 ; gain = 491.461
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 874.535 ; gain = 492.527
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -294,13 +277,13 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |CARRY4 |    13|
-|2     |LUT1   |     2|
-|3     |LUT2   |    17|
-|4     |LUT3   |    44|
-|5     |LUT4   |    10|
-|6     |LUT5   |     6|
-|7     |LUT6   |     7|
-|8     |FDRE   |   141|
+|2     |LUT1   |     1|
+|3     |LUT2   |    16|
+|4     |LUT3   |    40|
+|5     |LUT4   |     6|
+|6     |LUT5   |     3|
+|7     |LUT6   |     4|
+|8     |FDRE   |   129|
 |9     |FDSE   |     6|
 +------+-------+------+
 
@@ -308,40 +291,39 @@ Report Instance Areas:
 +------+---------------------+------------------+------+
 |      |Instance             |Module            |Cells |
 +------+---------------------+------------------+------+
-|1     |top                  |                  |   246|
-|2     |  inst               |MODULE_CONTROLLER |   246|
-|3     |    bus_msg_observer |BUS_MSG_OBSERVER  |   145|
-|4     |    msg_filter       |MSG_FILTER        |    56|
-|5     |    nolabel_line43   |TIMING_CONTROLLER |    28|
-|6     |    state_detector   |STATE_DETECTOR    |    17|
+|1     |top                  |                  |   218|
+|2     |  inst               |MODULE_CONTROLLER |   218|
+|3     |    bus_msg_observer |BUS_MSG_OBSERVER  |   144|
+|4     |    msg_filter       |MSG_FILTER        |    57|
+|5     |    state_detector   |STATE_DETECTOR    |    17|
 +------+---------------------+------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 873.027 ; gain = 491.461
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 874.535 ; gain = 492.527
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 873.027 ; gain = 183.957
-Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 873.027 ; gain = 491.461
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 874.535 ; gain = 178.605
+Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 874.535 ; gain = 492.527
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 13 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 879.008 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 875.684 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-30 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+26 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 879.008 ; gain = 511.020
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 879.008 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 875.684 ; gain = 506.938
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 875.684 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/car_security/vivado/CAN_controller/CAN_controller.runs/design_1_MODULE_CONTROLLER_0_0_synth_1/design_1_MODULE_CONTROLLER_0_0.dcp' has been generated.
-INFO: [Coretcl 2-1174] Renamed 5 cell refs.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 879.008 ; gain = 0.000
+INFO: [Coretcl 2-1174] Renamed 4 cell refs.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 875.684 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/car_security/vivado/CAN_controller/CAN_controller.runs/design_1_MODULE_CONTROLLER_0_0_synth_1/design_1_MODULE_CONTROLLER_0_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_1_MODULE_CONTROLLER_0_0_utilization_synth.rpt -pb design_1_MODULE_CONTROLLER_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Dec 10 13:51:01 2019...
+INFO: [Common 17-206] Exiting Vivado at Sat Dec 21 13:45:48 2019...

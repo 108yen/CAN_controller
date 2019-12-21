@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Sat Dec 21 00:34:41 2019
+| Date         : Sat Dec 21 13:51:34 2019
 | Host         : DESKTOP-NTANC38 running 64-bit major release  (build 9200)
 | Command      : report_drc -file design_1_wrapper_drc_routed.rpt -pb design_1_wrapper_drc_routed.pb -rpx design_1_wrapper_drc_routed.rpx
 | Design       : design_1_wrapper
@@ -49,7 +49,7 @@ Related violations: <none>
 
 IOSR-1#1 Warning
 IOB set reset sharing  
-IO can_signal_in connects to flops which have these design_1_i/MODULE_CONTROLLER_0/inst/state_detector/buffer[4]_i_1_n_0, design_1_i/MODULE_CONTROLLER_0/inst/state_detector/RESET_0[0], design_1_i/initializer_0/inst/rst_o set/reset signals.  For optimal IOB flop packing there should be only one set/reset signal coming into the IOB.
+IO can_signal_in connects to flops which have these design_1_i/MODULE_CONTROLLER_0/inst/state_detector/SR[0], design_1_i/MODULE_CONTROLLER_0/inst/state_detector/buffer[4]_i_1_n_0, design_1_i/initializer_0/inst/rst_o set/reset signals.  For optimal IOB flop packing there should be only one set/reset signal coming into the IOB.
 Related violations: <none>
 
 

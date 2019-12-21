@@ -55,37 +55,40 @@
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_1_MODULE_CONTROLLER_0_0 (
-  CLK,
-  RESET,
-  CAN_SIGNAL_IN,
-  TRIGER,
-  ATTACK_STATE,
-  DEBUG,
-  DEBUG_1,
-  DEBUG_2
+  clk,
+  reset,
+  can_signal_in,
+  sample_point,
+  triger,
+  attack_state,
+  debug,
+  debug_1,
+  debug_2
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK, ASSOCIATED_RESET RESET, FREQ_HZ 40000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0" *)
-(* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK CLK" *)
-input wire CLK;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RESET, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
-(* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RESET RST" *)
-input wire RESET;
-input wire CAN_SIGNAL_IN;
-output wire TRIGER;
-output wire ATTACK_STATE;
-output wire DEBUG;
-output wire DEBUG_1;
-output wire DEBUG_2;
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 100000000, PHASE 0.000, INSERT_VIP 0" *)
+(* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
+input wire clk;
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
+(* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset RST" *)
+input wire reset;
+input wire can_signal_in;
+input wire sample_point;
+output wire triger;
+output wire attack_state;
+output wire debug;
+output wire debug_1;
+output wire debug_2;
 
   MODULE_CONTROLLER inst (
-    .CLK(CLK),
-    .RESET(RESET),
-    .CAN_SIGNAL_IN(CAN_SIGNAL_IN),
-    .TRIGER(TRIGER),
-    .ATTACK_STATE(ATTACK_STATE),
-    .DEBUG(DEBUG),
-    .DEBUG_1(DEBUG_1),
-    .DEBUG_2(DEBUG_2)
+    .clk(clk),
+    .reset(reset),
+    .can_signal_in(can_signal_in),
+    .sample_point(sample_point),
+    .triger(triger),
+    .attack_state(attack_state),
+    .debug(debug),
+    .debug_1(debug_1),
+    .debug_2(debug_2)
   );
 endmodule

@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Sat Dec 21 00:32:32 2019
+//Date        : Sat Dec 21 13:50:05 2019
 //Host        : DESKTOP-NTANC38 running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -37,7 +37,6 @@ module design_1
   wire can_top_0_tx_o;
   wire clk_1;
   wire clk_wiz_0_clk_out2;
-  wire clk_wiz_0_clk_out3;
   wire clk_wiz_0_locked;
   wire initializer_0_ale_o;
   wire initializer_0_clk_o;
@@ -56,10 +55,11 @@ module design_1
   assign to_recessive = can_top_0_debug;
   assign triger = MODULE_CONTROLLER_0_TRIGER;
   design_1_MODULE_CONTROLLER_0_0 MODULE_CONTROLLER_0
-       (.CAN_SIGNAL_IN(can_signal_in_1),
-        .CLK(clk_wiz_0_clk_out3),
-        .RESET(clk_wiz_0_locked),
-        .TRIGER(MODULE_CONTROLLER_0_TRIGER));
+       (.can_signal_in(can_signal_in_1),
+        .clk(initializer_0_clk_o),
+        .reset(clk_wiz_0_locked),
+        .sample_point(can_top_0_sample_point),
+        .triger(MODULE_CONTROLLER_0_TRIGER));
   design_1_can_top_0_0 can_top_0
        (.ale_i(initializer_0_ale_o),
         .clk_i(initializer_0_clk_o),
@@ -77,7 +77,6 @@ module design_1
   design_1_clk_wiz_0_0 clk_wiz_0
        (.clk_in1(clk_1),
         .clk_out2(clk_wiz_0_clk_out2),
-        .clk_out3(clk_wiz_0_clk_out3),
         .locked(clk_wiz_0_locked));
   design_1_initializer_0_0 initializer_0
        (.ale_o(initializer_0_ale_o),
