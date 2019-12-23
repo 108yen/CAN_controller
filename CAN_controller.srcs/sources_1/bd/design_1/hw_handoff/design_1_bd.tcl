@@ -249,6 +249,7 @@ proc create_root_design { parentCell } {
    }
   
   # Create port connections
+  connect_bd_net -net ATTACK_MODULE_0_debug [get_bd_ports debug_0] [get_bd_pins ATTACK_MODULE_0/debug]
   connect_bd_net -net ATTACK_MODULE_0_to_dominant [get_bd_ports to_dominant] [get_bd_pins ATTACK_MODULE_0/to_dominant]
   connect_bd_net -net ATTACK_MODULE_0_to_recessive [get_bd_ports to_recessive] [get_bd_pins ATTACK_MODULE_0/to_recessive]
   connect_bd_net -net MODULE_CONTROLLER_0_TRIGER [get_bd_ports triger] [get_bd_pins MODULE_CONTROLLER_0/triger]
@@ -257,7 +258,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net can_signal_in_1 [get_bd_ports can_signal_in] [get_bd_pins ATTACK_MODULE_0/can_signal_in] [get_bd_pins MODULE_CONTROLLER_0/can_signal_in] [get_bd_pins can_top_0/rx_i]
   connect_bd_net -net can_top_0_clkout_o [get_bd_ports debug_2] [get_bd_pins can_top_0/clkout_o]
   connect_bd_net -net can_top_0_rsyn_t [get_bd_pins ATTACK_MODULE_0/rsyn_t] [get_bd_pins can_top_0/rsyn_t]
-  connect_bd_net -net can_top_0_sample_point [get_bd_ports debug_0] [get_bd_pins ATTACK_MODULE_0/sample_point] [get_bd_pins MODULE_CONTROLLER_0/sample_point] [get_bd_pins can_top_0/sample_point]
+  connect_bd_net -net can_top_0_sample_point [get_bd_pins ATTACK_MODULE_0/sample_point] [get_bd_pins MODULE_CONTROLLER_0/sample_point] [get_bd_pins can_top_0/sample_point]
   connect_bd_net -net can_top_0_sample_point_q [get_bd_ports debug_1] [get_bd_pins ATTACK_MODULE_0/sample_point_q] [get_bd_pins can_top_0/sample_point_q]
   connect_bd_net -net clk_1 [get_bd_ports clk] [get_bd_pins clk_wiz_0/clk_in1]
   connect_bd_net -net clk_wiz_0_clk_out2 [get_bd_pins clk_wiz_0/clk_out2] [get_bd_pins initializer_0/clk_i]

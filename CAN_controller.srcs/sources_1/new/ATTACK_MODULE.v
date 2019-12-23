@@ -30,7 +30,8 @@ module ATTACK_MODULE(
     sample_point_q,
     rsyn_t,
     to_dominant,
-    to_recessive
+    to_recessive,
+    debug
 );
 
     input clk;
@@ -43,6 +44,7 @@ module ATTACK_MODULE(
     input rsyn_t;
     output to_dominant;
     output to_recessive;
+    output debug;
 
     parameter UNATTACKED_MSG = 44'b00011001101000001001000001001110000101010110;    //ID:19A,DATA:1のメッセージ
     parameter ATTACKED_MSG =   44'b00011001101000001001000001000010010011001111;  //ID:19A,DATA:0のメッセージ
@@ -56,13 +58,14 @@ module ATTACK_MODULE(
     parameter MSG_L = 8'd44;
     
     reg [7:0] bit_cnt;
-    reg [7:0] attack_cnt; //クロック16MHzだと1カウント6.25ns,20カウントで1Tq
+    reg [7:0] attack_cnt; //クロック16MHzだと1カウント62.5ns ,20カウントで1Tq
     reg ex_attack;
     wire attack_bit; //攻撃bit
     
     assign attack_bit = UNATTACKED_MSG[MSG_L - 1 - bit_cnt] != ATTACKED_MSG[MSG_L - 1 - bit_cnt];
     assign to_dominant = ~(attack_state && (ex_attack && UNATTACKED_MSG[MSG_L - 1 - bit_cnt] == 1));
-    assign to_recessive = ~(attack_state && ((ex_attack && UNATTACKED_MSG[MSG_L - 1 - bit_cnt] == 0) || ex_rsyn));
+    assign to_recessive = ~(attack_state && ((ex_attack && UNATTACKED_MSG[MSG_L - 1 - bit_cnt] == 0)/* || ex_rsyn*/));
+    assign debug = attack_cnt[0];
     
     always @(posedge clk) begin
         if(~rst) begin
@@ -77,7 +80,7 @@ module ATTACK_MODULE(
     always @(posedge clk) begin
         if(~rst) begin
             attack_cnt <= 0;
-        end else if(attack_cnt == 8'd40) begin
+        end else if(attack_cnt == 8'd4) begin
             attack_cnt <= 0;
         end else if(ex_attack) begin
             attack_cnt <= attack_cnt + 1;
@@ -87,7 +90,7 @@ module ATTACK_MODULE(
     always @(posedge clk) begin
         if(~rst) begin
             ex_attack <= 0;
-        end else if(attack_cnt == 8'd40) begin
+        end else if(attack_cnt == 8'd4) begin
             ex_attack <= 0;
         end else if(attack_bit && sample_point_q) begin
             ex_attack <= 1;
@@ -101,7 +104,7 @@ module ATTACK_MODULE(
     always @(posedge clk) begin
         if(~rst) begin
             ex_rsyn <= 0;
-        end else if(rsyn_cnt == 8'd60) begin
+        end else if(rsyn_cnt == 8'd6) begin
             ex_rsyn <= 0;
         end else if(rsyn_t) begin
             ex_rsyn <= 1;
@@ -111,7 +114,7 @@ module ATTACK_MODULE(
     always @(posedge clk) begin
         if(~rst) begin
             rsyn_cnt <= 0;
-        end else if(rsyn_cnt == 8'd60) begin
+        end else if(rsyn_cnt == 8'd6) begin
             rsyn_cnt <= 0;
         end else if(ex_rsyn) begin
             rsyn_cnt <= rsyn_cnt + 1;

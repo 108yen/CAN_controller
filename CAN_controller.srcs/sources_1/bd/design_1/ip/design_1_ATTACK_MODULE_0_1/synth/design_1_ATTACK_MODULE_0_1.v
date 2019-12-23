@@ -65,7 +65,8 @@ module design_1_ATTACK_MODULE_0_1 (
   sample_point_q,
   rsyn_t,
   to_dominant,
-  to_recessive
+  to_recessive,
+  debug
 );
 
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, PHASE 0.000, INSERT_VIP 0" *)
@@ -82,6 +83,7 @@ input wire sample_point_q;
 input wire rsyn_t;
 output wire to_dominant;
 output wire to_recessive;
+output wire debug;
 
   ATTACK_MODULE #(
     .UNATTACKED_MSG(44'H19A0904E156),
@@ -97,6 +99,7 @@ output wire to_recessive;
     .sample_point_q(sample_point_q),
     .rsyn_t(rsyn_t),
     .to_dominant(to_dominant),
-    .to_recessive(to_recessive)
+    .to_recessive(to_recessive),
+    .debug(debug)
   );
 endmodule

@@ -360,6 +360,9 @@
           },
           "to_recessive": {
             "direction": "O"
+          },
+          "debug": {
+            "direction": "O"
           }
         }
       }
@@ -458,7 +461,6 @@
       "can_top_0_sample_point": {
         "ports": [
           "can_top_0/sample_point",
-          "debug_0",
           "MODULE_CONTROLLER_0/sample_point",
           "ATTACK_MODULE_0/sample_point"
         ]
@@ -491,6 +493,12 @@
         "ports": [
           "can_top_0/rsyn_t",
           "ATTACK_MODULE_0/rsyn_t"
+        ]
+      },
+      "ATTACK_MODULE_0_debug": {
+        "ports": [
+          "ATTACK_MODULE_0/debug",
+          "debug_0"
         ]
       }
     }
