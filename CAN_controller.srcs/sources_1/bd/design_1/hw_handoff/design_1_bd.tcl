@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# MODULE_CONTROLLER, can_top, initializer
+# ATTACK_MODULE, MODULE_CONTROLLER, can_top, initializer
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -176,6 +176,17 @@ proc create_root_design { parentCell } {
   set to_recessive [ create_bd_port -dir O to_recessive ]
   set triger [ create_bd_port -dir O triger ]
 
+  # Create instance: ATTACK_MODULE_0, and set properties
+  set block_name ATTACK_MODULE
+  set block_cell_name ATTACK_MODULE_0
+  if { [catch {set ATTACK_MODULE_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $ATTACK_MODULE_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
   # Create instance: MODULE_CONTROLLER_0, and set properties
   set block_name MODULE_CONTROLLER
   set block_cell_name MODULE_CONTROLLER_0
@@ -238,18 +249,21 @@ proc create_root_design { parentCell } {
    }
   
   # Create port connections
+  connect_bd_net -net ATTACK_MODULE_0_to_dominant [get_bd_ports to_dominant] [get_bd_pins ATTACK_MODULE_0/to_dominant]
+  connect_bd_net -net ATTACK_MODULE_0_to_recessive [get_bd_ports to_recessive] [get_bd_pins ATTACK_MODULE_0/to_recessive]
   connect_bd_net -net MODULE_CONTROLLER_0_TRIGER [get_bd_ports triger] [get_bd_pins MODULE_CONTROLLER_0/triger]
-  connect_bd_net -net can_signal_in_1 [get_bd_ports can_signal_in] [get_bd_pins MODULE_CONTROLLER_0/can_signal_in] [get_bd_pins can_top_0/rx_i]
+  connect_bd_net -net MODULE_CONTROLLER_0_attack_state [get_bd_pins ATTACK_MODULE_0/attack_state] [get_bd_pins MODULE_CONTROLLER_0/attack_state]
+  connect_bd_net -net MODULE_CONTROLLER_0_state [get_bd_pins ATTACK_MODULE_0/state] [get_bd_pins MODULE_CONTROLLER_0/state]
+  connect_bd_net -net can_signal_in_1 [get_bd_ports can_signal_in] [get_bd_pins ATTACK_MODULE_0/can_signal_in] [get_bd_pins MODULE_CONTROLLER_0/can_signal_in] [get_bd_pins can_top_0/rx_i]
   connect_bd_net -net can_top_0_clkout_o [get_bd_ports debug_2] [get_bd_pins can_top_0/clkout_o]
-  connect_bd_net -net can_top_0_debug [get_bd_ports to_recessive] [get_bd_pins can_top_0/debug]
-  connect_bd_net -net can_top_0_sample_point [get_bd_ports debug_0] [get_bd_pins MODULE_CONTROLLER_0/sample_point] [get_bd_pins can_top_0/sample_point]
-  connect_bd_net -net can_top_0_sample_point_q [get_bd_ports debug_1] [get_bd_pins can_top_0/sample_point_q]
-  connect_bd_net -net can_top_0_tx_o [get_bd_ports to_dominant] [get_bd_pins can_top_0/tx_o]
+  connect_bd_net -net can_top_0_rsyn_t [get_bd_pins ATTACK_MODULE_0/rsyn_t] [get_bd_pins can_top_0/rsyn_t]
+  connect_bd_net -net can_top_0_sample_point [get_bd_ports debug_0] [get_bd_pins ATTACK_MODULE_0/sample_point] [get_bd_pins MODULE_CONTROLLER_0/sample_point] [get_bd_pins can_top_0/sample_point]
+  connect_bd_net -net can_top_0_sample_point_q [get_bd_ports debug_1] [get_bd_pins ATTACK_MODULE_0/sample_point_q] [get_bd_pins can_top_0/sample_point_q]
   connect_bd_net -net clk_1 [get_bd_ports clk] [get_bd_pins clk_wiz_0/clk_in1]
   connect_bd_net -net clk_wiz_0_clk_out2 [get_bd_pins clk_wiz_0/clk_out2] [get_bd_pins initializer_0/clk_i]
-  connect_bd_net -net clk_wiz_0_locked [get_bd_pins MODULE_CONTROLLER_0/reset] [get_bd_pins clk_wiz_0/locked]
+  connect_bd_net -net clk_wiz_0_locked [get_bd_pins ATTACK_MODULE_0/rst] [get_bd_pins MODULE_CONTROLLER_0/reset] [get_bd_pins clk_wiz_0/locked]
   connect_bd_net -net initializer_0_ale_o [get_bd_pins can_top_0/ale_i] [get_bd_pins initializer_0/ale_o]
-  connect_bd_net -net initializer_0_clk_o [get_bd_pins MODULE_CONTROLLER_0/clk] [get_bd_pins can_top_0/clk_i] [get_bd_pins initializer_0/clk_o]
+  connect_bd_net -net initializer_0_clk_o [get_bd_pins ATTACK_MODULE_0/clk] [get_bd_pins MODULE_CONTROLLER_0/clk] [get_bd_pins can_top_0/clk_i] [get_bd_pins initializer_0/clk_o]
   connect_bd_net -net initializer_0_cs_can_o [get_bd_pins can_top_0/cs_can_i] [get_bd_pins initializer_0/cs_can_o]
   connect_bd_net -net initializer_0_port_0_io [get_bd_pins can_top_0/port_0_i] [get_bd_pins initializer_0/port_0_io]
   connect_bd_net -net initializer_0_rd_i [get_bd_pins can_top_0/rd_i] [get_bd_pins initializer_0/rd_o]

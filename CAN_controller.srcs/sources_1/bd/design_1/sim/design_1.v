@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Sat Dec 21 13:50:05 2019
+//Date        : Sun Dec 22 20:43:49 2019
 //Host        : DESKTOP-NTANC38 running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=4,numReposBlks=4,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=3,numPkgbdBlks=0,bdsource=USER,da_clkrst_cnt=2,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
+(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=5,numReposBlks=5,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=4,numPkgbdBlks=0,bdsource=USER,da_clkrst_cnt=2,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
 module design_1
    (can_signal_in,
     clk,
@@ -28,13 +28,16 @@ module design_1
   output to_recessive;
   output triger;
 
+  wire ATTACK_MODULE_0_to_dominant;
+  wire ATTACK_MODULE_0_to_recessive;
   wire MODULE_CONTROLLER_0_TRIGER;
+  wire MODULE_CONTROLLER_0_attack_state;
+  wire MODULE_CONTROLLER_0_state;
   wire can_signal_in_1;
   wire can_top_0_clkout_o;
-  wire can_top_0_debug;
+  wire can_top_0_rsyn_t;
   wire can_top_0_sample_point;
   wire can_top_0_sample_point_q;
-  wire can_top_0_tx_o;
   wire clk_1;
   wire clk_wiz_0_clk_out2;
   wire clk_wiz_0_locked;
@@ -51,28 +54,40 @@ module design_1
   assign debug_0 = can_top_0_sample_point;
   assign debug_1 = can_top_0_sample_point_q;
   assign debug_2 = can_top_0_clkout_o;
-  assign to_dominant = can_top_0_tx_o;
-  assign to_recessive = can_top_0_debug;
+  assign to_dominant = ATTACK_MODULE_0_to_dominant;
+  assign to_recessive = ATTACK_MODULE_0_to_recessive;
   assign triger = MODULE_CONTROLLER_0_TRIGER;
+  design_1_ATTACK_MODULE_0_1 ATTACK_MODULE_0
+       (.attack_state(MODULE_CONTROLLER_0_attack_state),
+        .can_signal_in(can_signal_in_1),
+        .clk(initializer_0_clk_o),
+        .rst(clk_wiz_0_locked),
+        .rsyn_t(can_top_0_rsyn_t),
+        .sample_point(can_top_0_sample_point),
+        .sample_point_q(can_top_0_sample_point_q),
+        .state(MODULE_CONTROLLER_0_state),
+        .to_dominant(ATTACK_MODULE_0_to_dominant),
+        .to_recessive(ATTACK_MODULE_0_to_recessive));
   design_1_MODULE_CONTROLLER_0_0 MODULE_CONTROLLER_0
-       (.can_signal_in(can_signal_in_1),
+       (.attack_state(MODULE_CONTROLLER_0_attack_state),
+        .can_signal_in(can_signal_in_1),
         .clk(initializer_0_clk_o),
         .reset(clk_wiz_0_locked),
         .sample_point(can_top_0_sample_point),
+        .state(MODULE_CONTROLLER_0_state),
         .triger(MODULE_CONTROLLER_0_TRIGER));
   design_1_can_top_0_0 can_top_0
        (.ale_i(initializer_0_ale_o),
         .clk_i(initializer_0_clk_o),
         .clkout_o(can_top_0_clkout_o),
         .cs_can_i(initializer_0_cs_can_o),
-        .debug(can_top_0_debug),
         .port_0_i(initializer_0_port_0_io),
         .rd_i(initializer_0_rd_i),
         .rst_i(initializer_0_rst_o),
+        .rsyn_t(can_top_0_rsyn_t),
         .rx_i(can_signal_in_1),
         .sample_point(can_top_0_sample_point),
         .sample_point_q(can_top_0_sample_point_q),
-        .tx_o(can_top_0_tx_o),
         .wr_i(initializer_0_wr_o));
   design_1_clk_wiz_0_0 clk_wiz_0
        (.clk_in1(clk_1),

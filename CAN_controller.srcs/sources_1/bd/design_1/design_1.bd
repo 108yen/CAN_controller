@@ -5,7 +5,8 @@
       "device": "xc7a35ticsg324-1L",
       "name": "design_1",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2018.3"
+      "tool_version": "2018.3",
+      "validated": "true"
     },
     "design_tree": {
       "clk_wiz_0": "",
@@ -19,8 +20,20 @@
         "type": "clk",
         "direction": "I",
         "parameters": {
+          "CLK_DOMAIN": {
+            "value": "design_1_clk",
+            "value_src": "default"
+          },
           "FREQ_HZ": {
             "value": "100000000"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
           }
         }
       },
@@ -155,7 +168,21 @@
             "direction": "O"
           },
           "clk_i": {
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
+              },
+              "FREQ_HZ": {
+                "value": "32000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              }
+            }
           },
           "rx_i": {
             "direction": "O"
@@ -227,6 +254,9 @@
           "sample_point_q": {
             "direction": "O"
           },
+          "rsyn_t": {
+            "direction": "O"
+          },
           "sampled_bit": {
             "direction": "O"
           },
@@ -246,7 +276,13 @@
         "ports": {
           "clk": {
             "type": "clk",
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              }
+            }
           },
           "reset": {
             "type": "rst",
@@ -289,7 +325,13 @@
         "ports": {
           "clk": {
             "type": "clk",
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              }
+            }
           },
           "rst": {
             "type": "rst",
@@ -308,6 +350,9 @@
             "direction": "I"
           },
           "sample_point_q": {
+            "direction": "I"
+          },
+          "rsyn_t": {
             "direction": "I"
           },
           "to_dominant": {
@@ -379,12 +424,6 @@
           "can_top_0/wr_i"
         ]
       },
-      "can_top_0_debug": {
-        "ports": [
-          "can_top_0/debug",
-          "to_recessive"
-        ]
-      },
       "initializer_0_cs_can_o": {
         "ports": [
           "initializer_0/cs_can_o",
@@ -407,12 +446,6 @@
         "ports": [
           "initializer_0/port_0_io",
           "can_top_0/port_0_i"
-        ]
-      },
-      "can_top_0_tx_o": {
-        "ports": [
-          "can_top_0/tx_o",
-          "to_dominant"
         ]
       },
       "can_top_0_sample_point_q": {
@@ -440,6 +473,24 @@
         "ports": [
           "MODULE_CONTROLLER_0/state",
           "ATTACK_MODULE_0/state"
+        ]
+      },
+      "ATTACK_MODULE_0_to_dominant": {
+        "ports": [
+          "ATTACK_MODULE_0/to_dominant",
+          "to_dominant"
+        ]
+      },
+      "ATTACK_MODULE_0_to_recessive": {
+        "ports": [
+          "ATTACK_MODULE_0/to_recessive",
+          "to_recessive"
+        ]
+      },
+      "can_top_0_rsyn_t": {
+        "ports": [
+          "can_top_0/rsyn_t",
+          "ATTACK_MODULE_0/rsyn_t"
         ]
       }
     }

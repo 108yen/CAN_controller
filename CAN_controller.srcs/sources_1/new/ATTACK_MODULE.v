@@ -28,6 +28,7 @@ module ATTACK_MODULE(
     attack_state,
     sample_point,
     sample_point_q,
+    rsyn_t,
     to_dominant,
     to_recessive
 );
@@ -39,6 +40,7 @@ module ATTACK_MODULE(
     input attack_state;
     input sample_point;
     input sample_point_q;
+    input rsyn_t;
     output to_dominant;
     output to_recessive;
 
@@ -59,8 +61,8 @@ module ATTACK_MODULE(
     wire attack_bit; //çUåÇbit
     
     assign attack_bit = UNATTACKED_MSG[MSG_L - 1 - bit_cnt] != ATTACKED_MSG[MSG_L - 1 - bit_cnt];
-    assign to_dominant = ~(ex_attack && UNATTACKED_MSG[MSG_L - 1 - bit_cnt] == 1);
-    assign to_recessive = ~(ex_attack && UNATTACKED_MSG[MSG_L - 1 - bit_cnt] == 0);
+    assign to_dominant = ~(attack_state && (ex_attack && UNATTACKED_MSG[MSG_L - 1 - bit_cnt] == 1));
+    assign to_recessive = ~(attack_state && ((ex_attack && UNATTACKED_MSG[MSG_L - 1 - bit_cnt] == 0) || ex_rsyn));
     
     always @(posedge clk) begin
         if(~rst) begin
@@ -75,21 +77,45 @@ module ATTACK_MODULE(
     always @(posedge clk) begin
         if(~rst) begin
             attack_cnt <= 0;
+        end else if(attack_cnt == 8'd40) begin
+            attack_cnt <= 0;
         end else if(ex_attack) begin
             attack_cnt <= attack_cnt + 1;
-        end else begin
-            attack_cnt <= 0;
         end
     end
     
     always @(posedge clk) begin
         if(~rst) begin
             ex_attack <= 0;
-        end else if(attack_bit && sample_point_q) begin
-            ex_attack <= 1;
         end else if(attack_cnt == 8'd40) begin
             ex_attack <= 0;
+        end else if(attack_bit && sample_point_q) begin
+            ex_attack <= 1;
         end
     end
-
+    
+    /*çƒìØä˙ópÇÃçUåÇêMçÜ*/
+    reg [7:0] rsyn_cnt;
+    reg ex_rsyn;
+    
+    always @(posedge clk) begin
+        if(~rst) begin
+            ex_rsyn <= 0;
+        end else if(rsyn_cnt == 8'd60) begin
+            ex_rsyn <= 0;
+        end else if(rsyn_t) begin
+            ex_rsyn <= 1;
+        end
+    end
+    
+    always @(posedge clk) begin
+        if(~rst) begin
+            rsyn_cnt <= 0;
+        end else if(rsyn_cnt == 8'd60) begin
+            rsyn_cnt <= 0;
+        end else if(ex_rsyn) begin
+            rsyn_cnt <= rsyn_cnt + 1;
+        end
+    end
+    
 endmodule
