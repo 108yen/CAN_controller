@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Mon Dec 23 11:13:10 2019
+//Date        : Mon Dec 23 11:53:12 2019
 //Host        : DESKTOP-NTANC38 running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -36,6 +36,7 @@ module design_1
   wire MODULE_CONTROLLER_0_state;
   wire can_signal_in_1;
   wire can_top_0_clkout_o;
+  wire can_top_0_go_sync;
   wire can_top_0_rsyn_t;
   wire can_top_0_sample_point;
   wire can_top_0_sample_point_q;
@@ -63,6 +64,7 @@ module design_1
         .can_signal_in(can_signal_in_1),
         .clk(initializer_0_clk_o),
         .debug(ATTACK_MODULE_0_debug),
+        .go_sync(can_top_0_go_sync),
         .rst(clk_wiz_0_locked),
         .rsyn_t(can_top_0_rsyn_t),
         .sample_point(can_top_0_sample_point),
@@ -83,6 +85,7 @@ module design_1
         .clk_i(initializer_0_clk_o),
         .clkout_o(can_top_0_clkout_o),
         .cs_can_i(initializer_0_cs_can_o),
+        .go_sync(can_top_0_go_sync),
         .port_0_i(initializer_0_port_0_io),
         .rd_i(initializer_0_rd_i),
         .rst_i(initializer_0_rst_o),

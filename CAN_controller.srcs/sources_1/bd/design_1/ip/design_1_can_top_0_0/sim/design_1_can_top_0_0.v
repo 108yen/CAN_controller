@@ -71,6 +71,7 @@ module design_1_can_top_0_0 (
   sample_point_q,
   rsyn_t,
   sampled_bit,
+  go_sync,
   debug
 );
 
@@ -90,6 +91,7 @@ output wire sample_point;
 output wire sample_point_q;
 output wire rsyn_t;
 output wire sampled_bit;
+output wire go_sync;
 output wire debug;
 
   can_top #(
@@ -111,6 +113,7 @@ output wire debug;
     .sample_point_q(sample_point_q),
     .rsyn_t(rsyn_t),
     .sampled_bit(sampled_bit),
+    .go_sync(go_sync),
     .debug(debug)
   );
 endmodule

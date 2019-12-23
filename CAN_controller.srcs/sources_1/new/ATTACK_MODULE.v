@@ -29,6 +29,7 @@ module ATTACK_MODULE(
     sample_point,
     sample_point_q,
     rsyn_t,
+    go_sync,
     to_dominant,
     to_recessive,
     debug
@@ -42,6 +43,7 @@ module ATTACK_MODULE(
     input sample_point;
     input sample_point_q;
     input rsyn_t;
+    input go_sync;
     output to_dominant;
     output to_recessive;
     output debug;
@@ -60,12 +62,19 @@ module ATTACK_MODULE(
     reg [7:0] bit_cnt;
     reg [7:0] attack_cnt; //クロック16MHzだと1カウント62.5ns ,20カウントで1Tq
     reg ex_attack;
+    reg value;
     wire attack_bit; //攻撃bit
     
     assign attack_bit = UNATTACKED_MSG[MSG_L - 1 - bit_cnt] != ATTACKED_MSG[MSG_L - 1 - bit_cnt];
-    assign to_dominant = ~(attack_state && (ex_attack && UNATTACKED_MSG[MSG_L - 1 - bit_cnt] == 1));
-    assign to_recessive = ~(attack_state && ((ex_attack && UNATTACKED_MSG[MSG_L - 1 - bit_cnt] == 0)/* || ex_rsyn*/));
-    assign debug = attack_cnt[0];
+    assign to_dominant = ~(attack_state && (ex_attack && value));
+    assign to_recessive = ~(attack_state && ((ex_attack && ~value)/* || ex_rsyn*/));
+    assign debug = go_sync;
+    
+    always @(posedge clk) begin
+        if(attack_bit && sample_point_q) begin
+            value <= UNATTACKED_MSG[MSG_L - 1 - bit_cnt];
+        end
+    end
     
     always @(posedge clk) begin
         if(~rst) begin

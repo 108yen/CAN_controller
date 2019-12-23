@@ -11,8 +11,8 @@
     "design_tree": {
       "clk_wiz_0": "",
       "initializer_0": "",
-      "can_top_0": "",
       "MODULE_CONTROLLER_0": "",
+      "can_top_0": "",
       "ATTACK_MODULE_0": ""
     },
     "ports": {
@@ -201,6 +201,55 @@
           }
         }
       },
+      "MODULE_CONTROLLER_0": {
+        "vlnv": "xilinx.com:module_ref:MODULE_CONTROLLER:1.0",
+        "xci_name": "design_1_MODULE_CONTROLLER_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "MODULE_CONTROLLER",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              }
+            }
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "can_signal_in": {
+            "direction": "I"
+          },
+          "sample_point": {
+            "direction": "I"
+          },
+          "triger": {
+            "direction": "O"
+          },
+          "state": {
+            "direction": "O"
+          },
+          "attack_state": {
+            "direction": "O"
+          },
+          "debug": {
+            "direction": "O"
+          },
+          "debug_1": {
+            "direction": "O"
+          },
+          "debug_2": {
+            "direction": "O"
+          }
+        }
+      },
       "can_top_0": {
         "vlnv": "xilinx.com:module_ref:can_top:1.0",
         "xci_name": "design_1_can_top_0_0",
@@ -260,56 +309,10 @@
           "sampled_bit": {
             "direction": "O"
           },
-          "debug": {
-            "direction": "O"
-          }
-        }
-      },
-      "MODULE_CONTROLLER_0": {
-        "vlnv": "xilinx.com:module_ref:MODULE_CONTROLLER:1.0",
-        "xci_name": "design_1_MODULE_CONTROLLER_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "MODULE_CONTROLLER",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "reset",
-                "value_src": "constant"
-              }
-            }
-          },
-          "reset": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "can_signal_in": {
-            "direction": "I"
-          },
-          "sample_point": {
-            "direction": "I"
-          },
-          "triger": {
-            "direction": "O"
-          },
-          "state": {
-            "direction": "O"
-          },
-          "attack_state": {
+          "go_sync": {
             "direction": "O"
           },
           "debug": {
-            "direction": "O"
-          },
-          "debug_1": {
-            "direction": "O"
-          },
-          "debug_2": {
             "direction": "O"
           }
         }
@@ -353,6 +356,9 @@
             "direction": "I"
           },
           "rsyn_t": {
+            "direction": "I"
+          },
+          "go_sync": {
             "direction": "I"
           },
           "to_dominant": {
@@ -402,16 +408,16 @@
       "initializer_0_clk_o": {
         "ports": [
           "initializer_0/clk_o",
-          "can_top_0/clk_i",
           "MODULE_CONTROLLER_0/clk",
+          "can_top_0/clk_i",
           "ATTACK_MODULE_0/clk"
         ]
       },
       "can_signal_in_1": {
         "ports": [
           "can_signal_in",
-          "can_top_0/rx_i",
           "MODULE_CONTROLLER_0/can_signal_in",
+          "can_top_0/rx_i",
           "ATTACK_MODULE_0/can_signal_in"
         ]
       },
@@ -499,6 +505,12 @@
         "ports": [
           "ATTACK_MODULE_0/debug",
           "debug_0"
+        ]
+      },
+      "can_top_0_go_sync": {
+        "ports": [
+          "can_top_0/go_sync",
+          "ATTACK_MODULE_0/go_sync"
         ]
       }
     }

@@ -64,6 +64,7 @@ module design_1_ATTACK_MODULE_0_1 (
   sample_point,
   sample_point_q,
   rsyn_t,
+  go_sync,
   to_dominant,
   to_recessive,
   debug
@@ -81,6 +82,7 @@ input wire attack_state;
 input wire sample_point;
 input wire sample_point_q;
 input wire rsyn_t;
+input wire go_sync;
 output wire to_dominant;
 output wire to_recessive;
 output wire debug;
@@ -98,6 +100,7 @@ output wire debug;
     .sample_point(sample_point),
     .sample_point_q(sample_point_q),
     .rsyn_t(rsyn_t),
+    .go_sync(go_sync),
     .to_dominant(to_dominant),
     .to_recessive(to_recessive),
     .debug(debug)
