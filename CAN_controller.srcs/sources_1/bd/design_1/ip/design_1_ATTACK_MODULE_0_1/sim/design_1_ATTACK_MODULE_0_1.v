@@ -89,7 +89,8 @@ output wire debug;
   ATTACK_MODULE #(
     .UNATTACKED_MSG(44'H19A0904E156),
     .ATTACKED_MSG(44'H19A090424CF),
-    .MSG_L(8'B00101100)
+    .MSG_L(8'B00101100),
+    .ATTACK_L(8'B00001010)
   ) inst (
     .clk(clk),
     .rst(rst),

@@ -58,16 +58,19 @@ module ATTACK_MODULE(
 //    parameter UNATTACKED_MSG = 47'b00000111101110000010100000101100100010001101010;    //ID:077,DATA:03のメッセージ
 //    parameter ATTACKED_MSG =   47'b00000111101110000010100000110010000101110011110;  //ID:077,DATA:04のメッセージ
     parameter MSG_L = 8'd44;
+    parameter ATTACK_L = 8'd10;
     
     reg [7:0] bit_cnt;
-    reg [7:0] attack_cnt; //クロック16MHzだと1カウント62.5ns ,20カウントで1Tq
+    reg [7:0] attack_cnt; //クロック16MHzだと1カウント62.5ns ,2カウントで1Tq
     reg ex_attack;
     reg value;
     wire attack_bit; //攻撃bit
+    wire attack_bit_q;
     
     assign attack_bit = UNATTACKED_MSG[MSG_L - 1 - bit_cnt] != ATTACKED_MSG[MSG_L - 1 - bit_cnt];
+    assign attack_bit_q = UNATTACKED_MSG[MSG_L - 1 - bit_cnt] != ATTACKED_MSG[MSG_L - 1 - bit_cnt];
     assign to_dominant = ~(attack_state && (ex_attack && value));
-    assign to_recessive = ~(attack_state && ((ex_attack && ~value)/* || ex_rsyn*/));
+    assign to_recessive = ~(attack_state && ((ex_attack && ~value) || ex_rsyn));
     assign debug = go_sync;
     
     always @(posedge clk) begin
@@ -89,7 +92,7 @@ module ATTACK_MODULE(
     always @(posedge clk) begin
         if(~rst) begin
             attack_cnt <= 0;
-        end else if(attack_cnt == 8'd4) begin
+        end else if(attack_cnt == ATTACK_L) begin
             attack_cnt <= 0;
         end else if(ex_attack) begin
             attack_cnt <= attack_cnt + 1;
@@ -99,7 +102,9 @@ module ATTACK_MODULE(
     always @(posedge clk) begin
         if(~rst) begin
             ex_attack <= 0;
-        end else if(attack_cnt == 8'd4) begin
+        end else if(~state) begin
+            ex_attack <= 0;
+        end else if(attack_cnt == ATTACK_L) begin
             ex_attack <= 0;
         end else if(attack_bit && sample_point_q) begin
             ex_attack <= 1;
@@ -113,9 +118,11 @@ module ATTACK_MODULE(
     always @(posedge clk) begin
         if(~rst) begin
             ex_rsyn <= 0;
+        end else if(~state) begin
+            ex_rsyn <= 0;
         end else if(rsyn_cnt == 8'd6) begin
             ex_rsyn <= 0;
-        end else if(rsyn_t) begin
+        end else if(rsyn_t && UNATTACKED_MSG[MSG_L - 1 - bit_cnt] == 0 && UNATTACKED_MSG[MSG_L - bit_cnt] == 1 && !attack_bit_q) begin
             ex_rsyn <= 1;
         end
     end

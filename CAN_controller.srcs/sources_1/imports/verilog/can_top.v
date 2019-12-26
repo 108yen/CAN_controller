@@ -309,8 +309,8 @@ output       rsyn_t;
 output       go_sync;
 output       debug;
 
-assign       sample_point_q = (i_can_btl.clk_en_q & i_can_btl.seg1 & (i_can_btl.quant_cnt == (time_segment1 + i_can_btl.delay - 1)));
-assign       rsyn_t = i_can_btl.seg2 && i_can_btl.quant_cnt[2:0] == time_segment2 - 2;  //2Tq‘O
+assign       sample_point_q = (i_can_btl.clk_en_q & i_can_btl.seg1 & (i_can_btl.quant_cnt == (time_segment1 + i_can_btl.delay - 2)));
+assign       rsyn_t = i_can_btl.seg2 && i_can_btl.quant_cnt[2:0] == time_segment2 - 4;  //2Tq‘O
 assign       go_sync = i_can_btl.go_sync;
 assign       debug = 1;
 //assign       debug = (cs_can_i & rd_i)? 1 : 0;
