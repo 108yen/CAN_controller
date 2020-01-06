@@ -26,7 +26,7 @@
 
 /* Bit Timing 0 register value */
 `define CAN_TIMING0_BRP                 6'h0    /* Baud rate prescaler (2*(value+1)) */
-`define CAN_TIMING0_SJW                 2'h2    /* SJW (value+1) */
+`define CAN_TIMING0_SJW                 2'h1    /* SJW (value+1) */
 
 /* Bit Timing 1 register value */
 `define CAN_TIMING1_TSEG1               4'h8    /* TSEG1 segment (value+1) */
