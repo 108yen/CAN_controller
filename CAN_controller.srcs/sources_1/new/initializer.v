@@ -26,7 +26,7 @@
 
 /* Bit Timing 0 register value */
 `define CAN_TIMING0_BRP                 6'h0    /* Baud rate prescaler (2*(value+1)) */
-`define CAN_TIMING0_SJW                 2'h2    /* SJW (value+1) */
+`define CAN_TIMING0_SJW                 2'h1    /* SJW (value+1) */
 
 /* Bit Timing 1 register value */
 `define CAN_TIMING1_TSEG1               4'h8    /* TSEG1 segment (value+1) */
@@ -56,7 +56,7 @@ output reg   ale_o=0;
 output reg   rd_o=0;
 output reg   wr_o=0;
 output reg   cs_can_o=0;
-output reg   clk_o=1;
+output reg   clk_o=0;
 input         clk_i;    //32MHz
 output        rx_i;
 input         tx_o;
@@ -79,23 +79,19 @@ always @(posedge clk_i) begin
 end
 
 reg[19:0] clk_i_counter = 0;
+reg init_num = 0;
 
 always @(posedge clk_i) begin
     if(clk_i_counter == 20'd200000) begin
-//        clk_i_counter <= 0;
+        if(!init_num) begin
+            clk_i_counter <= 0;
+            init_num <= 1;
+        end
     end else begin
         clk_i_counter <= clk_i_counter + 1;
     end
 end
 
-//reg [19:0] interbal=20'd2;
-//reg [19:0] rst_time=20'd7;
-//reg [19:0] base_time=20'd13;
-//reg [19:0] cs_can_time=20'd1;
-//reg [19:0] ale_time=20'd2;
-//reg [19:0] port_time=20'd3;
-//reg [19:0] wr_time=20'd5;
-//wire [19:0] st_write_reg;
 parameter [19:0] timing1=20'd2;
 parameter [19:0] timing2=20'd3+timing1;
 parameter [19:0] timing3=20'd4+timing2;
@@ -111,12 +107,6 @@ parameter [19:0] wr5=wr4+timing4+20'd2000;
 always @(posedge clk_i) begin
     case (clk_i_counter)
         20'd0:begin
-            rst_o <= 1;
-        end
-        20'd10:begin
-            rst_o <= 0;
-        end
-        20'd100:begin
             rst_o <= 1;
         end
         20'd200:begin

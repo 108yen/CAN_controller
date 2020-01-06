@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xC387CEA7DF968F2",
+      "boundary_crc": "0x96B7762927301676",
       "device": "xc7a35ticsg324-1L",
       "name": "design_1",
       "synth_flow_mode": "Hierarchical",
@@ -12,7 +12,8 @@
       "clk_wiz_0": "",
       "MODULE_CONTROLLER_0": "",
       "can_top_0": "",
-      "initializer_0": ""
+      "initializer_0": "",
+      "ATTACK_MODULE_0": ""
     },
     "ports": {
       "clk": {
@@ -39,7 +40,7 @@
       "can_signal_in": {
         "direction": "I"
       },
-      "can_signal_out": {
+      "to_dominant": {
         "direction": "O"
       },
       "triger": {
@@ -143,48 +144,42 @@
           "boundary_crc": "0x0"
         },
         "ports": {
-          "CLK": {
+          "clk": {
             "type": "clk",
             "direction": "I",
             "parameters": {
               "ASSOCIATED_RESET": {
-                "value": "RESET",
+                "value": "reset",
                 "value_src": "constant"
-              },
-              "CLK_DOMAIN": {
-                "value": "/clk_wiz_0_clk_out1",
-                "value_src": "ip_prop"
-              },
-              "FREQ_HZ": {
-                "value": "40000000",
-                "value_src": "ip_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "ip_prop"
               }
             }
           },
-          "RESET": {
+          "reset": {
             "type": "rst",
             "direction": "I"
           },
-          "CAN_SIGNAL_IN": {
+          "can_signal_in": {
             "direction": "I"
           },
-          "TRIGER": {
+          "sample_point": {
+            "direction": "I"
+          },
+          "triger": {
             "direction": "O"
           },
-          "ATTACK_STATE": {
+          "state": {
             "direction": "O"
           },
-          "DEBUG": {
+          "attack_state": {
             "direction": "O"
           },
-          "DEBUG_1": {
+          "debug": {
             "direction": "O"
           },
-          "DEBUG_2": {
+          "debug_1": {
+            "direction": "O"
+          },
+          "debug_2": {
             "direction": "O"
           }
         }
@@ -209,11 +204,6 @@
           },
           "wr_i": {
             "direction": "I"
-          },
-          "port_0_io": {
-            "direction": "IO",
-            "left": "7",
-            "right": "0"
           },
           "cs_can_i": {
             "direction": "I"
@@ -244,22 +234,16 @@
           "sample_point": {
             "direction": "O"
           },
+          "sample_point_q": {
+            "direction": "O"
+          },
+          "rsyn_t": {
+            "direction": "O"
+          },
           "sampled_bit": {
             "direction": "O"
           },
-          "cs_o": {
-            "direction": "O"
-          },
-          "we_o": {
-            "direction": "O"
-          },
-          "wr_i_q_o": {
-            "direction": "O"
-          },
-          "addr_o": {
-            "direction": "O"
-          },
-          "debug_addr": {
+          "go_sync": {
             "direction": "O"
           },
           "debug": {
@@ -332,6 +316,61 @@
             "direction": "O"
           }
         }
+      },
+      "ATTACK_MODULE_0": {
+        "vlnv": "xilinx.com:module_ref:ATTACK_MODULE:1.0",
+        "xci_name": "design_1_ATTACK_MODULE_0_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ATTACK_MODULE",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "can_signal_in": {
+            "direction": "I"
+          },
+          "state": {
+            "direction": "I"
+          },
+          "attack_state": {
+            "direction": "I"
+          },
+          "sample_point": {
+            "direction": "I"
+          },
+          "sample_point_q": {
+            "direction": "I"
+          },
+          "rsyn_t": {
+            "direction": "I"
+          },
+          "go_sync": {
+            "direction": "I"
+          },
+          "to_dominant": {
+            "direction": "O"
+          },
+          "to_recessive": {
+            "direction": "O"
+          },
+          "debug": {
+            "direction": "O"
+          }
+        }
       }
     },
     "nets": {
@@ -349,7 +388,7 @@
       },
       "MODULE_CONTROLLER_0_TRIGER": {
         "ports": [
-          "MODULE_CONTROLLER_0/TRIGER",
+          "MODULE_CONTROLLER_0/triger",
           "triger"
         ]
       },
@@ -359,29 +398,27 @@
           "debug_2"
         ]
       },
-      "clk_wiz_0_clk_out3": {
-        "ports": [
-          "clk_wiz_0/clk_out3",
-          "MODULE_CONTROLLER_0/CLK"
-        ]
-      },
       "clk_wiz_0_locked": {
         "ports": [
           "clk_wiz_0/locked",
-          "MODULE_CONTROLLER_0/RESET"
+          "MODULE_CONTROLLER_0/reset",
+          "ATTACK_MODULE_0/rst"
         ]
       },
       "initializer_0_clk_o": {
         "ports": [
           "initializer_0/clk_o",
-          "can_top_0/clk_i"
+          "MODULE_CONTROLLER_0/clk",
+          "can_top_0/clk_i",
+          "ATTACK_MODULE_0/clk"
         ]
       },
       "can_signal_in_1": {
         "ports": [
           "can_signal_in",
-          "MODULE_CONTROLLER_0/CAN_SIGNAL_IN",
-          "can_top_0/rx_i"
+          "MODULE_CONTROLLER_0/can_signal_in",
+          "can_top_0/rx_i",
+          "ATTACK_MODULE_0/can_signal_in"
         ]
       },
       "clk_wiz_0_clk_out2": {
@@ -396,12 +433,6 @@
           "can_top_0/wr_i"
         ]
       },
-      "can_top_0_debug": {
-        "ports": [
-          "can_top_0/debug",
-          "to_recessive"
-        ]
-      },
       "initializer_0_cs_can_o": {
         "ports": [
           "initializer_0/cs_can_o",
@@ -412,18 +443,6 @@
         "ports": [
           "initializer_0/rst_o",
           "can_top_0/rst_i"
-        ]
-      },
-      "can_top_0_addr": {
-        "ports": [
-          "can_top_0/addr_o",
-          "can_signal_out"
-        ]
-      },
-      "initializer_0_debug": {
-        "ports": [
-          "initializer_0/debug",
-          "debug_1"
         ]
       },
       "initializer_0_ale_o": {
@@ -438,10 +457,60 @@
           "can_top_0/port_0_i"
         ]
       },
+      "can_top_0_sample_point_q": {
+        "ports": [
+          "can_top_0/sample_point_q",
+          "debug_1",
+          "ATTACK_MODULE_0/sample_point_q"
+        ]
+      },
       "can_top_0_sample_point": {
         "ports": [
           "can_top_0/sample_point",
+          "MODULE_CONTROLLER_0/sample_point",
+          "ATTACK_MODULE_0/sample_point"
+        ]
+      },
+      "MODULE_CONTROLLER_0_attack_state": {
+        "ports": [
+          "MODULE_CONTROLLER_0/attack_state",
+          "ATTACK_MODULE_0/attack_state"
+        ]
+      },
+      "MODULE_CONTROLLER_0_state": {
+        "ports": [
+          "MODULE_CONTROLLER_0/state",
+          "ATTACK_MODULE_0/state"
+        ]
+      },
+      "ATTACK_MODULE_0_to_dominant": {
+        "ports": [
+          "ATTACK_MODULE_0/to_dominant",
+          "to_dominant"
+        ]
+      },
+      "ATTACK_MODULE_0_to_recessive": {
+        "ports": [
+          "ATTACK_MODULE_0/to_recessive",
+          "to_recessive"
+        ]
+      },
+      "can_top_0_rsyn_t": {
+        "ports": [
+          "can_top_0/rsyn_t",
+          "ATTACK_MODULE_0/rsyn_t"
+        ]
+      },
+      "ATTACK_MODULE_0_debug": {
+        "ports": [
+          "ATTACK_MODULE_0/debug",
           "debug_0"
+        ]
+      },
+      "can_top_0_go_sync": {
+        "ports": [
+          "can_top_0/go_sync",
+          "ATTACK_MODULE_0/go_sync"
         ]
       }
     }

@@ -228,24 +228,22 @@ module can_top
     ale_i,
     rd_i,
     wr_i,
-    port_0_io,
+//    port_0_io,
     cs_can_i,
   `endif
-  clk_i,
-  rx_i,
-  tx_o,
-  bus_off_on,
-  irq_on,
-  clkout_o,
-  port_0_i,
-  sample_point,
-  sampled_bit,
-  cs_o,
-  we_o,
-  wr_i_q_o,
-  addr_o,
-  debug_addr,
-  debug
+    clk_i,
+    rx_i,
+    tx_o,
+    bus_off_on,
+    irq_on,
+    clkout_o,
+    port_0_i,
+    sample_point,
+    sample_point_q,
+    rsyn_t,
+    sampled_bit,
+    go_sync,
+    debug
 
   // Bist
 `ifdef CAN_BIST
@@ -287,9 +285,10 @@ parameter Tp = 1;
   input        ale_i;
   input        rd_i;
   input        wr_i;
-  inout  [7:0] port_0_io;
+//  inout  [7:0] port_0_io;
   input        cs_can_i;
-  
+
+  wire   [7:0] port_0_io;  
   reg    [7:0] addr_latched;
   reg          wr_i_q;
   reg          rd_i_q;
@@ -305,21 +304,16 @@ output       clkout_o;
 input  [7:0] port_0_i;
 output       sample_point;
 output       sampled_bit;
-output       cs_o;
-output       we_o;
-output       wr_i_q_o;
-output       addr_o;
-output       debug_addr;
+output       sample_point_q;
+output       rsyn_t;
+output       go_sync;
 output       debug;
 
-assign       cs_o = cs;
-//assign       cs_o = (wr_i&(~wr_i_q)) & cs_can_i;
-assign       we_o = i_can_registers.we;
-assign       wr_i_q_o = wr_i_q;
-assign       addr_o = addr_latched==0;
-assign       debug = port_0_io==8'd6;
+assign       sample_point_q = (i_can_btl.clk_en_q & i_can_btl.seg1 & (i_can_btl.quant_cnt == (time_segment1 + i_can_btl.delay - 2)));
+assign       rsyn_t = i_can_btl.seg2 && i_can_btl.quant_cnt[2:0] == time_segment2 - 4;  //2Tq‘O
+assign       go_sync = i_can_btl.go_sync;
+assign       debug = 1;
 //assign       debug = (cs_can_i & rd_i)? 1 : 0;
-reg         debug_addr=0;
 
 // Bist
 `ifdef CAN_BIST
@@ -783,9 +777,9 @@ begin
   if (cs & (~we))
     begin
       if (data_out_fifo_selected)
-        data_out <=#Tp data_out_fifo;
+        data_out <= data_out_fifo;
       else
-        data_out <=#Tp data_out_regs;
+        data_out <= data_out_regs;
     end
 end
 
@@ -800,8 +794,8 @@ begin
     end
   else
     begin
-      rx_sync_tmp <=#Tp rx_i;
-      rx_sync     <=#Tp rx_sync_tmp;
+      rx_sync_tmp <= rx_i;
+      rx_sync     <= rx_sync_tmp;
     end
 end
 
@@ -871,7 +865,6 @@ end
     else if (ale_i)
       begin
         addr_latched <= port_0_io;
-        debug_addr<=~debug_addr;
       end
   end
 
