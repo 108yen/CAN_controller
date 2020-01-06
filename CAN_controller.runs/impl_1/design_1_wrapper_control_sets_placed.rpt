@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Fri Dec 27 01:54:27 2019
+| Date         : Tue Jan  7 03:01:43 2020
 | Host         : DESKTOP-NTANC38 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file design_1_wrapper_control_sets_placed.rpt
 | Design       : design_1_wrapper
@@ -24,7 +24,7 @@ Table of Contents
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
 | Number of unique control sets                            |    36 |
-| Unused register locations in slices containing registers |    59 |
+| Unused register locations in slices containing registers |    52 |
 +----------------------------------------------------------+-------+
 
 
@@ -36,11 +36,12 @@ Table of Contents
 +--------+--------------+
 |      3 |            1 |
 |      4 |            2 |
-|      5 |            2 |
+|      5 |            1 |
 |      6 |            3 |
+|      7 |            2 |
 |      8 |           19 |
 |      9 |            1 |
-|     10 |            2 |
+|     10 |            1 |
 |     14 |            1 |
 |     15 |            1 |
 |    16+ |            4 |
@@ -53,12 +54,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              20 |           12 |
-| No           | No                    | Yes                    |             132 |           67 |
+| No           | No                    | No                     |              17 |           12 |
+| No           | No                    | Yes                    |             132 |           65 |
 | No           | Yes                   | No                     |               0 |            0 |
-| Yes          | No                    | No                     |             140 |           40 |
-| Yes          | No                    | Yes                    |              63 |           28 |
-| Yes          | Yes                   | No                     |             170 |           40 |
+| Yes          | No                    | No                     |             147 |           43 |
+| Yes          | No                    | Yes                    |              63 |           26 |
+| Yes          | Yes                   | No                     |             165 |           37 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -69,41 +70,41 @@ Table of Contents
 |             Clock Signal             |                                 Enable Signal                                |                           Set/Reset Signal                           | Slice Load Count | Bel Load Count |
 +--------------------------------------+------------------------------------------------------------------------------+----------------------------------------------------------------------+------------------+----------------+
 |  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_btl/out                                      | design_1_i/initializer_0/inst/rst_o                                  |                2 |              3 |
-|  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_bsp/data_len0                                | design_1_i/initializer_0/inst/rst_o                                  |                1 |              4 |
 |  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_btl/E[0]                                     | design_1_i/initializer_0/inst/rst_o                                  |                2 |              4 |
-|  design_1_i/clk_wiz_0/inst/clk_out2  | design_1_i/initializer_0/inst/port_0_o[6]_i_2_n_0                            | design_1_i/initializer_0/inst/port_0_o[6]_i_1_n_0                    |                2 |              5 |
-|  design_1_i/initializer_0/inst/clk_o | design_1_i/MODULE_CONTROLLER_0/inst/state_detector/buffer[4]_i_2_n_0         | design_1_i/MODULE_CONTROLLER_0/inst/state_detector/buffer[4]_i_1_n_0 |                1 |              5 |
-|  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_bsp/bit_cnt[5]_i_1_n_0                       | design_1_i/initializer_0/inst/rst_o                                  |                4 |              6 |
+|  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_bsp/data_len0                                | design_1_i/initializer_0/inst/rst_o                                  |                1 |              4 |
+|  design_1_i/initializer_0/inst/clk_o | design_1_i/MODULE_CONTROLLER_0/inst/state_detector/buffer[4]_i_2_n_0         | design_1_i/MODULE_CONTROLLER_0/inst/state_detector/buffer[4]_i_1_n_0 |                2 |              5 |
+|  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_btl/E[0]                                     | design_1_i/ATTACK_MODULE_0/inst/bit_cnt[5]_i_1_n_0                   |                2 |              6 |
+|  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_bsp/bit_cnt[5]_i_1_n_0                       | design_1_i/initializer_0/inst/rst_o                                  |                3 |              6 |
 |  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_bsp/tx_pointer[5]_i_1_n_0                    | design_1_i/initializer_0/inst/rst_o                                  |                3 |              6 |
-|  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_btl/E[0]                                     | design_1_i/ATTACK_MODULE_0/inst/bit_cnt[5]_i_1_n_0                   |                1 |              6 |
-|  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_registers/MODE_REG0/data_out_reg[0]_13[0]    |                                                                      |                2 |              8 |
-|  design_1_i/initializer_0/inst/clk_o | design_1_i/ATTACK_MODULE_0/inst/rsyn_cnt_1                                   | design_1_i/ATTACK_MODULE_0/inst/attack_cnt[7]_i_1_n_0                |                2 |              8 |
-|  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_registers/MODE_REG0/data_out_reg[0]_11[0]    |                                                                      |                3 |              8 |
-|  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_registers/MODE_REG0/data_out_reg[0]_10[0]    |                                                                      |                3 |              8 |
-|  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_registers/MODE_REG0/addr_latched_reg[0]_5[0] |                                                                      |                3 |              8 |
+|  design_1_i/clk_wiz_0/inst/clk_out2  |                                                                              |                                                                      |                6 |              7 |
+|  design_1_i/clk_wiz_0/inst/clk_out2  | design_1_i/initializer_0/inst/port_0_o[7]_i_1_n_0                            |                                                                      |                2 |              7 |
 |  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_registers/MODE_REG0/addr_latched_reg[1]_8[0] |                                                                      |                2 |              8 |
-|  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_registers/MODE_REG0/addr_latched_reg[1]_7[0] |                                                                      |                2 |              8 |
-|  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_registers/MODE_REG0/addr_latched_reg[0]_4[0] |                                                                      |                2 |              8 |
-|  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_registers/MODE_REG0/addr_latched_reg[1]_1[0] |                                                                      |                1 |              8 |
 |  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_registers/MODE_REG0/E[0]                     |                                                                      |                2 |              8 |
-|  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_registers/MODE_REG0/addr_latched_reg[1]_6[0] |                                                                      |                2 |              8 |
-|  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_registers/MODE_REG0/addr_latched_reg[0]_1[0] |                                                                      |                3 |              8 |
-|  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_registers/MODE_REG0/addr_latched_reg[0]_3[0] |                                                                      |                3 |              8 |
-|  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_registers/MODE_REG0/addr_latched_reg[1]_9[0] |                                                                      |                2 |              8 |
-|  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_registers/MODE_REG0/data_out_reg[0]_12[0]    |                                                                      |                2 |              8 |
-|  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_registers/MODE_REG0/data_out_reg[0]_9[0]     |                                                                      |                2 |              8 |
+|  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_registers/MODE_REG0/data_out_reg[0]_10[0]    |                                                                      |                3 |              8 |
 |  design_1_i/initializer_0/inst/clk_o | design_1_i/ATTACK_MODULE_0/inst/attack_cnt_0                                 | design_1_i/ATTACK_MODULE_0/inst/attack_cnt[7]_i_1_n_0                |                3 |              8 |
-|  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_bsp/rx_err_cnt[7]_i_1_n_0                    | design_1_i/initializer_0/inst/rst_o                                  |                6 |              8 |
+|  design_1_i/initializer_0/inst/clk_o | design_1_i/ATTACK_MODULE_0/inst/rsyn_cnt_1                                   | design_1_i/ATTACK_MODULE_0/inst/attack_cnt[7]_i_1_n_0                |                2 |              8 |
+|  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_registers/MODE_REG0/data_out_reg[0]_9[0]     |                                                                      |                2 |              8 |
+|  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_registers/MODE_REG0/data_out_reg[0]_12[0]    |                                                                      |                3 |              8 |
+|  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_registers/MODE_REG0/data_out_reg[0]_11[0]    |                                                                      |                3 |              8 |
+|  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_bsp/rx_err_cnt[7]_i_1_n_0                    | design_1_i/initializer_0/inst/rst_o                                  |                4 |              8 |
+|  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_registers/MODE_REG0/data_out_reg[0]_13[0]    |                                                                      |                2 |              8 |
 |  design_1_i/initializer_0/inst/clk_o | design_1_i/initializer_0/inst/ale_o                                          | design_1_i/initializer_0/inst/rst_o                                  |                2 |              8 |
-|  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_bsp/tx_err_cnt[8]_i_1_n_0                    | design_1_i/initializer_0/inst/rst_o                                  |                5 |              9 |
-|  design_1_i/clk_wiz_0/inst/clk_out2  |                                                                              |                                                                      |                8 |             10 |
-|  design_1_i/initializer_0/inst/clk_o |                                                                              |                                                                      |                4 |             10 |
-|  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_bsp/i_can_crc_rx/enable0                     | design_1_i/can_top_0/inst/i_can_bsp/i_can_crc_rx/go_crc_enable       |                4 |             14 |
+|  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_registers/MODE_REG0/addr_latched_reg[0]_4[0] |                                                                      |                2 |              8 |
+|  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_registers/MODE_REG0/addr_latched_reg[0]_3[0] |                                                                      |                2 |              8 |
+|  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_registers/MODE_REG0/addr_latched_reg[0]_5[0] |                                                                      |                3 |              8 |
+|  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_registers/MODE_REG0/addr_latched_reg[1]_1[0] |                                                                      |                2 |              8 |
+|  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_registers/MODE_REG0/addr_latched_reg[1]_7[0] |                                                                      |                2 |              8 |
+|  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_registers/MODE_REG0/addr_latched_reg[0]_1[0] |                                                                      |                3 |              8 |
+|  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_registers/MODE_REG0/addr_latched_reg[1]_6[0] |                                                                      |                2 |              8 |
+|  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_registers/MODE_REG0/addr_latched_reg[1]_9[0] |                                                                      |                2 |              8 |
+|  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_bsp/tx_err_cnt[8]_i_1_n_0                    | design_1_i/initializer_0/inst/rst_o                                  |                6 |              9 |
+|  design_1_i/initializer_0/inst/clk_o |                                                                              |                                                                      |                6 |             10 |
+|  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_bsp/i_can_crc_rx/enable0                     | design_1_i/can_top_0/inst/i_can_bsp/i_can_crc_rx/go_crc_enable       |                3 |             14 |
 |  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_bsp/crc_in0                                  | design_1_i/initializer_0/inst/rst_o                                  |                3 |             15 |
 |  design_1_i/initializer_0/inst/clk_o | design_1_i/MODULE_CONTROLLER_0/inst/msg_filter/counter                       | design_1_i/MODULE_CONTROLLER_0/inst/msg_filter/p_0_in                |                4 |             16 |
 |  design_1_i/clk_wiz_0/inst/clk_out2  | design_1_i/initializer_0/inst/clk_i_counter[19]_i_1_n_0                      |                                                                      |                6 |             20 |
-|  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_btl/E[0]                                     | design_1_i/MODULE_CONTROLLER_0/inst/state_detector/SR[0]             |               23 |            108 |
-|  design_1_i/initializer_0/inst/clk_o |                                                                              | design_1_i/initializer_0/inst/rst_o                                  |               67 |            132 |
+|  design_1_i/initializer_0/inst/clk_o | design_1_i/can_top_0/inst/i_can_btl/E[0]                                     | design_1_i/MODULE_CONTROLLER_0/inst/state_detector/SR[0]             |               21 |            108 |
+|  design_1_i/initializer_0/inst/clk_o |                                                                              | design_1_i/initializer_0/inst/rst_o                                  |               65 |            132 |
 +--------------------------------------+------------------------------------------------------------------------------+----------------------------------------------------------------------+------------------+----------------+
 
 
