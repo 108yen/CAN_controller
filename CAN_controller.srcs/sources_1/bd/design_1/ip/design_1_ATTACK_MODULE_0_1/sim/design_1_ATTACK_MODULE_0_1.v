@@ -87,10 +87,10 @@ output wire to_recessive;
 output wire debug;
 
   ATTACK_MODULE #(
-    .UNATTACKED_MSG(44'H19A090424CF),
-    .ATTACKED_MSG(44'H19A0904E156),
-    .MSG_L(8'B00101100),
-    .ATTACK_L(8'B00010000),
+    .UNATTACKED_MSG(48'H07B82826FAC6),
+    .ATTACKED_MSG(48'H07B8282AA41E),
+    .MSG_L(8'B00110000),
+    .ATTACK_L(8'B00010010),
     .RSYN_L(8'B00000110)
   ) inst (
     .clk(clk),

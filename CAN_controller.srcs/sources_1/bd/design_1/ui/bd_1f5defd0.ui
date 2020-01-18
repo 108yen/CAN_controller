@@ -17,27 +17,27 @@ preplace inst clk_wiz_0 -pg 1 -lvl 1 -y 100 -defaultsOSRD
 preplace inst initializer_0 -pg 1 -lvl 2 -y 330 -defaultsOSRD
 preplace netloc ATTACK_MODULE_0_to_recessive 1 5 1 NJ
 preplace netloc ATTACK_MODULE_0_debug 1 5 1 NJ
-preplace netloc MODULE_CONTROLLER_0_attack_state 1 4 1 1080
-preplace netloc can_top_0_sample_point_q 1 3 3 N 350 1090 470 NJ
-preplace netloc clk_wiz_0_locked 1 1 4 NJ 130 NJ 130 770 250 NJ
+preplace netloc MODULE_CONTROLLER_0_attack_state 1 4 1 1130
+preplace netloc can_top_0_sample_point_q 1 3 3 N 350 1140 470 NJ
+preplace netloc clk_wiz_0_locked 1 1 4 NJ 130 NJ 130 810 250 NJ
 preplace netloc ATTACK_MODULE_0_to_dominant 1 5 1 NJ
-preplace netloc can_top_0_clkout_o 1 3 3 NJ 310 1070J 450 NJ
-preplace netloc can_top_0_sample_point 1 3 2 780 330 NJ
+preplace netloc can_top_0_clkout_o 1 3 3 NJ 310 1120J 450 NJ
+preplace netloc can_top_0_sample_point 1 3 2 820 330 NJ
 preplace netloc initializer_0_cs_can_o 1 2 1 N
 preplace netloc can_top_0_rsyn_t 1 3 2 N 370 NJ
-preplace netloc MODULE_CONTROLLER_0_state 1 4 1 1100
+preplace netloc MODULE_CONTROLLER_0_state 1 4 1 1150
 preplace netloc initializer_0_wr_o 1 2 1 N
-preplace netloc can_signal_in_1 1 0 5 NJ 190 NJ 190 480 190 790 220 1090
+preplace netloc can_signal_in_1 1 0 5 NJ 190 NJ 190 500 190 830 220 1140
 preplace netloc MODULE_CONTROLLER_0_TRIGER 1 4 2 NJ 60 NJ
 preplace netloc clk_1 1 0 1 NJ
-preplace netloc initializer_0_port_0_io 1 2 1 460
-preplace netloc initializer_0_clk_o 1 2 3 470 490 760 230 NJ
+preplace netloc initializer_0_port_0_io 1 2 1 480
+preplace netloc initializer_0_clk_o 1 2 3 490 490 800 230 NJ
 preplace netloc initializer_0_rd_i 1 2 1 N
 preplace netloc initializer_0_ale_o 1 2 1 N
 preplace netloc initializer_0_rst_o 1 2 1 N
 preplace netloc clk_wiz_0_clk_out2 1 1 1 200
-preplace netloc can_top_0_go_sync 1 3 2 780 390 NJ
-levelinfo -pg 1 0 110 330 620 930 1240 1400 -top 0 -bot 500
+preplace netloc can_top_0_go_sync 1 3 2 820 390 NJ
+levelinfo -pg 1 -10 110 350 660 980 1300 1470 -top 0 -bot 500
 "
 }
 {

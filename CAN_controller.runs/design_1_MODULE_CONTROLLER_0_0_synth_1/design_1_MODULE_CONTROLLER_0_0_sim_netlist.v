@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Sun Dec 22 20:30:36 2019
+// Date        : Sat Jan 18 18:50:05 2020
 // Host        : DESKTOP-NTANC38 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_1_MODULE_CONTROLLER_0_0_sim_netlist.v
@@ -78,7 +78,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BUS_MSG_OBSERVER
         .I2(p_1_in[16]),
         .O(\BUS_MSG_reg[23]_0 [1]));
   LUT3 #(
-    .INIT(8'h10)) 
+    .INIT(8'h04)) 
     ATTACK_STATE1_carry__0_i_4
        (.I0(p_1_in[15]),
         .I1(p_1_in[14]),
@@ -288,21 +288,21 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_BUS_MSG_OBSERVER
         .I2(p_1_in[10]),
         .O(S[3]));
   LUT3 #(
-    .INIT(8'h08)) 
+    .INIT(8'h40)) 
     ATTACK_STATE1_carry_i_2
        (.I0(p_1_in[9]),
         .I1(p_1_in[8]),
         .I2(p_1_in[7]),
         .O(S[2]));
   LUT3 #(
-    .INIT(8'h40)) 
+    .INIT(8'h08)) 
     ATTACK_STATE1_carry_i_3
        (.I0(p_1_in[6]),
         .I1(p_1_in[5]),
         .I2(p_1_in[4]),
         .O(S[1]));
   LUT3 #(
-    .INIT(8'h04)) 
+    .INIT(8'h80)) 
     ATTACK_STATE1_carry_i_4
        (.I0(p_1_in[3]),
         .I1(p_1_in[2]),

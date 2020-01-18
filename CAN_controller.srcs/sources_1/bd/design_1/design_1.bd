@@ -10,9 +10,9 @@
     },
     "design_tree": {
       "clk_wiz_0": "",
-      "MODULE_CONTROLLER_0": "",
       "can_top_0": "",
       "initializer_0": "",
+      "MODULE_CONTROLLER_0": "",
       "ATTACK_MODULE_0": ""
     },
     "ports": {
@@ -132,55 +132,6 @@
           },
           "USE_RESET": {
             "value": "false"
-          }
-        }
-      },
-      "MODULE_CONTROLLER_0": {
-        "vlnv": "xilinx.com:module_ref:MODULE_CONTROLLER:1.0",
-        "xci_name": "design_1_MODULE_CONTROLLER_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "MODULE_CONTROLLER",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "reset",
-                "value_src": "constant"
-              }
-            }
-          },
-          "reset": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "can_signal_in": {
-            "direction": "I"
-          },
-          "sample_point": {
-            "direction": "I"
-          },
-          "triger": {
-            "direction": "O"
-          },
-          "state": {
-            "direction": "O"
-          },
-          "attack_state": {
-            "direction": "O"
-          },
-          "debug": {
-            "direction": "O"
-          },
-          "debug_1": {
-            "direction": "O"
-          },
-          "debug_2": {
-            "direction": "O"
           }
         }
       },
@@ -317,6 +268,55 @@
           }
         }
       },
+      "MODULE_CONTROLLER_0": {
+        "vlnv": "xilinx.com:module_ref:MODULE_CONTROLLER:1.0",
+        "xci_name": "design_1_MODULE_CONTROLLER_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "MODULE_CONTROLLER",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              }
+            }
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "can_signal_in": {
+            "direction": "I"
+          },
+          "sample_point": {
+            "direction": "I"
+          },
+          "triger": {
+            "direction": "O"
+          },
+          "state": {
+            "direction": "O"
+          },
+          "attack_state": {
+            "direction": "O"
+          },
+          "debug": {
+            "direction": "O"
+          },
+          "debug_1": {
+            "direction": "O"
+          },
+          "debug_2": {
+            "direction": "O"
+          }
+        }
+      },
       "ATTACK_MODULE_0": {
         "vlnv": "xilinx.com:module_ref:ATTACK_MODULE:1.0",
         "xci_name": "design_1_ATTACK_MODULE_0_1",
@@ -408,16 +408,16 @@
       "initializer_0_clk_o": {
         "ports": [
           "initializer_0/clk_o",
-          "MODULE_CONTROLLER_0/clk",
           "can_top_0/clk_i",
+          "MODULE_CONTROLLER_0/clk",
           "ATTACK_MODULE_0/clk"
         ]
       },
       "can_signal_in_1": {
         "ports": [
           "can_signal_in",
-          "MODULE_CONTROLLER_0/can_signal_in",
           "can_top_0/rx_i",
+          "MODULE_CONTROLLER_0/can_signal_in",
           "ATTACK_MODULE_0/can_signal_in"
         ]
       },
