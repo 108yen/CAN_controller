@@ -463,18 +463,12 @@
           "can_top_0/port_0_i"
         ]
       },
-      "can_top_0_sample_point_q": {
-        "ports": [
-          "can_top_0/sample_point_q",
-          "debug_1",
-          "ATTACK_MODULE_0/sample_point_q"
-        ]
-      },
       "can_top_0_sample_point": {
         "ports": [
           "can_top_0/sample_point",
           "MODULE_CONTROLLER_0/sample_point",
-          "ATTACK_MODULE_0/sample_point"
+          "ATTACK_MODULE_0/sample_point",
+          "debug_1"
         ]
       },
       "MODULE_CONTROLLER_0_attack_state": {
@@ -523,6 +517,12 @@
         "ports": [
           "SW_0",
           "MODULE_CONTROLLER_0/ATTACK_PERMIT"
+        ]
+      },
+      "can_top_0_sample_point_q": {
+        "ports": [
+          "can_top_0/sample_point_q",
+          "ATTACK_MODULE_0/sample_point_q"
         ]
       }
     }
