@@ -164,6 +164,7 @@ proc create_root_design { parentCell } {
   # Create interface ports
 
   # Create ports
+  set SW_0 [ create_bd_port -dir I SW_0 ]
   set can_signal_in [ create_bd_port -dir I can_signal_in ]
   set clk [ create_bd_port -dir I -type clk clk ]
   set_property -dict [ list \
@@ -255,6 +256,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net MODULE_CONTROLLER_0_TRIGER [get_bd_ports triger] [get_bd_pins MODULE_CONTROLLER_0/triger]
   connect_bd_net -net MODULE_CONTROLLER_0_attack_state [get_bd_pins ATTACK_MODULE_0/attack_state] [get_bd_pins MODULE_CONTROLLER_0/attack_state]
   connect_bd_net -net MODULE_CONTROLLER_0_state [get_bd_pins ATTACK_MODULE_0/state] [get_bd_pins MODULE_CONTROLLER_0/state]
+  connect_bd_net -net SW_0_1 [get_bd_ports SW_0] [get_bd_pins MODULE_CONTROLLER_0/ATTACK_PERMIT]
   connect_bd_net -net can_signal_in_1 [get_bd_ports can_signal_in] [get_bd_pins ATTACK_MODULE_0/can_signal_in] [get_bd_pins MODULE_CONTROLLER_0/can_signal_in] [get_bd_pins can_top_0/rx_i]
   connect_bd_net -net can_top_0_clkout_o [get_bd_ports debug_2] [get_bd_pins can_top_0/clkout_o]
   connect_bd_net -net can_top_0_go_sync [get_bd_pins ATTACK_MODULE_0/go_sync] [get_bd_pins can_top_0/go_sync]

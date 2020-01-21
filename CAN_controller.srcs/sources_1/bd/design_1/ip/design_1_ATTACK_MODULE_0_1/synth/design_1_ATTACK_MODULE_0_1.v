@@ -52,7 +52,7 @@
 
 (* X_CORE_INFO = "ATTACK_MODULE,Vivado 2018.3" *)
 (* CHECK_LICENSE_TYPE = "design_1_ATTACK_MODULE_0_1,ATTACK_MODULE,{}" *)
-(* CORE_GENERATION_INFO = "design_1_ATTACK_MODULE_0_1,ATTACK_MODULE,{x_ipProduct=Vivado 2018.3,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=ATTACK_MODULE,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,UNATTACKED_MSG=0x07B82826FAC6,ATTACKED_MSG=0x07B8282AA41E,MSG_L=00110000,ATTACK_L=00010010,RSYN_L=00000110}" *)
+(* CORE_GENERATION_INFO = "design_1_ATTACK_MODULE_0_1,ATTACK_MODULE,{x_ipProduct=Vivado 2018.3,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=ATTACK_MODULE,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,UNATTACKED_MSG=0x07B82826FAC6,ATTACKED_MSG=0x07B8282AA41E,MSG_L=00110000,ATTACK_L=00010000,RSYN_L=00000110}" *)
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_1_ATTACK_MODULE_0_1 (
@@ -91,7 +91,7 @@ output wire debug;
     .UNATTACKED_MSG(48'H07B82826FAC6),
     .ATTACKED_MSG(48'H07B8282AA41E),
     .MSG_L(8'B00110000),
-    .ATTACK_L(8'B00010010),
+    .ATTACK_L(8'B00010000),
     .RSYN_L(8'B00000110)
   ) inst (
     .clk(clk),

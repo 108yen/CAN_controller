@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Sat Jan 18 18:50:05 2020
+// Date        : Tue Jan 21 14:27:51 2020
 // Host        : DESKTOP-NTANC38 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/bd/design_1/ip/design_1_MODULE_CONTROLLER_0_0/design_1_MODULE_CONTROLLER_0_0_sim_netlist.v
@@ -18,6 +18,7 @@
 module design_1_MODULE_CONTROLLER_0_0
    (clk,
     reset,
+    ATTACK_PERMIT,
     can_signal_in,
     sample_point,
     triger,
@@ -28,6 +29,7 @@ module design_1_MODULE_CONTROLLER_0_0
     debug_2);
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 100000000, PHASE 0.000, INSERT_VIP 0" *) input clk;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input reset;
+  input ATTACK_PERMIT;
   input can_signal_in;
   input sample_point;
   output triger;
@@ -38,6 +40,7 @@ module design_1_MODULE_CONTROLLER_0_0
   output debug_2;
 
   wire \<const0> ;
+  wire ATTACK_PERMIT;
   wire attack_state;
   wire can_signal_in;
   wire clk;
@@ -52,7 +55,8 @@ module design_1_MODULE_CONTROLLER_0_0
   GND GND
        (.G(\<const0> ));
   design_1_MODULE_CONTROLLER_0_0_MODULE_CONTROLLER inst
-       (.STATE_reg(state),
+       (.ATTACK_PERMIT(ATTACK_PERMIT),
+        .STATE_reg(state),
         .attack_state(attack_state),
         .can_signal_in(can_signal_in),
         .clk(clk),
@@ -64,40 +68,40 @@ endmodule
 (* ORIG_REF_NAME = "BUS_MSG_OBSERVER" *) 
 module design_1_MODULE_CONTROLLER_0_0_BUS_MSG_OBSERVER
    (S,
-    \BUS_MSG_reg[23]_0 ,
-    \BUS_MSG_reg[35]_0 ,
-    \BUS_MSG_reg[47]_0 ,
-    \BUS_MSG_reg[59]_0 ,
-    \BUS_MSG_reg[71]_0 ,
-    \BUS_MSG_reg[83]_0 ,
-    \BUS_MSG_reg[95]_0 ,
-    \BUS_MSG_reg[107]_0 ,
+    \BUS_MSG_reg[22]_0 ,
+    \BUS_MSG_reg[34]_0 ,
+    \BUS_MSG_reg[46]_0 ,
+    \BUS_MSG_reg[58]_0 ,
+    \BUS_MSG_reg[70]_0 ,
+    \BUS_MSG_reg[82]_0 ,
+    \BUS_MSG_reg[94]_0 ,
+    \BUS_MSG_reg[106]_0 ,
     SR,
     sample_point,
     clk,
     can_signal_in);
   output [3:0]S;
-  output [3:0]\BUS_MSG_reg[23]_0 ;
-  output [3:0]\BUS_MSG_reg[35]_0 ;
-  output [3:0]\BUS_MSG_reg[47]_0 ;
-  output [3:0]\BUS_MSG_reg[59]_0 ;
-  output [3:0]\BUS_MSG_reg[71]_0 ;
-  output [3:0]\BUS_MSG_reg[83]_0 ;
-  output [3:0]\BUS_MSG_reg[95]_0 ;
-  output [3:0]\BUS_MSG_reg[107]_0 ;
+  output [3:0]\BUS_MSG_reg[22]_0 ;
+  output [3:0]\BUS_MSG_reg[34]_0 ;
+  output [3:0]\BUS_MSG_reg[46]_0 ;
+  output [3:0]\BUS_MSG_reg[58]_0 ;
+  output [3:0]\BUS_MSG_reg[70]_0 ;
+  output [3:0]\BUS_MSG_reg[82]_0 ;
+  output [3:0]\BUS_MSG_reg[94]_0 ;
+  output [3:0]\BUS_MSG_reg[106]_0 ;
   input [0:0]SR;
   input sample_point;
   input clk;
   input can_signal_in;
 
-  wire [3:0]\BUS_MSG_reg[107]_0 ;
-  wire [3:0]\BUS_MSG_reg[23]_0 ;
-  wire [3:0]\BUS_MSG_reg[35]_0 ;
-  wire [3:0]\BUS_MSG_reg[47]_0 ;
-  wire [3:0]\BUS_MSG_reg[59]_0 ;
-  wire [3:0]\BUS_MSG_reg[71]_0 ;
-  wire [3:0]\BUS_MSG_reg[83]_0 ;
-  wire [3:0]\BUS_MSG_reg[95]_0 ;
+  wire [3:0]\BUS_MSG_reg[106]_0 ;
+  wire [3:0]\BUS_MSG_reg[22]_0 ;
+  wire [3:0]\BUS_MSG_reg[34]_0 ;
+  wire [3:0]\BUS_MSG_reg[46]_0 ;
+  wire [3:0]\BUS_MSG_reg[58]_0 ;
+  wire [3:0]\BUS_MSG_reg[70]_0 ;
+  wire [3:0]\BUS_MSG_reg[82]_0 ;
+  wire [3:0]\BUS_MSG_reg[94]_0 ;
   wire \BUS_MSG_reg_n_0_[107] ;
   wire [3:0]S;
   wire [0:0]SR;
@@ -109,254 +113,254 @@ module design_1_MODULE_CONTROLLER_0_0_BUS_MSG_OBSERVER
   LUT3 #(
     .INIT(8'h01)) 
     ATTACK_STATE1_carry__0_i_1
-       (.I0(p_1_in[24]),
-        .I1(p_1_in[23]),
+       (.I0(p_1_in[23]),
+        .I1(p_1_in[24]),
         .I2(p_1_in[22]),
-        .O(\BUS_MSG_reg[23]_0 [3]));
+        .O(\BUS_MSG_reg[22]_0 [3]));
   LUT3 #(
     .INIT(8'h01)) 
     ATTACK_STATE1_carry__0_i_2
-       (.I0(p_1_in[21]),
-        .I1(p_1_in[20]),
+       (.I0(p_1_in[20]),
+        .I1(p_1_in[21]),
         .I2(p_1_in[19]),
-        .O(\BUS_MSG_reg[23]_0 [2]));
+        .O(\BUS_MSG_reg[22]_0 [2]));
   LUT3 #(
     .INIT(8'h01)) 
     ATTACK_STATE1_carry__0_i_3
-       (.I0(p_1_in[18]),
-        .I1(p_1_in[17]),
+       (.I0(p_1_in[17]),
+        .I1(p_1_in[18]),
         .I2(p_1_in[16]),
-        .O(\BUS_MSG_reg[23]_0 [1]));
+        .O(\BUS_MSG_reg[22]_0 [1]));
   LUT3 #(
     .INIT(8'h04)) 
     ATTACK_STATE1_carry__0_i_4
        (.I0(p_1_in[15]),
         .I1(p_1_in[14]),
         .I2(p_1_in[13]),
-        .O(\BUS_MSG_reg[23]_0 [0]));
+        .O(\BUS_MSG_reg[22]_0 [0]));
   LUT3 #(
     .INIT(8'h01)) 
     ATTACK_STATE1_carry__1_i_1
-       (.I0(p_1_in[36]),
-        .I1(p_1_in[35]),
+       (.I0(p_1_in[35]),
+        .I1(p_1_in[36]),
         .I2(p_1_in[34]),
-        .O(\BUS_MSG_reg[35]_0 [3]));
+        .O(\BUS_MSG_reg[34]_0 [3]));
   LUT3 #(
     .INIT(8'h01)) 
     ATTACK_STATE1_carry__1_i_2
-       (.I0(p_1_in[33]),
-        .I1(p_1_in[32]),
+       (.I0(p_1_in[32]),
+        .I1(p_1_in[33]),
         .I2(p_1_in[31]),
-        .O(\BUS_MSG_reg[35]_0 [2]));
+        .O(\BUS_MSG_reg[34]_0 [2]));
   LUT3 #(
     .INIT(8'h01)) 
     ATTACK_STATE1_carry__1_i_3
-       (.I0(p_1_in[30]),
-        .I1(p_1_in[29]),
+       (.I0(p_1_in[29]),
+        .I1(p_1_in[30]),
         .I2(p_1_in[28]),
-        .O(\BUS_MSG_reg[35]_0 [1]));
+        .O(\BUS_MSG_reg[34]_0 [1]));
   LUT3 #(
     .INIT(8'h01)) 
     ATTACK_STATE1_carry__1_i_4
-       (.I0(p_1_in[27]),
-        .I1(p_1_in[26]),
+       (.I0(p_1_in[26]),
+        .I1(p_1_in[27]),
         .I2(p_1_in[25]),
-        .O(\BUS_MSG_reg[35]_0 [0]));
+        .O(\BUS_MSG_reg[34]_0 [0]));
   LUT3 #(
     .INIT(8'h01)) 
     ATTACK_STATE1_carry__2_i_1
-       (.I0(p_1_in[48]),
-        .I1(p_1_in[47]),
+       (.I0(p_1_in[47]),
+        .I1(p_1_in[48]),
         .I2(p_1_in[46]),
-        .O(\BUS_MSG_reg[47]_0 [3]));
+        .O(\BUS_MSG_reg[46]_0 [3]));
   LUT3 #(
     .INIT(8'h01)) 
     ATTACK_STATE1_carry__2_i_2
-       (.I0(p_1_in[45]),
-        .I1(p_1_in[44]),
+       (.I0(p_1_in[44]),
+        .I1(p_1_in[45]),
         .I2(p_1_in[43]),
-        .O(\BUS_MSG_reg[47]_0 [2]));
+        .O(\BUS_MSG_reg[46]_0 [2]));
   LUT3 #(
     .INIT(8'h01)) 
     ATTACK_STATE1_carry__2_i_3
-       (.I0(p_1_in[42]),
-        .I1(p_1_in[41]),
+       (.I0(p_1_in[41]),
+        .I1(p_1_in[42]),
         .I2(p_1_in[40]),
-        .O(\BUS_MSG_reg[47]_0 [1]));
+        .O(\BUS_MSG_reg[46]_0 [1]));
   LUT3 #(
     .INIT(8'h01)) 
     ATTACK_STATE1_carry__2_i_4
-       (.I0(p_1_in[39]),
-        .I1(p_1_in[38]),
+       (.I0(p_1_in[38]),
+        .I1(p_1_in[39]),
         .I2(p_1_in[37]),
-        .O(\BUS_MSG_reg[47]_0 [0]));
+        .O(\BUS_MSG_reg[46]_0 [0]));
   LUT3 #(
     .INIT(8'h01)) 
     ATTACK_STATE1_carry__3_i_1
-       (.I0(p_1_in[60]),
-        .I1(p_1_in[59]),
+       (.I0(p_1_in[59]),
+        .I1(p_1_in[60]),
         .I2(p_1_in[58]),
-        .O(\BUS_MSG_reg[59]_0 [3]));
+        .O(\BUS_MSG_reg[58]_0 [3]));
   LUT3 #(
     .INIT(8'h01)) 
     ATTACK_STATE1_carry__3_i_2
-       (.I0(p_1_in[57]),
-        .I1(p_1_in[56]),
+       (.I0(p_1_in[56]),
+        .I1(p_1_in[57]),
         .I2(p_1_in[55]),
-        .O(\BUS_MSG_reg[59]_0 [2]));
+        .O(\BUS_MSG_reg[58]_0 [2]));
   LUT3 #(
     .INIT(8'h01)) 
     ATTACK_STATE1_carry__3_i_3
-       (.I0(p_1_in[54]),
-        .I1(p_1_in[53]),
+       (.I0(p_1_in[53]),
+        .I1(p_1_in[54]),
         .I2(p_1_in[52]),
-        .O(\BUS_MSG_reg[59]_0 [1]));
+        .O(\BUS_MSG_reg[58]_0 [1]));
   LUT3 #(
     .INIT(8'h01)) 
     ATTACK_STATE1_carry__3_i_4
-       (.I0(p_1_in[51]),
-        .I1(p_1_in[50]),
+       (.I0(p_1_in[50]),
+        .I1(p_1_in[51]),
         .I2(p_1_in[49]),
-        .O(\BUS_MSG_reg[59]_0 [0]));
+        .O(\BUS_MSG_reg[58]_0 [0]));
   LUT3 #(
     .INIT(8'h01)) 
     ATTACK_STATE1_carry__4_i_1
-       (.I0(p_1_in[72]),
-        .I1(p_1_in[71]),
+       (.I0(p_1_in[71]),
+        .I1(p_1_in[72]),
         .I2(p_1_in[70]),
-        .O(\BUS_MSG_reg[71]_0 [3]));
+        .O(\BUS_MSG_reg[70]_0 [3]));
   LUT3 #(
     .INIT(8'h01)) 
     ATTACK_STATE1_carry__4_i_2
-       (.I0(p_1_in[69]),
-        .I1(p_1_in[68]),
+       (.I0(p_1_in[68]),
+        .I1(p_1_in[69]),
         .I2(p_1_in[67]),
-        .O(\BUS_MSG_reg[71]_0 [2]));
+        .O(\BUS_MSG_reg[70]_0 [2]));
   LUT3 #(
     .INIT(8'h01)) 
     ATTACK_STATE1_carry__4_i_3
-       (.I0(p_1_in[66]),
-        .I1(p_1_in[65]),
+       (.I0(p_1_in[65]),
+        .I1(p_1_in[66]),
         .I2(p_1_in[64]),
-        .O(\BUS_MSG_reg[71]_0 [1]));
+        .O(\BUS_MSG_reg[70]_0 [1]));
   LUT3 #(
     .INIT(8'h01)) 
     ATTACK_STATE1_carry__4_i_4
-       (.I0(p_1_in[63]),
-        .I1(p_1_in[62]),
+       (.I0(p_1_in[62]),
+        .I1(p_1_in[63]),
         .I2(p_1_in[61]),
-        .O(\BUS_MSG_reg[71]_0 [0]));
+        .O(\BUS_MSG_reg[70]_0 [0]));
   LUT3 #(
     .INIT(8'h01)) 
     ATTACK_STATE1_carry__5_i_1
-       (.I0(p_1_in[84]),
-        .I1(p_1_in[83]),
+       (.I0(p_1_in[83]),
+        .I1(p_1_in[84]),
         .I2(p_1_in[82]),
-        .O(\BUS_MSG_reg[83]_0 [3]));
+        .O(\BUS_MSG_reg[82]_0 [3]));
   LUT3 #(
     .INIT(8'h01)) 
     ATTACK_STATE1_carry__5_i_2
-       (.I0(p_1_in[81]),
-        .I1(p_1_in[80]),
+       (.I0(p_1_in[80]),
+        .I1(p_1_in[81]),
         .I2(p_1_in[79]),
-        .O(\BUS_MSG_reg[83]_0 [2]));
+        .O(\BUS_MSG_reg[82]_0 [2]));
   LUT3 #(
     .INIT(8'h01)) 
     ATTACK_STATE1_carry__5_i_3
-       (.I0(p_1_in[78]),
-        .I1(p_1_in[77]),
+       (.I0(p_1_in[77]),
+        .I1(p_1_in[78]),
         .I2(p_1_in[76]),
-        .O(\BUS_MSG_reg[83]_0 [1]));
+        .O(\BUS_MSG_reg[82]_0 [1]));
   LUT3 #(
     .INIT(8'h01)) 
     ATTACK_STATE1_carry__5_i_4
-       (.I0(p_1_in[75]),
-        .I1(p_1_in[74]),
+       (.I0(p_1_in[74]),
+        .I1(p_1_in[75]),
         .I2(p_1_in[73]),
-        .O(\BUS_MSG_reg[83]_0 [0]));
+        .O(\BUS_MSG_reg[82]_0 [0]));
   LUT3 #(
     .INIT(8'h01)) 
     ATTACK_STATE1_carry__6_i_1
-       (.I0(p_1_in[96]),
-        .I1(p_1_in[95]),
+       (.I0(p_1_in[95]),
+        .I1(p_1_in[96]),
         .I2(p_1_in[94]),
-        .O(\BUS_MSG_reg[95]_0 [3]));
+        .O(\BUS_MSG_reg[94]_0 [3]));
   LUT3 #(
     .INIT(8'h01)) 
     ATTACK_STATE1_carry__6_i_2
-       (.I0(p_1_in[93]),
-        .I1(p_1_in[92]),
+       (.I0(p_1_in[92]),
+        .I1(p_1_in[93]),
         .I2(p_1_in[91]),
-        .O(\BUS_MSG_reg[95]_0 [2]));
+        .O(\BUS_MSG_reg[94]_0 [2]));
   LUT3 #(
     .INIT(8'h01)) 
     ATTACK_STATE1_carry__6_i_3
-       (.I0(p_1_in[90]),
-        .I1(p_1_in[89]),
+       (.I0(p_1_in[89]),
+        .I1(p_1_in[90]),
         .I2(p_1_in[88]),
-        .O(\BUS_MSG_reg[95]_0 [1]));
+        .O(\BUS_MSG_reg[94]_0 [1]));
   LUT3 #(
     .INIT(8'h01)) 
     ATTACK_STATE1_carry__6_i_4
-       (.I0(p_1_in[87]),
-        .I1(p_1_in[86]),
+       (.I0(p_1_in[86]),
+        .I1(p_1_in[87]),
         .I2(p_1_in[85]),
-        .O(\BUS_MSG_reg[95]_0 [0]));
+        .O(\BUS_MSG_reg[94]_0 [0]));
   LUT3 #(
     .INIT(8'h01)) 
     ATTACK_STATE1_carry__7_i_1
-       (.I0(\BUS_MSG_reg_n_0_[107] ),
-        .I1(p_1_in[107]),
+       (.I0(p_1_in[107]),
+        .I1(\BUS_MSG_reg_n_0_[107] ),
         .I2(p_1_in[106]),
-        .O(\BUS_MSG_reg[107]_0 [3]));
+        .O(\BUS_MSG_reg[106]_0 [3]));
   LUT3 #(
     .INIT(8'h01)) 
     ATTACK_STATE1_carry__7_i_2
-       (.I0(p_1_in[105]),
-        .I1(p_1_in[104]),
+       (.I0(p_1_in[104]),
+        .I1(p_1_in[105]),
         .I2(p_1_in[103]),
-        .O(\BUS_MSG_reg[107]_0 [2]));
+        .O(\BUS_MSG_reg[106]_0 [2]));
   LUT3 #(
     .INIT(8'h01)) 
     ATTACK_STATE1_carry__7_i_3
-       (.I0(p_1_in[102]),
-        .I1(p_1_in[101]),
+       (.I0(p_1_in[101]),
+        .I1(p_1_in[102]),
         .I2(p_1_in[100]),
-        .O(\BUS_MSG_reg[107]_0 [1]));
+        .O(\BUS_MSG_reg[106]_0 [1]));
   LUT3 #(
     .INIT(8'h01)) 
     ATTACK_STATE1_carry__7_i_4
-       (.I0(p_1_in[99]),
-        .I1(p_1_in[98]),
+       (.I0(p_1_in[98]),
+        .I1(p_1_in[99]),
         .I2(p_1_in[97]),
-        .O(\BUS_MSG_reg[107]_0 [0]));
+        .O(\BUS_MSG_reg[106]_0 [0]));
   LUT3 #(
     .INIT(8'h01)) 
     ATTACK_STATE1_carry_i_1
-       (.I0(p_1_in[12]),
-        .I1(p_1_in[11]),
+       (.I0(p_1_in[11]),
+        .I1(p_1_in[12]),
         .I2(p_1_in[10]),
         .O(S[3]));
   LUT3 #(
-    .INIT(8'h40)) 
+    .INIT(8'h08)) 
     ATTACK_STATE1_carry_i_2
-       (.I0(p_1_in[9]),
+       (.I0(p_1_in[7]),
         .I1(p_1_in[8]),
-        .I2(p_1_in[7]),
+        .I2(p_1_in[9]),
         .O(S[2]));
   LUT3 #(
     .INIT(8'h08)) 
     ATTACK_STATE1_carry_i_3
-       (.I0(p_1_in[6]),
-        .I1(p_1_in[5]),
+       (.I0(p_1_in[5]),
+        .I1(p_1_in[6]),
         .I2(p_1_in[4]),
         .O(S[1]));
   LUT3 #(
     .INIT(8'h80)) 
     ATTACK_STATE1_carry_i_4
-       (.I0(p_1_in[3]),
+       (.I0(p_1_in[1]),
         .I1(p_1_in[2]),
-        .I2(p_1_in[1]),
+        .I2(p_1_in[3]),
         .O(S[0]));
   FDSE #(
     .INIT(1'b1)) 
@@ -1232,7 +1236,8 @@ module design_1_MODULE_CONTROLLER_0_0_MODULE_CONTROLLER
     reset,
     sample_point,
     clk,
-    can_signal_in);
+    can_signal_in,
+    ATTACK_PERMIT);
   output STATE_reg;
   output attack_state;
   output triger;
@@ -1240,7 +1245,9 @@ module design_1_MODULE_CONTROLLER_0_0_MODULE_CONTROLLER
   input sample_point;
   input clk;
   input can_signal_in;
+  input ATTACK_PERMIT;
 
+  wire ATTACK_PERMIT;
   wire STATE_reg;
   wire attack_state;
   wire bus_msg_observer_n_0;
@@ -1287,21 +1294,22 @@ module design_1_MODULE_CONTROLLER_0_0_MODULE_CONTROLLER
   wire triger;
 
   design_1_MODULE_CONTROLLER_0_0_BUS_MSG_OBSERVER bus_msg_observer
-       (.\BUS_MSG_reg[107]_0 ({bus_msg_observer_n_32,bus_msg_observer_n_33,bus_msg_observer_n_34,bus_msg_observer_n_35}),
-        .\BUS_MSG_reg[23]_0 ({bus_msg_observer_n_4,bus_msg_observer_n_5,bus_msg_observer_n_6,bus_msg_observer_n_7}),
-        .\BUS_MSG_reg[35]_0 ({bus_msg_observer_n_8,bus_msg_observer_n_9,bus_msg_observer_n_10,bus_msg_observer_n_11}),
-        .\BUS_MSG_reg[47]_0 ({bus_msg_observer_n_12,bus_msg_observer_n_13,bus_msg_observer_n_14,bus_msg_observer_n_15}),
-        .\BUS_MSG_reg[59]_0 ({bus_msg_observer_n_16,bus_msg_observer_n_17,bus_msg_observer_n_18,bus_msg_observer_n_19}),
-        .\BUS_MSG_reg[71]_0 ({bus_msg_observer_n_20,bus_msg_observer_n_21,bus_msg_observer_n_22,bus_msg_observer_n_23}),
-        .\BUS_MSG_reg[83]_0 ({bus_msg_observer_n_24,bus_msg_observer_n_25,bus_msg_observer_n_26,bus_msg_observer_n_27}),
-        .\BUS_MSG_reg[95]_0 ({bus_msg_observer_n_28,bus_msg_observer_n_29,bus_msg_observer_n_30,bus_msg_observer_n_31}),
+       (.\BUS_MSG_reg[106]_0 ({bus_msg_observer_n_32,bus_msg_observer_n_33,bus_msg_observer_n_34,bus_msg_observer_n_35}),
+        .\BUS_MSG_reg[22]_0 ({bus_msg_observer_n_4,bus_msg_observer_n_5,bus_msg_observer_n_6,bus_msg_observer_n_7}),
+        .\BUS_MSG_reg[34]_0 ({bus_msg_observer_n_8,bus_msg_observer_n_9,bus_msg_observer_n_10,bus_msg_observer_n_11}),
+        .\BUS_MSG_reg[46]_0 ({bus_msg_observer_n_12,bus_msg_observer_n_13,bus_msg_observer_n_14,bus_msg_observer_n_15}),
+        .\BUS_MSG_reg[58]_0 ({bus_msg_observer_n_16,bus_msg_observer_n_17,bus_msg_observer_n_18,bus_msg_observer_n_19}),
+        .\BUS_MSG_reg[70]_0 ({bus_msg_observer_n_20,bus_msg_observer_n_21,bus_msg_observer_n_22,bus_msg_observer_n_23}),
+        .\BUS_MSG_reg[82]_0 ({bus_msg_observer_n_24,bus_msg_observer_n_25,bus_msg_observer_n_26,bus_msg_observer_n_27}),
+        .\BUS_MSG_reg[94]_0 ({bus_msg_observer_n_28,bus_msg_observer_n_29,bus_msg_observer_n_30,bus_msg_observer_n_31}),
         .S({bus_msg_observer_n_0,bus_msg_observer_n_1,bus_msg_observer_n_2,bus_msg_observer_n_3}),
         .SR(state_detector_n_1),
         .can_signal_in(can_signal_in),
         .clk(clk),
         .sample_point(sample_point));
   design_1_MODULE_CONTROLLER_0_0_MSG_FILTER msg_filter
-       (.ATTACK_STATE1_carry__1_0({bus_msg_observer_n_4,bus_msg_observer_n_5,bus_msg_observer_n_6,bus_msg_observer_n_7}),
+       (.ATTACK_PERMIT(ATTACK_PERMIT),
+        .ATTACK_STATE1_carry__1_0({bus_msg_observer_n_4,bus_msg_observer_n_5,bus_msg_observer_n_6,bus_msg_observer_n_7}),
         .ATTACK_STATE1_carry__2_0({bus_msg_observer_n_8,bus_msg_observer_n_9,bus_msg_observer_n_10,bus_msg_observer_n_11}),
         .ATTACK_STATE1_carry__3_0({bus_msg_observer_n_12,bus_msg_observer_n_13,bus_msg_observer_n_14,bus_msg_observer_n_15}),
         .ATTACK_STATE1_carry__4_0({bus_msg_observer_n_16,bus_msg_observer_n_17,bus_msg_observer_n_18,bus_msg_observer_n_19}),
@@ -1339,6 +1347,7 @@ module design_1_MODULE_CONTROLLER_0_0_MSG_FILTER
     TRIGER_reg_0,
     clk,
     reset,
+    ATTACK_PERMIT,
     TRIGER_reg_1);
   output attack_state;
   output triger;
@@ -1353,8 +1362,10 @@ module design_1_MODULE_CONTROLLER_0_0_MSG_FILTER
   input [3:0]TRIGER_reg_0;
   input clk;
   input reset;
+  input ATTACK_PERMIT;
   input TRIGER_reg_1;
 
+  wire ATTACK_PERMIT;
   wire ATTACK_STATE1_carry__0_n_0;
   wire ATTACK_STATE1_carry__0_n_1;
   wire ATTACK_STATE1_carry__0_n_2;
@@ -1433,6 +1444,8 @@ module design_1_MODULE_CONTROLLER_0_0_MSG_FILTER
   wire \counter[14]_i_1_n_0 ;
   wire \counter[15]_i_3_n_0 ;
   wire \counter[15]_i_4_n_0 ;
+  wire \counter[15]_i_5_n_0 ;
+  wire \counter[15]_i_6_n_0 ;
   wire \counter[1]_i_1_n_0 ;
   wire \counter[2]_i_1_n_0 ;
   wire \counter[3]_i_1_n_0 ;
@@ -1537,54 +1550,56 @@ module design_1_MODULE_CONTROLLER_0_0_MSG_FILTER
         .DI({1'b0,1'b0,1'b0,1'b0}),
         .O(NLW_ATTACK_STATE1_carry__7_O_UNCONNECTED[3:0]),
         .S(TRIGER_reg_0));
-  LUT4 #(
-    .INIT(16'hF800)) 
+  LUT5 #(
+    .INIT(32'hF2220000)) 
     ATTACK_STATE_i_1
        (.I0(attack_state),
         .I1(ATTACK_STATE_i_2_n_0),
-        .I2(ATTACK_STATE1_carry__7_n_0),
-        .I3(reset),
+        .I2(ATTACK_PERMIT),
+        .I3(ATTACK_STATE1_carry__7_n_0),
+        .I4(reset),
         .O(ATTACK_STATE_i_1_n_0));
-  LUT5 #(
-    .INIT(32'hFFFFFFFE)) 
+  LUT4 #(
+    .INIT(16'h0004)) 
     ATTACK_STATE_i_2
        (.I0(ATTACK_STATE_i_3_n_0),
         .I1(ATTACK_STATE_i_4_n_0),
         .I2(ATTACK_STATE_i_5_n_0),
         .I3(ATTACK_STATE_i_6_n_0),
-        .I4(\counter_reg_n_0_[0] ),
         .O(ATTACK_STATE_i_2_n_0));
   LUT4 #(
     .INIT(16'hFFFE)) 
     ATTACK_STATE_i_3
-       (.I0(\counter_reg_n_0_[13] ),
-        .I1(\counter_reg_n_0_[12] ),
-        .I2(\counter_reg_n_0_[15] ),
-        .I3(\counter_reg_n_0_[14] ),
+       (.I0(\counter_reg_n_0_[2] ),
+        .I1(\counter_reg_n_0_[4] ),
+        .I2(\counter_reg_n_0_[8] ),
+        .I3(\counter_reg_n_0_[3] ),
         .O(ATTACK_STATE_i_3_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT4 #(
-    .INIT(16'hFFFE)) 
+    .INIT(16'h0001)) 
     ATTACK_STATE_i_4
-       (.I0(\counter_reg_n_0_[6] ),
+       (.I0(\counter_reg_n_0_[1] ),
         .I1(\counter_reg_n_0_[5] ),
         .I2(\counter_reg_n_0_[9] ),
-        .I3(\counter_reg_n_0_[8] ),
+        .I3(\counter_reg_n_0_[0] ),
         .O(ATTACK_STATE_i_4_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT4 #(
+    .INIT(16'hDFFF)) 
+    ATTACK_STATE_i_5
+       (.I0(\counter_reg_n_0_[10] ),
+        .I1(\counter_reg_n_0_[6] ),
+        .I2(\counter_reg_n_0_[11] ),
+        .I3(\counter_reg_n_0_[7] ),
+        .O(ATTACK_STATE_i_5_n_0));
   LUT4 #(
     .INIT(16'hFFFE)) 
-    ATTACK_STATE_i_5
-       (.I0(\counter_reg_n_0_[2] ),
-        .I1(\counter_reg_n_0_[1] ),
-        .I2(\counter_reg_n_0_[4] ),
-        .I3(\counter_reg_n_0_[3] ),
-        .O(ATTACK_STATE_i_5_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT3 #(
-    .INIT(8'h7F)) 
     ATTACK_STATE_i_6
-       (.I0(\counter_reg_n_0_[11] ),
-        .I1(\counter_reg_n_0_[10] ),
-        .I2(\counter_reg_n_0_[7] ),
+       (.I0(\counter_reg_n_0_[13] ),
+        .I1(\counter_reg_n_0_[12] ),
+        .I2(\counter_reg_n_0_[14] ),
+        .I3(\counter_reg_n_0_[15] ),
         .O(ATTACK_STATE_i_6_n_0));
   FDRE ATTACK_STATE_reg
        (.C(clk),
@@ -1634,144 +1649,159 @@ module design_1_MODULE_CONTROLLER_0_0_MSG_FILTER
         .DI({1'b0,1'b0,1'b0,1'b0}),
         .O({NLW_counter0_carry__2_O_UNCONNECTED[3],data0[15:13]}),
         .S({1'b0,\counter_reg_n_0_[15] ,\counter_reg_n_0_[14] ,\counter_reg_n_0_[13] }));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT5 #(
-    .INIT(32'h0000BFFF)) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  LUT2 #(
+    .INIT(4'h1)) 
     \counter[0]_i_1 
-       (.I0(\counter[15]_i_4_n_0 ),
-        .I1(\counter_reg_n_0_[11] ),
-        .I2(\counter_reg_n_0_[10] ),
-        .I3(\counter_reg_n_0_[7] ),
-        .I4(\counter_reg_n_0_[0] ),
+       (.I0(\counter_reg_n_0_[0] ),
+        .I1(ATTACK_STATE_i_2_n_0),
         .O(\counter[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT2 #(
-    .INIT(4'h8)) 
+    .INIT(4'h2)) 
     \counter[10]_i_1 
-       (.I0(ATTACK_STATE_i_2_n_0),
-        .I1(data0[10]),
+       (.I0(data0[10]),
+        .I1(ATTACK_STATE_i_2_n_0),
         .O(\counter[10]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT2 #(
-    .INIT(4'h8)) 
+    .INIT(4'h2)) 
     \counter[11]_i_1 
-       (.I0(ATTACK_STATE_i_2_n_0),
-        .I1(data0[11]),
+       (.I0(data0[11]),
+        .I1(ATTACK_STATE_i_2_n_0),
         .O(\counter[11]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT2 #(
-    .INIT(4'h8)) 
+    .INIT(4'h2)) 
     \counter[12]_i_1 
-       (.I0(ATTACK_STATE_i_2_n_0),
-        .I1(data0[12]),
+       (.I0(data0[12]),
+        .I1(ATTACK_STATE_i_2_n_0),
         .O(\counter[12]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT2 #(
-    .INIT(4'h8)) 
+    .INIT(4'h2)) 
     \counter[13]_i_1 
-       (.I0(ATTACK_STATE_i_2_n_0),
-        .I1(data0[13]),
+       (.I0(data0[13]),
+        .I1(ATTACK_STATE_i_2_n_0),
         .O(\counter[13]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT2 #(
-    .INIT(4'h8)) 
+    .INIT(4'h2)) 
     \counter[14]_i_1 
-       (.I0(ATTACK_STATE_i_2_n_0),
-        .I1(data0[14]),
+       (.I0(data0[14]),
+        .I1(ATTACK_STATE_i_2_n_0),
         .O(\counter[14]_i_1_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
     \counter[15]_i_1 
        (.I0(reset),
         .O(p_0_in));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFFFFE)) 
+  LUT3 #(
+    .INIT(8'hBF)) 
     \counter[15]_i_2 
-       (.I0(\counter_reg_n_0_[10] ),
-        .I1(\counter_reg_n_0_[11] ),
-        .I2(\counter_reg_n_0_[0] ),
-        .I3(\counter_reg_n_0_[7] ),
-        .I4(\counter[15]_i_4_n_0 ),
-        .I5(attack_state),
+       (.I0(\counter[15]_i_4_n_0 ),
+        .I1(\counter[15]_i_5_n_0 ),
+        .I2(\counter[15]_i_6_n_0 ),
         .O(counter));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT2 #(
-    .INIT(4'h8)) 
+    .INIT(4'h2)) 
     \counter[15]_i_3 
-       (.I0(ATTACK_STATE_i_2_n_0),
-        .I1(data0[15]),
+       (.I0(data0[15]),
+        .I1(ATTACK_STATE_i_2_n_0),
         .O(\counter[15]_i_3_n_0 ));
   LUT6 #(
     .INIT(64'hFFFFFFFFFFFFFFFE)) 
     \counter[15]_i_4 
-       (.I0(ATTACK_STATE_i_3_n_0),
-        .I1(\counter_reg_n_0_[6] ),
-        .I2(\counter_reg_n_0_[5] ),
-        .I3(\counter_reg_n_0_[9] ),
-        .I4(\counter_reg_n_0_[8] ),
-        .I5(ATTACK_STATE_i_5_n_0),
+       (.I0(ATTACK_STATE_i_6_n_0),
+        .I1(\counter_reg_n_0_[7] ),
+        .I2(\counter_reg_n_0_[6] ),
+        .I3(\counter_reg_n_0_[11] ),
+        .I4(\counter_reg_n_0_[10] ),
+        .I5(attack_state),
         .O(\counter[15]_i_4_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT2 #(
-    .INIT(4'h8)) 
-    \counter[1]_i_1 
-       (.I0(ATTACK_STATE_i_2_n_0),
-        .I1(data0[1]),
-        .O(\counter[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
-  LUT2 #(
-    .INIT(4'h8)) 
-    \counter[2]_i_1 
-       (.I0(ATTACK_STATE_i_2_n_0),
-        .I1(data0[2]),
-        .O(\counter[2]_i_1_n_0 ));
+  LUT5 #(
+    .INIT(32'hFFBFFFFF)) 
+    \counter[15]_i_5 
+       (.I0(ATTACK_STATE_i_6_n_0),
+        .I1(\counter_reg_n_0_[7] ),
+        .I2(\counter_reg_n_0_[11] ),
+        .I3(\counter_reg_n_0_[6] ),
+        .I4(\counter_reg_n_0_[10] ),
+        .O(\counter[15]_i_5_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT5 #(
+    .INIT(32'h00000001)) 
+    \counter[15]_i_6 
+       (.I0(\counter_reg_n_0_[0] ),
+        .I1(\counter_reg_n_0_[9] ),
+        .I2(\counter_reg_n_0_[5] ),
+        .I3(\counter_reg_n_0_[1] ),
+        .I4(ATTACK_STATE_i_3_n_0),
+        .O(\counter[15]_i_6_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT2 #(
-    .INIT(4'h8)) 
-    \counter[3]_i_1 
-       (.I0(ATTACK_STATE_i_2_n_0),
-        .I1(data0[3]),
-        .O(\counter[3]_i_1_n_0 ));
+    .INIT(4'h2)) 
+    \counter[1]_i_1 
+       (.I0(data0[1]),
+        .I1(ATTACK_STATE_i_2_n_0),
+        .O(\counter[1]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT2 #(
-    .INIT(4'h8)) 
-    \counter[4]_i_1 
-       (.I0(ATTACK_STATE_i_2_n_0),
-        .I1(data0[4]),
-        .O(\counter[4]_i_1_n_0 ));
+    .INIT(4'h2)) 
+    \counter[2]_i_1 
+       (.I0(data0[2]),
+        .I1(ATTACK_STATE_i_2_n_0),
+        .O(\counter[2]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT2 #(
-    .INIT(4'h8)) 
-    \counter[5]_i_1 
-       (.I0(ATTACK_STATE_i_2_n_0),
-        .I1(data0[5]),
-        .O(\counter[5]_i_1_n_0 ));
+    .INIT(4'h2)) 
+    \counter[3]_i_1 
+       (.I0(data0[3]),
+        .I1(ATTACK_STATE_i_2_n_0),
+        .O(\counter[3]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT2 #(
-    .INIT(4'h8)) 
-    \counter[6]_i_1 
-       (.I0(ATTACK_STATE_i_2_n_0),
-        .I1(data0[6]),
-        .O(\counter[6]_i_1_n_0 ));
+    .INIT(4'h2)) 
+    \counter[4]_i_1 
+       (.I0(data0[4]),
+        .I1(ATTACK_STATE_i_2_n_0),
+        .O(\counter[4]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  LUT2 #(
+    .INIT(4'h2)) 
+    \counter[5]_i_1 
+       (.I0(data0[5]),
+        .I1(ATTACK_STATE_i_2_n_0),
+        .O(\counter[5]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT2 #(
-    .INIT(4'h8)) 
+    .INIT(4'h2)) 
+    \counter[6]_i_1 
+       (.I0(data0[6]),
+        .I1(ATTACK_STATE_i_2_n_0),
+        .O(\counter[6]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  LUT2 #(
+    .INIT(4'h2)) 
     \counter[7]_i_1 
-       (.I0(ATTACK_STATE_i_2_n_0),
-        .I1(data0[7]),
+       (.I0(data0[7]),
+        .I1(ATTACK_STATE_i_2_n_0),
         .O(\counter[7]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  LUT2 #(
+    .INIT(4'h2)) 
+    \counter[8]_i_1 
+       (.I0(data0[8]),
+        .I1(ATTACK_STATE_i_2_n_0),
+        .O(\counter[8]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT2 #(
-    .INIT(4'h8)) 
-    \counter[8]_i_1 
-       (.I0(ATTACK_STATE_i_2_n_0),
-        .I1(data0[8]),
-        .O(\counter[8]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT2 #(
-    .INIT(4'h8)) 
+    .INIT(4'h2)) 
     \counter[9]_i_1 
-       (.I0(ATTACK_STATE_i_2_n_0),
-        .I1(data0[9]),
+       (.I0(data0[9]),
+        .I1(ATTACK_STATE_i_2_n_0),
         .O(\counter[9]_i_1_n_0 ));
   FDRE \counter_reg[0] 
        (.C(clk),
@@ -1904,14 +1934,14 @@ module design_1_MODULE_CONTROLLER_0_0_STATE_DETECTOR
   wire reset;
   wire sample_point;
 
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT2 #(
     .INIT(4'h7)) 
     \BUS_MSG[107]_i_1 
-       (.I0(reset),
-        .I1(STATE_reg_0),
+       (.I0(STATE_reg_0),
+        .I1(reset),
         .O(SR));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT5 #(
     .INIT(32'h22F20000)) 
     STATE_i_1
@@ -1924,12 +1954,12 @@ module design_1_MODULE_CONTROLLER_0_0_STATE_DETECTOR
   LUT6 #(
     .INIT(64'h8000000000000001)) 
     STATE_i_2
-       (.I0(p_0_in__0[4]),
-        .I1(p_0_in__0[5]),
-        .I2(p_0_in__0[1]),
-        .I3(\buffer_reg_n_0_[5] ),
-        .I4(p_0_in__0[3]),
-        .I5(p_0_in__0[2]),
+       (.I0(p_0_in__0[2]),
+        .I1(p_0_in__0[3]),
+        .I2(p_0_in__0[4]),
+        .I3(p_0_in__0[5]),
+        .I4(p_0_in__0[1]),
+        .I5(\buffer_reg_n_0_[5] ),
         .O(STATE_i_2_n_0));
   FDRE STATE_reg
        (.C(clk),
@@ -1938,27 +1968,27 @@ module design_1_MODULE_CONTROLLER_0_0_STATE_DETECTOR
         .Q(STATE_reg_0),
         .R(1'b0));
   LUT3 #(
-    .INIT(8'h75)) 
+    .INIT(8'h2F)) 
     \buffer[4]_i_1 
-       (.I0(reset),
+       (.I0(STATE_i_2_n_0),
         .I1(STATE_reg_0),
-        .I2(STATE_i_2_n_0),
+        .I2(reset),
         .O(\buffer[4]_i_1_n_0 ));
   LUT4 #(
-    .INIT(16'hDFD5)) 
+    .INIT(16'hEF2F)) 
     \buffer[4]_i_2 
-       (.I0(reset),
-        .I1(sample_point),
-        .I2(STATE_reg_0),
-        .I3(STATE_i_2_n_0),
+       (.I0(STATE_i_2_n_0),
+        .I1(STATE_reg_0),
+        .I2(reset),
+        .I3(sample_point),
         .O(\buffer[4]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'hA0AA202A80800000)) 
+    .INIT(64'hD0D010D0C0000000)) 
     \buffer[5]_i_1 
-       (.I0(reset),
-        .I1(sample_point),
-        .I2(STATE_reg_0),
-        .I3(STATE_i_2_n_0),
+       (.I0(STATE_i_2_n_0),
+        .I1(STATE_reg_0),
+        .I2(reset),
+        .I3(sample_point),
         .I4(p_0_in__0[5]),
         .I5(\buffer_reg_n_0_[5] ),
         .O(\buffer[5]_i_1_n_0 ));
@@ -1998,21 +2028,21 @@ module design_1_MODULE_CONTROLLER_0_0_STATE_DETECTOR
         .D(\buffer[5]_i_1_n_0 ),
         .Q(\buffer_reg_n_0_[5] ),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT3 #(
-    .INIT(8'h40)) 
+    .INIT(8'h08)) 
     \can_signal_reg[0]_i_1 
-       (.I0(STATE_reg_0),
+       (.I0(can_signal_in),
         .I1(reset),
-        .I2(can_signal_in),
+        .I2(STATE_reg_0),
         .O(\can_signal_reg[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT3 #(
-    .INIT(8'h40)) 
+    .INIT(8'h08)) 
     \can_signal_reg[1]_i_1 
-       (.I0(STATE_reg_0),
+       (.I0(p_0_in),
         .I1(reset),
-        .I2(p_0_in),
+        .I2(STATE_reg_0),
         .O(\can_signal_reg[1]_i_1_n_0 ));
   FDRE \can_signal_reg_reg[0] 
        (.C(clk),

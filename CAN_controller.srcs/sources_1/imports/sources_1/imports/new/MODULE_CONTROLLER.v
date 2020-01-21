@@ -20,10 +20,10 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module MODULE_CONTROLLER(clk, reset, can_signal_in, sample_point, triger, state, attack_state,  debug, debug_1, debug_2);
+module MODULE_CONTROLLER(clk, reset, ATTACK_PERMIT, can_signal_in, sample_point, triger, state, attack_state,  debug, debug_1, debug_2);
     input clk; //40MHz 25ns 1TQ=125ns=5クロック
     input reset;
-//    input ATTACK_PERMIT;
+    input ATTACK_PERMIT;
     input can_signal_in;
     input sample_point;
     output triger;
@@ -36,7 +36,7 @@ module MODULE_CONTROLLER(clk, reset, can_signal_in, sample_point, triger, state,
     wire sp_trg;                    //Artyがバス上の値をサンプリングするタイミング
 //    wire state;                     //メッセージを受信したら1
     wire [107:0]bus_msg;            //バス上のメッセージ
-    reg ATTACK_PERMIT=1;
+//    reg ATTACK_PERMIT=1;
     
     assign sp_trg = sample_point;
     assign debug = 1'b0;

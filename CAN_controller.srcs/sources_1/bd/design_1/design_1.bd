@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x96B7762927301676",
+      "boundary_crc": "0xE3B7BB3E86C4F31F",
       "device": "xc7a35ticsg324-1L",
       "name": "design_1",
       "synth_flow_mode": "Hierarchical",
@@ -57,6 +57,9 @@
       },
       "to_recessive": {
         "direction": "O"
+      },
+      "SW_0": {
+        "direction": "I"
       }
     },
     "components": {
@@ -291,6 +294,9 @@
             "type": "rst",
             "direction": "I"
           },
+          "ATTACK_PERMIT": {
+            "direction": "I"
+          },
           "can_signal_in": {
             "direction": "I"
           },
@@ -511,6 +517,12 @@
         "ports": [
           "can_top_0/go_sync",
           "ATTACK_MODULE_0/go_sync"
+        ]
+      },
+      "SW_0_1": {
+        "ports": [
+          "SW_0",
+          "MODULE_CONTROLLER_0/ATTACK_PERMIT"
         ]
       }
     }

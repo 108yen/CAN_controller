@@ -58,6 +58,7 @@
 module design_1_MODULE_CONTROLLER_0_0 (
   clk,
   reset,
+  ATTACK_PERMIT,
   can_signal_in,
   sample_point,
   triger,
@@ -74,6 +75,7 @@ input wire clk;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset RST" *)
 input wire reset;
+input wire ATTACK_PERMIT;
 input wire can_signal_in;
 input wire sample_point;
 output wire triger;
@@ -86,6 +88,7 @@ output wire debug_2;
   MODULE_CONTROLLER inst (
     .clk(clk),
     .reset(reset),
+    .ATTACK_PERMIT(ATTACK_PERMIT),
     .can_signal_in(can_signal_in),
     .sample_point(sample_point),
     .triger(triger),

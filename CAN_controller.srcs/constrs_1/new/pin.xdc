@@ -18,3 +18,6 @@ set_property IOSTANDARD LVCMOS33 [get_ports to_recessive]
 
 set_property PACKAGE_PIN G13 [get_ports to_dominant]
 set_property IOSTANDARD LVCMOS33 [get_ports to_dominant]
+
+set_property PACKAGE_PIN A8 [get_ports SW_0]
+set_property IOSTANDARD LVCMOS33 [get_ports SW_0]

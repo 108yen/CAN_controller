@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Sat Jan 18 19:30:04 2020
+//Date        : Tue Jan 21 14:39:42 2020
 //Host        : DESKTOP-NTANC38 running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -11,7 +11,8 @@
 
 (* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=5,numReposBlks=5,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=4,numPkgbdBlks=0,bdsource=USER,da_clkrst_cnt=2,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
 module design_1
-   (can_signal_in,
+   (SW_0,
+    can_signal_in,
     clk,
     debug_0,
     debug_1,
@@ -19,6 +20,7 @@ module design_1
     to_dominant,
     to_recessive,
     triger);
+  input SW_0;
   input can_signal_in;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK, CLK_DOMAIN design_1_clk, FREQ_HZ 100000000, INSERT_VIP 0, PHASE 0.000" *) input clk;
   output debug_0;
@@ -34,6 +36,7 @@ module design_1
   wire MODULE_CONTROLLER_0_TRIGER;
   wire MODULE_CONTROLLER_0_attack_state;
   wire MODULE_CONTROLLER_0_state;
+  wire SW_0_1;
   wire can_signal_in_1;
   wire can_top_0_clkout_o;
   wire can_top_0_go_sync;
@@ -51,6 +54,7 @@ module design_1
   wire initializer_0_rst_o;
   wire initializer_0_wr_o;
 
+  assign SW_0_1 = SW_0;
   assign can_signal_in_1 = can_signal_in;
   assign clk_1 = clk;
   assign debug_0 = ATTACK_MODULE_0_debug;
@@ -73,7 +77,8 @@ module design_1
         .to_dominant(ATTACK_MODULE_0_to_dominant),
         .to_recessive(ATTACK_MODULE_0_to_recessive));
   design_1_MODULE_CONTROLLER_0_0 MODULE_CONTROLLER_0
-       (.attack_state(MODULE_CONTROLLER_0_attack_state),
+       (.ATTACK_PERMIT(SW_0_1),
+        .attack_state(MODULE_CONTROLLER_0_attack_state),
         .can_signal_in(can_signal_in_1),
         .clk(initializer_0_clk_o),
         .reset(clk_wiz_0_locked),
