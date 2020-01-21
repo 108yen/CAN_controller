@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date             : Tue Jan 21 16:37:01 2020
+| Date             : Tue Jan 21 17:16:33 2020
 | Host             : DESKTOP-NTANC38 running 64-bit major release  (build 9200)
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
@@ -53,13 +53,13 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        5 |       --- |             --- |
-| Slice Logic    |    <0.001 |     1331 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      615 |     20800 |            2.96 |
+| Slice Logic    |    <0.001 |     1344 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      624 |     20800 |            3.00 |
 |   Register     |    <0.001 |      524 |     41600 |            1.26 |
 |   CARRY4       |    <0.001 |       27 |      8150 |            0.33 |
-|   F7/F8 Muxes  |    <0.001 |       21 |     32600 |            0.06 |
+|   F7/F8 Muxes  |    <0.001 |       18 |     32600 |            0.06 |
 |   Others       |     0.000 |       42 |       --- |             --- |
-| Signals        |    <0.001 |      995 |       --- |             --- |
+| Signals        |    <0.001 |     1006 |       --- |             --- |
 | MMCM           |     0.103 |        1 |         5 |           20.00 |
 | I/O            |    <0.001 |        9 |       210 |            4.29 |
 | Static Power   |     0.062 |          |           |                 |
@@ -145,7 +145,7 @@ Table of Contents
 | Name             | Power (W) |
 +------------------+-----------+
 | design_1_wrapper |     0.105 |
-|   design_1_i     |     0.104 |
+|   design_1_i     |     0.105 |
 |     clk_wiz_0    |     0.103 |
 |       inst       |     0.103 |
 +------------------+-----------+
