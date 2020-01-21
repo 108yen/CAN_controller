@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Tue Jan 21 17:15:03 2020
+// Date        : Tue Jan 21 21:25:37 2020
 // Host        : DESKTOP-NTANC38 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_1_ATTACK_MODULE_0_1_sim_netlist.v
@@ -47,6 +47,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ATTACK_MODULE
   wire \attack_cnt[7]_i_6_n_0 ;
   wire attack_cnt_0;
   wire attack_state;
+  wire \bit_cnt[4]_i_1_n_0 ;
   wire \bit_cnt[5]_i_1_n_0 ;
   wire [5:0]bit_cnt_reg__0;
   wire clk;
@@ -83,14 +84,14 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ATTACK_MODULE
   wire value_i_2_n_0;
   wire value_i_3_n_0;
 
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT2 #(
     .INIT(4'h1)) 
     \attack_cnt[0]_i_1 
        (.I0(attack_cnt[0]),
         .I1(\attack_cnt[7]_i_4_n_0 ),
         .O(\attack_cnt[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT3 #(
     .INIT(8'h06)) 
     \attack_cnt[1]_i_1 
@@ -98,7 +99,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ATTACK_MODULE
         .I1(attack_cnt[1]),
         .I2(\attack_cnt[7]_i_4_n_0 ),
         .O(\attack_cnt[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT3 #(
     .INIT(8'h6A)) 
     \attack_cnt[2]_i_1 
@@ -106,41 +107,42 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ATTACK_MODULE
         .I1(attack_cnt[1]),
         .I2(attack_cnt[0]),
         .O(\attack_cnt[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT4 #(
-    .INIT(16'h6AAA)) 
+    .INIT(16'h7F80)) 
     \attack_cnt[3]_i_1 
-       (.I0(attack_cnt[3]),
-        .I1(attack_cnt[0]),
-        .I2(attack_cnt[1]),
-        .I3(attack_cnt[2]),
+       (.I0(attack_cnt[0]),
+        .I1(attack_cnt[1]),
+        .I2(attack_cnt[2]),
+        .I3(attack_cnt[3]),
         .O(\attack_cnt[3]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h000000007FFF8000)) 
+    .INIT(64'h1444444444444444)) 
     \attack_cnt[4]_i_1 
-       (.I0(attack_cnt[3]),
-        .I1(attack_cnt[0]),
-        .I2(attack_cnt[1]),
+       (.I0(\attack_cnt[7]_i_4_n_0 ),
+        .I1(attack_cnt[4]),
+        .I2(attack_cnt[3]),
         .I3(attack_cnt[2]),
-        .I4(attack_cnt[4]),
-        .I5(\attack_cnt[7]_i_4_n_0 ),
+        .I4(attack_cnt[1]),
+        .I5(attack_cnt[0]),
         .O(\attack_cnt[4]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h7FFFFFFF80000000)) 
+    .INIT(64'h6AAAAAAAAAAAAAAA)) 
     \attack_cnt[5]_i_1 
-       (.I0(attack_cnt[3]),
-        .I1(attack_cnt[0]),
-        .I2(attack_cnt[1]),
+       (.I0(attack_cnt[5]),
+        .I1(attack_cnt[4]),
+        .I2(attack_cnt[3]),
         .I3(attack_cnt[2]),
-        .I4(attack_cnt[4]),
-        .I5(attack_cnt[5]),
+        .I4(attack_cnt[1]),
+        .I5(attack_cnt[0]),
         .O(\attack_cnt[5]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
-  LUT2 #(
-    .INIT(4'h6)) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  LUT3 #(
+    .INIT(8'h6A)) 
     \attack_cnt[6]_i_1 
        (.I0(attack_cnt[6]),
         .I1(\attack_cnt[7]_i_5_n_0 ),
+        .I2(attack_cnt[5]),
         .O(\attack_cnt[6]_i_1_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
@@ -153,40 +155,42 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ATTACK_MODULE
        (.I0(ex_attack),
         .I1(\attack_cnt[7]_i_4_n_0 ),
         .O(attack_cnt_0));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
-  LUT3 #(
-    .INIT(8'h6A)) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  LUT4 #(
+    .INIT(16'h6AAA)) 
     \attack_cnt[7]_i_3 
        (.I0(attack_cnt[7]),
-        .I1(\attack_cnt[7]_i_5_n_0 ),
-        .I2(attack_cnt[6]),
+        .I1(attack_cnt[5]),
+        .I2(\attack_cnt[7]_i_5_n_0 ),
+        .I3(attack_cnt[6]),
         .O(\attack_cnt[7]_i_3_n_0 ));
-  LUT3 #(
-    .INIT(8'h04)) 
+  LUT5 #(
+    .INIT(32'h00000004)) 
     \attack_cnt[7]_i_4 
-       (.I0(\attack_cnt[7]_i_6_n_0 ),
-        .I1(attack_cnt[4]),
-        .I2(attack_cnt[5]),
-        .O(\attack_cnt[7]_i_4_n_0 ));
-  LUT6 #(
-    .INIT(64'h8000000000000000)) 
-    \attack_cnt[7]_i_5 
-       (.I0(attack_cnt[5]),
-        .I1(attack_cnt[4]),
-        .I2(attack_cnt[2]),
-        .I3(attack_cnt[1]),
-        .I4(attack_cnt[0]),
-        .I5(attack_cnt[3]),
-        .O(\attack_cnt[7]_i_5_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFFEFFFF)) 
-    \attack_cnt[7]_i_6 
        (.I0(attack_cnt[2]),
-        .I1(attack_cnt[3]),
-        .I2(attack_cnt[0]),
-        .I3(attack_cnt[7]),
-        .I4(attack_cnt[1]),
-        .I5(attack_cnt[6]),
+        .I1(attack_cnt[4]),
+        .I2(attack_cnt[7]),
+        .I3(attack_cnt[6]),
+        .I4(\attack_cnt[7]_i_6_n_0 ),
+        .O(\attack_cnt[7]_i_4_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT5 #(
+    .INIT(32'h80000000)) 
+    \attack_cnt[7]_i_5 
+       (.I0(attack_cnt[0]),
+        .I1(attack_cnt[1]),
+        .I2(attack_cnt[2]),
+        .I3(attack_cnt[3]),
+        .I4(attack_cnt[4]),
+        .O(\attack_cnt[7]_i_5_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  LUT4 #(
+    .INIT(16'hFFEF)) 
+    \attack_cnt[7]_i_6 
+       (.I0(attack_cnt[5]),
+        .I1(attack_cnt[0]),
+        .I2(attack_cnt[1]),
+        .I3(attack_cnt[3]),
         .O(\attack_cnt[7]_i_6_n_0 ));
   FDRE \attack_cnt_reg[0] 
        (.C(clk),
@@ -241,14 +245,14 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ATTACK_MODULE
     \bit_cnt[0]_i_1 
        (.I0(bit_cnt_reg__0[0]),
         .O(p_0_in__0));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \bit_cnt[1]_i_1 
        (.I0(bit_cnt_reg__0[1]),
         .I1(bit_cnt_reg__0[0]),
         .O(p_0_in[1]));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT3 #(
     .INIT(8'h6A)) 
     \bit_cnt[2]_i_1 
@@ -256,7 +260,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ATTACK_MODULE
         .I1(bit_cnt_reg__0[0]),
         .I2(bit_cnt_reg__0[1]),
         .O(p_0_in[2]));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT4 #(
     .INIT(16'h6AAA)) 
     \bit_cnt[3]_i_1 
@@ -265,16 +269,16 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ATTACK_MODULE
         .I2(bit_cnt_reg__0[2]),
         .I3(bit_cnt_reg__0[0]),
         .O(p_0_in[3]));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT5 #(
     .INIT(32'h6AAAAAAA)) 
     \bit_cnt[4]_i_1 
        (.I0(bit_cnt_reg__0[4]),
-        .I1(bit_cnt_reg__0[3]),
-        .I2(bit_cnt_reg__0[0]),
-        .I3(bit_cnt_reg__0[2]),
-        .I4(bit_cnt_reg__0[1]),
-        .O(p_0_in[4]));
+        .I1(bit_cnt_reg__0[1]),
+        .I2(bit_cnt_reg__0[3]),
+        .I3(bit_cnt_reg__0[0]),
+        .I4(bit_cnt_reg__0[2]),
+        .O(\bit_cnt[4]_i_1_n_0 ));
   LUT2 #(
     .INIT(4'h7)) 
     \bit_cnt[5]_i_1 
@@ -285,10 +289,10 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ATTACK_MODULE
     .INIT(64'h6AAAAAAAAAAAAAAA)) 
     \bit_cnt[5]_i_2 
        (.I0(bit_cnt_reg__0[5]),
-        .I1(bit_cnt_reg__0[1]),
-        .I2(bit_cnt_reg__0[2]),
-        .I3(bit_cnt_reg__0[0]),
-        .I4(bit_cnt_reg__0[3]),
+        .I1(bit_cnt_reg__0[2]),
+        .I2(bit_cnt_reg__0[0]),
+        .I3(bit_cnt_reg__0[3]),
+        .I4(bit_cnt_reg__0[1]),
         .I5(bit_cnt_reg__0[4]),
         .O(p_0_in[5]));
   FDRE \bit_cnt_reg[0] 
@@ -318,7 +322,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ATTACK_MODULE
   FDRE \bit_cnt_reg[4] 
        (.C(clk),
         .CE(sample_point),
-        .D(p_0_in[4]),
+        .D(\bit_cnt[4]_i_1_n_0 ),
         .Q(bit_cnt_reg__0[4]),
         .R(\bit_cnt[5]_i_1_n_0 ));
   FDRE \bit_cnt_reg[5] 
@@ -352,23 +356,23 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ATTACK_MODULE
         .I3(\rsyn_cnt[7]_i_3_n_0 ),
         .O(ex_rsyn_i_1_n_0));
   LUT5 #(
-    .INIT(32'hFFFF4000)) 
+    .INIT(32'hFFFF0400)) 
     ex_rsyn_i_2
-       (.I0(value_i_2_n_0),
-        .I1(ex_rsyn_i_3_n_0),
-        .I2(rsyn_t),
+       (.I0(ex_rsyn_i_3_n_0),
+        .I1(rsyn_t),
+        .I2(value_i_2_n_0),
         .I3(value_i_3_n_0),
         .I4(ex_rsyn),
         .O(ex_rsyn_i_2_n_0));
   LUT6 #(
-    .INIT(64'h09B2B6D46940D090)) 
+    .INIT(64'hD22DB20B0D6FFF2F)) 
     ex_rsyn_i_3
        (.I0(bit_cnt_reg__0[4]),
         .I1(bit_cnt_reg__0[5]),
         .I2(bit_cnt_reg__0[3]),
-        .I3(bit_cnt_reg__0[2]),
-        .I4(bit_cnt_reg__0[1]),
-        .I5(bit_cnt_reg__0[0]),
+        .I3(bit_cnt_reg__0[1]),
+        .I4(bit_cnt_reg__0[0]),
+        .I5(bit_cnt_reg__0[2]),
         .O(ex_rsyn_i_3_n_0));
   FDRE ex_rsyn_reg
        (.C(clk),
@@ -376,14 +380,13 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ATTACK_MODULE
         .D(ex_rsyn_i_1_n_0),
         .Q(ex_rsyn),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT2 #(
     .INIT(4'h1)) 
     \rsyn_cnt[0]_i_1 
        (.I0(rsyn_cnt[0]),
         .I1(\rsyn_cnt[7]_i_3_n_0 ),
         .O(\rsyn_cnt[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT3 #(
     .INIT(8'h06)) 
     \rsyn_cnt[1]_i_1 
@@ -391,7 +394,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ATTACK_MODULE
         .I1(rsyn_cnt[1]),
         .I2(\rsyn_cnt[7]_i_3_n_0 ),
         .O(\rsyn_cnt[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT4 #(
     .INIT(16'h0078)) 
     \rsyn_cnt[2]_i_1 
@@ -400,7 +403,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ATTACK_MODULE
         .I2(rsyn_cnt[2]),
         .I3(\rsyn_cnt[7]_i_3_n_0 ),
         .O(\rsyn_cnt[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT4 #(
     .INIT(16'h6AAA)) 
     \rsyn_cnt[3]_i_1 
@@ -409,32 +412,33 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ATTACK_MODULE
         .I2(rsyn_cnt[1]),
         .I3(rsyn_cnt[2]),
         .O(\rsyn_cnt[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT5 #(
-    .INIT(32'h6AAAAAAA)) 
+    .INIT(32'h7FFF8000)) 
     \rsyn_cnt[4]_i_1 
-       (.I0(rsyn_cnt[4]),
+       (.I0(rsyn_cnt[2]),
+        .I1(rsyn_cnt[1]),
+        .I2(rsyn_cnt[0]),
+        .I3(rsyn_cnt[3]),
+        .I4(rsyn_cnt[4]),
+        .O(\rsyn_cnt[4]_i_1_n_0 ));
+  LUT6 #(
+    .INIT(64'h6AAAAAAAAAAAAAAA)) 
+    \rsyn_cnt[5]_i_1 
+       (.I0(rsyn_cnt[5]),
         .I1(rsyn_cnt[2]),
         .I2(rsyn_cnt[1]),
         .I3(rsyn_cnt[0]),
         .I4(rsyn_cnt[3]),
-        .O(\rsyn_cnt[4]_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'h7FFFFFFF80000000)) 
-    \rsyn_cnt[5]_i_1 
-       (.I0(rsyn_cnt[3]),
-        .I1(rsyn_cnt[0]),
-        .I2(rsyn_cnt[1]),
-        .I3(rsyn_cnt[2]),
-        .I4(rsyn_cnt[4]),
-        .I5(rsyn_cnt[5]),
+        .I5(rsyn_cnt[4]),
         .O(\rsyn_cnt[5]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
-  LUT2 #(
-    .INIT(4'h6)) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  LUT3 #(
+    .INIT(8'h6A)) 
     \rsyn_cnt[6]_i_1 
        (.I0(rsyn_cnt[6]),
         .I1(\rsyn_cnt[7]_i_4_n_0 ),
+        .I2(rsyn_cnt[5]),
         .O(\rsyn_cnt[6]_i_1_n_0 ));
   LUT2 #(
     .INIT(4'hE)) 
@@ -442,34 +446,35 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ATTACK_MODULE
        (.I0(ex_rsyn),
         .I1(\rsyn_cnt[7]_i_3_n_0 ),
         .O(rsyn_cnt_1));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
-  LUT3 #(
-    .INIT(8'h6A)) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  LUT4 #(
+    .INIT(16'h6AAA)) 
     \rsyn_cnt[7]_i_2 
        (.I0(rsyn_cnt[7]),
-        .I1(\rsyn_cnt[7]_i_4_n_0 ),
-        .I2(rsyn_cnt[6]),
+        .I1(rsyn_cnt[5]),
+        .I2(\rsyn_cnt[7]_i_4_n_0 ),
+        .I3(rsyn_cnt[6]),
         .O(\rsyn_cnt[7]_i_2_n_0 ));
   LUT5 #(
-    .INIT(32'h00000004)) 
+    .INIT(32'h00000010)) 
     \rsyn_cnt[7]_i_3 
        (.I0(rsyn_cnt[5]),
-        .I1(rsyn_cnt[2]),
-        .I2(rsyn_cnt[4]),
-        .I3(rsyn_cnt[6]),
+        .I1(rsyn_cnt[6]),
+        .I2(rsyn_cnt[2]),
+        .I3(rsyn_cnt[4]),
         .I4(\rsyn_cnt[7]_i_5_n_0 ),
         .O(\rsyn_cnt[7]_i_3_n_0 ));
-  LUT6 #(
-    .INIT(64'h8000000000000000)) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  LUT5 #(
+    .INIT(32'h80000000)) 
     \rsyn_cnt[7]_i_4 
-       (.I0(rsyn_cnt[5]),
-        .I1(rsyn_cnt[4]),
-        .I2(rsyn_cnt[2]),
+       (.I0(rsyn_cnt[4]),
+        .I1(rsyn_cnt[3]),
+        .I2(rsyn_cnt[0]),
         .I3(rsyn_cnt[1]),
-        .I4(rsyn_cnt[0]),
-        .I5(rsyn_cnt[3]),
+        .I4(rsyn_cnt[2]),
         .O(\rsyn_cnt[7]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT4 #(
     .INIT(16'hFFEF)) 
     \rsyn_cnt[7]_i_5 
@@ -526,7 +531,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ATTACK_MODULE
         .D(\rsyn_cnt[7]_i_2_n_0 ),
         .Q(rsyn_cnt[7]),
         .R(\attack_cnt[7]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT3 #(
     .INIT(8'h7F)) 
     to_dominant_INST_0
@@ -534,7 +539,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ATTACK_MODULE
         .I1(value),
         .I2(attack_state),
         .O(to_dominant));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT4 #(
     .INIT(16'h45FF)) 
     to_recessive_INST_0
@@ -552,24 +557,24 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ATTACK_MODULE
         .I3(value),
         .O(value_i_1_n_0));
   LUT6 #(
-    .INIT(64'h586A203C2A13586A)) 
+    .INIT(64'h37890A8433EC8DC0)) 
     value_i_2
-       (.I0(bit_cnt_reg__0[3]),
-        .I1(bit_cnt_reg__0[1]),
-        .I2(bit_cnt_reg__0[2]),
-        .I3(bit_cnt_reg__0[0]),
-        .I4(bit_cnt_reg__0[5]),
+       (.I0(bit_cnt_reg__0[5]),
+        .I1(bit_cnt_reg__0[2]),
+        .I2(bit_cnt_reg__0[0]),
+        .I3(bit_cnt_reg__0[3]),
+        .I4(bit_cnt_reg__0[1]),
         .I5(bit_cnt_reg__0[4]),
         .O(value_i_2_n_0));
   LUT6 #(
-    .INIT(64'hEBAFFFFFFDD5575D)) 
+    .INIT(64'hFAEAEBAEDF5F7FFF)) 
     value_i_3
-       (.I0(bit_cnt_reg__0[5]),
+       (.I0(bit_cnt_reg__0[4]),
         .I1(bit_cnt_reg__0[1]),
-        .I2(bit_cnt_reg__0[2]),
+        .I2(bit_cnt_reg__0[3]),
         .I3(bit_cnt_reg__0[0]),
-        .I4(bit_cnt_reg__0[3]),
-        .I5(bit_cnt_reg__0[4]),
+        .I4(bit_cnt_reg__0[2]),
+        .I5(bit_cnt_reg__0[5]),
         .O(value_i_3_n_0));
   FDRE value_reg
        (.C(clk),
