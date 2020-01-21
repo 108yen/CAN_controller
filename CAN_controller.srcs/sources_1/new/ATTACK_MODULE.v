@@ -59,7 +59,7 @@ module ATTACK_MODULE(
 //    parameter ATTACKED_MSG =   47'b00000111101110000010100000110010000101110011110;  //ID:077,DATA:04のメッセージ
     parameter MSG_L = 8'd48;
 //    parameter MSG_L = 8'd44;
-    parameter ATTACK_L = 8'd16;
+    parameter ATTACK_L = 8'd18;
 //    parameter ATTACK_L = 8'd10;   //ID:0x19A, DATA:1のメッセージ改ざん
 
 //    parameter RSYN_L = 8'd6;   //ID:0x19A, DATA:1のメッセージ改ざん

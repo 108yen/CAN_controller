@@ -10,9 +10,9 @@
     },
     "design_tree": {
       "clk_wiz_0": "",
-      "can_top_0": "",
       "initializer_0": "",
       "MODULE_CONTROLLER_0": "",
+      "can_top_0": "",
       "ATTACK_MODULE_0": ""
     },
     "ports": {
@@ -138,73 +138,6 @@
           }
         }
       },
-      "can_top_0": {
-        "vlnv": "xilinx.com:module_ref:can_top:1.0",
-        "xci_name": "design_1_can_top_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "can_top",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "rst_i": {
-            "direction": "I"
-          },
-          "ale_i": {
-            "direction": "I"
-          },
-          "rd_i": {
-            "direction": "I"
-          },
-          "wr_i": {
-            "direction": "I"
-          },
-          "cs_can_i": {
-            "direction": "I"
-          },
-          "clk_i": {
-            "direction": "I"
-          },
-          "rx_i": {
-            "direction": "I"
-          },
-          "tx_o": {
-            "direction": "O"
-          },
-          "bus_off_on": {
-            "direction": "O"
-          },
-          "irq_on": {
-            "direction": "O"
-          },
-          "clkout_o": {
-            "direction": "O"
-          },
-          "port_0_i": {
-            "direction": "I",
-            "left": "7",
-            "right": "0"
-          },
-          "sample_point": {
-            "direction": "O"
-          },
-          "sample_point_q": {
-            "direction": "O"
-          },
-          "rsyn_t": {
-            "direction": "O"
-          },
-          "sampled_bit": {
-            "direction": "O"
-          },
-          "go_sync": {
-            "direction": "O"
-          },
-          "debug": {
-            "direction": "O"
-          }
-        }
-      },
       "initializer_0": {
         "vlnv": "xilinx.com:module_ref:initializer:1.0",
         "xci_name": "design_1_initializer_0_0",
@@ -323,6 +256,73 @@
           }
         }
       },
+      "can_top_0": {
+        "vlnv": "xilinx.com:module_ref:can_top:1.0",
+        "xci_name": "design_1_can_top_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "can_top",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "rst_i": {
+            "direction": "I"
+          },
+          "ale_i": {
+            "direction": "I"
+          },
+          "rd_i": {
+            "direction": "I"
+          },
+          "wr_i": {
+            "direction": "I"
+          },
+          "cs_can_i": {
+            "direction": "I"
+          },
+          "clk_i": {
+            "direction": "I"
+          },
+          "rx_i": {
+            "direction": "I"
+          },
+          "tx_o": {
+            "direction": "O"
+          },
+          "bus_off_on": {
+            "direction": "O"
+          },
+          "irq_on": {
+            "direction": "O"
+          },
+          "clkout_o": {
+            "direction": "O"
+          },
+          "port_0_i": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "sample_point": {
+            "direction": "O"
+          },
+          "sample_point_q": {
+            "direction": "O"
+          },
+          "rsyn_t": {
+            "direction": "O"
+          },
+          "sampled_bit": {
+            "direction": "O"
+          },
+          "go_sync": {
+            "direction": "O"
+          },
+          "debug": {
+            "direction": "O"
+          }
+        }
+      },
       "ATTACK_MODULE_0": {
         "vlnv": "xilinx.com:module_ref:ATTACK_MODULE:1.0",
         "xci_name": "design_1_ATTACK_MODULE_0_1",
@@ -414,16 +414,16 @@
       "initializer_0_clk_o": {
         "ports": [
           "initializer_0/clk_o",
-          "can_top_0/clk_i",
           "MODULE_CONTROLLER_0/clk",
+          "can_top_0/clk_i",
           "ATTACK_MODULE_0/clk"
         ]
       },
       "can_signal_in_1": {
         "ports": [
           "can_signal_in",
-          "can_top_0/rx_i",
           "MODULE_CONTROLLER_0/can_signal_in",
+          "can_top_0/rx_i",
           "ATTACK_MODULE_0/can_signal_in"
         ]
       },

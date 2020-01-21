@@ -90,7 +90,7 @@ output wire debug;
     .UNATTACKED_MSG(48'H07B82826FAC6),
     .ATTACKED_MSG(48'H07B8282AA41E),
     .MSG_L(8'B00110000),
-    .ATTACK_L(8'B00010000),
+    .ATTACK_L(8'B00010010),
     .RSYN_L(8'B00000110)
   ) inst (
     .clk(clk),
