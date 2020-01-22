@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Wed Jan 22 18:36:31 2020
+//Date        : Wed Jan 22 19:43:44 2020
 //Host        : DESKTOP-NTANC38 running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -9,9 +9,10 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=5,numReposBlks=5,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=4,numPkgbdBlks=0,bdsource=USER,da_clkrst_cnt=2,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
+(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=6,numReposBlks=6,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=5,numPkgbdBlks=0,bdsource=USER,da_clkrst_cnt=2,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
 module design_1
    (SW_0,
+    btn1,
     can_signal_in,
     clk,
     debug_0,
@@ -21,6 +22,7 @@ module design_1
     to_recessive,
     triger);
   input SW_0;
+  input btn1;
   input can_signal_in;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK, CLK_DOMAIN design_1_clk, FREQ_HZ 100000000, INSERT_VIP 0, PHASE 0.000" *) input clk;
   output debug_0;
@@ -37,6 +39,7 @@ module design_1
   wire MODULE_CONTROLLER_0_attack_state;
   wire MODULE_CONTROLLER_0_state;
   wire SW_0_1;
+  wire btn1_1;
   wire can_signal_in_1;
   wire can_top_0_go_sync;
   wire can_top_0_rsyn_t;
@@ -45,6 +48,7 @@ module design_1
   wire clk_1;
   wire clk_wiz_0_clk_out2;
   wire clk_wiz_0_locked;
+  wire [7:0]counter_0_cnt1;
   wire initializer_0_ale_o;
   wire initializer_0_clk_o;
   wire initializer_0_cs_can_o;
@@ -54,6 +58,7 @@ module design_1
   wire initializer_0_wr_o;
 
   assign SW_0_1 = SW_0;
+  assign btn1_1 = btn1;
   assign can_signal_in_1 = can_signal_in;
   assign clk_1 = clk;
   assign debug_0 = ATTACK_MODULE_0_debug;
@@ -66,6 +71,7 @@ module design_1
        (.attack_state(MODULE_CONTROLLER_0_attack_state),
         .can_signal_in(can_signal_in_1),
         .clk(initializer_0_clk_o),
+        .cnt1(counter_0_cnt1),
         .debug(ATTACK_MODULE_0_debug),
         .go_sync(can_top_0_go_sync),
         .rst(clk_wiz_0_locked),
@@ -101,6 +107,10 @@ module design_1
        (.clk_in1(clk_1),
         .clk_out2(clk_wiz_0_clk_out2),
         .locked(clk_wiz_0_locked));
+  design_1_counter_0_0 counter_0
+       (.btn1(btn1_1),
+        .clk(initializer_0_clk_o),
+        .cnt1(counter_0_cnt1));
   design_1_initializer_0_0 initializer_0
        (.ale_o(initializer_0_ale_o),
         .bus_off_on(1'b0),

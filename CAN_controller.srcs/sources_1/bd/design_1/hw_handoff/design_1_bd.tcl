@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# ATTACK_MODULE, MODULE_CONTROLLER, can_top, initializer
+# ATTACK_MODULE, MODULE_CONTROLLER, can_top, counter, initializer
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -165,6 +165,7 @@ proc create_root_design { parentCell } {
 
   # Create ports
   set SW_0 [ create_bd_port -dir I SW_0 ]
+  set btn1 [ create_bd_port -dir I btn1 ]
   set can_signal_in [ create_bd_port -dir I can_signal_in ]
   set clk [ create_bd_port -dir I -type clk clk ]
   set_property -dict [ list \
@@ -238,6 +239,17 @@ proc create_root_design { parentCell } {
    CONFIG.USE_RESET {false} \
  ] $clk_wiz_0
 
+  # Create instance: counter_0, and set properties
+  set block_name counter
+  set block_cell_name counter_0
+  if { [catch {set counter_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $counter_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
   # Create instance: initializer_0, and set properties
   set block_name initializer
   set block_cell_name initializer_0
@@ -257,6 +269,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net MODULE_CONTROLLER_0_attack_state [get_bd_pins ATTACK_MODULE_0/attack_state] [get_bd_pins MODULE_CONTROLLER_0/attack_state]
   connect_bd_net -net MODULE_CONTROLLER_0_state [get_bd_pins ATTACK_MODULE_0/state] [get_bd_pins MODULE_CONTROLLER_0/state]
   connect_bd_net -net SW_0_1 [get_bd_ports SW_0] [get_bd_pins MODULE_CONTROLLER_0/ATTACK_PERMIT]
+  connect_bd_net -net btn1_1 [get_bd_ports btn1] [get_bd_pins counter_0/btn1]
   connect_bd_net -net can_signal_in_1 [get_bd_ports can_signal_in] [get_bd_pins ATTACK_MODULE_0/can_signal_in] [get_bd_pins MODULE_CONTROLLER_0/can_signal_in] [get_bd_pins can_top_0/rx_i]
   connect_bd_net -net can_top_0_go_sync [get_bd_pins ATTACK_MODULE_0/go_sync] [get_bd_pins can_top_0/go_sync]
   connect_bd_net -net can_top_0_rsyn_t [get_bd_pins ATTACK_MODULE_0/rsyn_t] [get_bd_pins can_top_0/rsyn_t]
@@ -265,8 +278,9 @@ proc create_root_design { parentCell } {
   connect_bd_net -net clk_1 [get_bd_ports clk] [get_bd_pins clk_wiz_0/clk_in1]
   connect_bd_net -net clk_wiz_0_clk_out2 [get_bd_pins clk_wiz_0/clk_out2] [get_bd_pins initializer_0/clk_i]
   connect_bd_net -net clk_wiz_0_locked [get_bd_pins ATTACK_MODULE_0/rst] [get_bd_pins MODULE_CONTROLLER_0/reset] [get_bd_pins clk_wiz_0/locked]
+  connect_bd_net -net counter_0_cnt1 [get_bd_pins ATTACK_MODULE_0/cnt1] [get_bd_pins counter_0/cnt1]
   connect_bd_net -net initializer_0_ale_o [get_bd_pins can_top_0/ale_i] [get_bd_pins initializer_0/ale_o]
-  connect_bd_net -net initializer_0_clk_o [get_bd_pins ATTACK_MODULE_0/clk] [get_bd_pins MODULE_CONTROLLER_0/clk] [get_bd_pins can_top_0/clk_i] [get_bd_pins initializer_0/clk_o]
+  connect_bd_net -net initializer_0_clk_o [get_bd_pins ATTACK_MODULE_0/clk] [get_bd_pins MODULE_CONTROLLER_0/clk] [get_bd_pins can_top_0/clk_i] [get_bd_pins counter_0/clk] [get_bd_pins initializer_0/clk_o]
   connect_bd_net -net initializer_0_cs_can_o [get_bd_pins can_top_0/cs_can_i] [get_bd_pins initializer_0/cs_can_o]
   connect_bd_net -net initializer_0_port_0_io [get_bd_pins can_top_0/port_0_i] [get_bd_pins initializer_0/port_0_io]
   connect_bd_net -net initializer_0_rd_i [get_bd_pins can_top_0/rd_i] [get_bd_pins initializer_0/rd_o]

@@ -21,3 +21,6 @@ set_property IOSTANDARD LVCMOS33 [get_ports to_dominant]
 
 set_property PACKAGE_PIN A8 [get_ports SW_0]
 set_property IOSTANDARD LVCMOS33 [get_ports SW_0]
+
+set_property PACKAGE_PIN C9 [get_ports btn1]
+set_property IOSTANDARD LVCMOS33 [get_ports btn1]

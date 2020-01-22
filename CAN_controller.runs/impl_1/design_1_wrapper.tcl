@@ -67,24 +67,13 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param xicom.use_bs_reader 1
-  create_project -in_memory -part xc7a35ticsg324-1L
-  set_property design_mode GateLvl [current_fileset]
-  set_param project.singleFileAddWarning.threshold 0
+  reset_param project.defaultXPMLibraries 
+  open_checkpoint C:/Users/car_security/vivado/CAN_controller/CAN_controller.runs/impl_1/design_1_wrapper.dcp
   set_property webtalk.parent_dir C:/Users/car_security/vivado/CAN_controller/CAN_controller.cache/wt [current_project]
   set_property parent.project_path C:/Users/car_security/vivado/CAN_controller/CAN_controller.xpr [current_project]
   set_property ip_output_repo C:/Users/car_security/vivado/CAN_controller/CAN_controller.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES XPM_CDC [current_project]
-  add_files -quiet C:/Users/car_security/vivado/CAN_controller/CAN_controller.runs/synth_1/design_1_wrapper.dcp
-  set_msg_config -source 4 -id {BD 41-1661} -limit 0
-  set_param project.isImplRun true
-  add_files C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/sources_1/bd/design_1/design_1.bd
-  set_param project.isImplRun false
-  read_xdc C:/Users/car_security/vivado/CAN_controller/CAN_controller.srcs/constrs_1/new/pin.xdc
-  set_param project.isImplRun true
-  link_design -top design_1_wrapper -part xc7a35ticsg324-1L
-  set_param project.isImplRun false
-  write_hwdef -force -file design_1_wrapper.hwdef
   close_msg_db -file init_design.pb
 } RESULT]
 if {$rc} {

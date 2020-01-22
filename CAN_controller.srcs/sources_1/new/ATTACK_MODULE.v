@@ -30,6 +30,7 @@ module ATTACK_MODULE(
     sample_point_q,
     rsyn_t,
     go_sync,
+    cnt1,
     to_dominant,
     to_recessive,
     debug
@@ -44,6 +45,7 @@ module ATTACK_MODULE(
     input sample_point_q;
     input rsyn_t;
     input go_sync;
+    input [7:0]cnt1;
     output to_dominant;
     output to_recessive;
     output debug;
@@ -68,8 +70,9 @@ module ATTACK_MODULE(
 //    parameter MSG_L = 8'd47;
     parameter MSG_L = 8'd48;
 //    parameter MSG_L = 8'd44;
-    parameter ATTACK_L = 8'd18;
+//    parameter ATTACK_L = 8'd18;
 //    parameter ATTACK_L = 8'd10;   //ID:0x19A, DATA:1のメッセージ改ざん
+    wire [7:0]ATTACK_L = cnt1;
 
 //    parameter RSYN_L = 8'd6;   //ID:0x19A, DATA:1のメッセージ改ざん
     parameter RSYN_L = 8'd6;
@@ -88,7 +91,9 @@ module ATTACK_MODULE(
     assign debug = value;
     
     always @(posedge clk) begin
-        if(sample_point_q) begin
+        if(~attack_state) begin
+            value <= 0;
+        end else if(sample_point_q) begin
             value <= UNATTACKED_MSG[MSG_L - 1 - bit_cnt];
         end
     end

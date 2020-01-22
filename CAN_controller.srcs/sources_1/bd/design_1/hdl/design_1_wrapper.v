@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Wed Jan 22 18:36:31 2020
+//Date        : Wed Jan 22 19:43:44 2020
 //Host        : DESKTOP-NTANC38 running 64-bit major release  (build 9200)
 //Command     : generate_target design_1_wrapper.bd
 //Design      : design_1_wrapper
@@ -11,6 +11,7 @@
 
 module design_1_wrapper
    (SW_0,
+    btn1,
     can_signal_in,
     clk,
     debug_0,
@@ -20,6 +21,7 @@ module design_1_wrapper
     to_recessive,
     triger);
   input SW_0;
+  input btn1;
   input can_signal_in;
   input clk;
   output debug_0;
@@ -30,6 +32,7 @@ module design_1_wrapper
   output triger;
 
   wire SW_0;
+  wire btn1;
   wire can_signal_in;
   wire clk;
   wire debug_0;
@@ -41,6 +44,7 @@ module design_1_wrapper
 
   design_1 design_1_i
        (.SW_0(SW_0),
+        .btn1(btn1),
         .can_signal_in(can_signal_in),
         .clk(clk),
         .debug_0(debug_0),
