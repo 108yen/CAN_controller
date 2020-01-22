@@ -42,7 +42,7 @@ preplace netloc initializer_0_ale_o 1 2 1 N
 preplace netloc initializer_0_rst_o 1 2 1 N
 preplace netloc clk_wiz_0_clk_out2 1 1 1 200
 preplace netloc can_top_0_go_sync 1 3 2 820 380 NJ
-levelinfo -pg 1 -20 110 360 670 1000 1330 1490 -top -190 -bot 500
+levelinfo -pg 1 -20 110 360 670 1000 1330 1500 -top -190 -bot 500
 "
 }
 {
