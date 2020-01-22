@@ -55,12 +55,18 @@ module ATTACK_MODULE(
 //    parameter UNATTACKED_MSG = 48'b000001111011100000101000001001101111101011000110;    //ID:077,DATA:01のメッセージ
 //    parameter ATTACKED_MSG =   48'b000001111011100000101000001010101010010000011110;  //ID:077,DATA:02のメッセージ
 //    parameter ATTACKED_MSG =   48'b000001111011100000101000001101000011101111101010;  //ID:077,DATA:05のメッセージ
+//    parameter UNATTACKED_MSG =   48'b000001111011100000101000001010101010010000011110;  //ID:077,DATA:02のメッセージ
+//    parameter ATTACKED_MSG = 48'b000001111011100000101000001001101111101011000110;    //ID:077,DATA:01のメッセージ
+//    parameter ATTACKED_MSG =   48'b000001111011100000101000001101000011101111101010;  //ID:077,DATA:05のメッセージ
+    parameter UNATTACKED_MSG =   48'b000001111011100000101000001101000011101111101010;  //ID:077,DATA:05のメッセージ
+    parameter ATTACKED_MSG =     48'b000001111011100000101000001001101111101011000110;    //ID:077,DATA:01のメッセージ
+//    parameter ATTACKED_MSG =   48'b000001111011100000101000001010101010010000011110;  //ID:077,DATA:02のメッセージ
 //    parameter UNATTACKED_MSG = 47'b00000111101110000010100000101100100010001101010;    //ID:077,DATA:03のメッセージ
 //    parameter ATTACKED_MSG =   47'b00000111101110000010100000110010000101110011110;  //ID:077,DATA:04のメッセージ
-    parameter UNATTACKED_MSG =   47'b00000111101110000010100000110010000101110011110;  //ID:077,DATA:04のメッセージ
-    parameter ATTACKED_MSG = 47'b00000111101110000010100000101100100010001101010;    //ID:077,DATA:03のメッセージ
-    parameter MSG_L = 8'd47;
-//    parameter MSG_L = 8'd48;
+//    parameter UNATTACKED_MSG =   47'b00000111101110000010100000110010000101110011110;  //ID:077,DATA:04のメッセージ
+//    parameter ATTACKED_MSG = 47'b00000111101110000010100000101100100010001101010;    //ID:077,DATA:03のメッセージ
+//    parameter MSG_L = 8'd47;
+    parameter MSG_L = 8'd48;
 //    parameter MSG_L = 8'd44;
     parameter ATTACK_L = 8'd18;
 //    parameter ATTACK_L = 8'd10;   //ID:0x19A, DATA:1のメッセージ改ざん
@@ -76,13 +82,13 @@ module ATTACK_MODULE(
     wire attack_bit_q;
     
     assign attack_bit = UNATTACKED_MSG[MSG_L - 1 - bit_cnt] != ATTACKED_MSG[MSG_L - 1 - bit_cnt];
-    assign attack_bit_q = UNATTACKED_MSG[MSG_L - 1 - bit_cnt] != ATTACKED_MSG[MSG_L - 1 - bit_cnt];
+    assign attack_bit_q = UNATTACKED_MSG[MSG_L - bit_cnt] != ATTACKED_MSG[MSG_L - bit_cnt];
     assign to_dominant = ~(attack_state && (ex_attack && value));
     assign to_recessive = ~(attack_state && ((ex_attack && ~value) || ex_rsyn));
-    assign debug = go_sync;
+    assign debug = value;
     
     always @(posedge clk) begin
-        if(attack_bit && sample_point_q) begin
+        if(sample_point_q) begin
             value <= UNATTACKED_MSG[MSG_L - 1 - bit_cnt];
         end
     end

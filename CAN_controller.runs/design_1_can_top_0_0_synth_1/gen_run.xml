@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="design_1_can_top_0_0_synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1579593373">
+<GenRun Id="design_1_can_top_0_0_synth_1" LaunchPart="xc7a35ticsg324-1L" LaunchTime="1579681622">
   <File Type="PA-TCL" Name="design_1_can_top_0_0.tcl"/>
   <File Type="REPORTS-TCL" Name="design_1_can_top_0_0_reports.tcl"/>
   <File Type="RDS-RDS" Name="design_1_can_top_0_0.vds"/>

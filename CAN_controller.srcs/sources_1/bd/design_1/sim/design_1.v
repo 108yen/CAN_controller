@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Tue Jan 21 21:25:03 2020
+//Date        : Wed Jan 22 18:36:31 2020
 //Host        : DESKTOP-NTANC38 running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -38,7 +38,6 @@ module design_1
   wire MODULE_CONTROLLER_0_state;
   wire SW_0_1;
   wire can_signal_in_1;
-  wire can_top_0_clkout_o;
   wire can_top_0_go_sync;
   wire can_top_0_rsyn_t;
   wire can_top_0_sample_point;
@@ -59,7 +58,7 @@ module design_1
   assign clk_1 = clk;
   assign debug_0 = ATTACK_MODULE_0_debug;
   assign debug_1 = can_top_0_sample_point_q;
-  assign debug_2 = can_top_0_clkout_o;
+  assign debug_2 = can_top_0_sample_point;
   assign to_dominant = ATTACK_MODULE_0_to_dominant;
   assign to_recessive = ATTACK_MODULE_0_to_recessive;
   assign triger = MODULE_CONTROLLER_0_TRIGER;
@@ -88,7 +87,6 @@ module design_1
   design_1_can_top_0_0 can_top_0
        (.ale_i(initializer_0_ale_o),
         .clk_i(initializer_0_clk_o),
-        .clkout_o(can_top_0_clkout_o),
         .cs_can_i(initializer_0_cs_can_o),
         .go_sync(can_top_0_go_sync),
         .port_0_i(initializer_0_port_0_io),
